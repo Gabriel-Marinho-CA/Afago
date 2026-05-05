@@ -1474,6 +1474,14 @@ details[open] > .share-button__fallback {
   position: relative;
   right: var(--inputs-border-width);
 }
+.header__icons  {
+     
+    justify-content: space-between;
+
+    @media (min-width:750px) {
+ min-width: 200px;
+    }
+}
 .icon-wishlist {
       display: flex;
     align-items: center;

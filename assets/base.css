@@ -1474,10 +1474,16 @@ details[open] > .share-button__fallback {
   position: relative;
   right: var(--inputs-border-width);
 }
-
+.icon-wishlist {
+      display: flex;
+    align-items: center;
+}
+.header__icon .svg-wrapper {
+  width:2.4rem !important;
+}
 .header__icons {
   svg {
-    width:2.4rem;
+    width:2.4rem !important;
   }
 }
 .share-button__fallback button:hover {

@@ -117,8 +117,11 @@
         background: transparent;
 
         .header__icons {
-          svg *:not(.icon-close) {
+          svg * {
             fill: #fff;
+          }
+          svg.icon-close *{
+            fill:#000;
           }
         }
     }

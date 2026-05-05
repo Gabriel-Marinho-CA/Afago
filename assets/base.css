@@ -184,6 +184,16 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   max-width: 82rem;
   margin: 0 auto 2rem;
 }
+.header__menu-item span  {
+font-weight: 500;
+font-style: Medium;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+}
+
 
 .list-unstyled {
   margin: 0;

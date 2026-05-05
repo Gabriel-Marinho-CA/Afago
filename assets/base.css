@@ -1478,7 +1478,8 @@ details[open] > .share-button__fallback {
       display: flex;
     align-items: center;
 }
-.header__icon .svg-wrapper {
+.header__icon .svg-wrapper,
+.header__icon {
   width:2.4rem !important;
 }
 .header__icons {

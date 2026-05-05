@@ -264,6 +264,12 @@
       </div>
       {% render 'header-search', input_id: 'Search-In-Modal' %}
 
+      <a href="#" class="icon-wishlist">
+        <span class="svg-wrapper ">
+          {{ 'icon-heart.svg' | inline_asset_content }}
+        </span>
+      </a>
+
       {%- if shop.customer_accounts_enabled -%}
         <a
           href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"

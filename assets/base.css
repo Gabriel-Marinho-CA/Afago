@@ -1475,6 +1475,11 @@ details[open] > .share-button__fallback {
   right: var(--inputs-border-width);
 }
 
+.header__icons {
+  svg {
+    width:2.4rem;
+  }
+}
 .share-button__fallback button:hover {
   color: rgba(var(--color-foreground), 0.75);
 }

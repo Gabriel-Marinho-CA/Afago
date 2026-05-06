@@ -1960,18 +1960,14 @@ class ResColorCard extends HTMLElement {
       );
     }).join('');
 
-    var prevEl = this.querySelector('.res-card__nav--prev');
-    var nextEl = this.querySelector('.res-card__nav--next');
-    var multiSlide = images.length > 1;
-
-    if (prevEl) prevEl.style.display = multiSlide ? '' : 'none';
-    if (nextEl) nextEl.style.display = multiSlide ? '' : 'none';
-
     if (typeof Swiper === 'undefined') return;
 
+    var multiSlide = images.length > 1;
+    var paginationEl = this.querySelector('.res-card__img-dots');
+
     var config = { loop: multiSlide };
-    if (multiSlide && prevEl && nextEl) {
-      config.navigation = { prevEl: prevEl, nextEl: nextEl };
+    if (multiSlide && paginationEl) {
+      config.pagination = { el: paginationEl, clickable: true };
     }
 
     this._swiper = new Swiper(this.querySelector('.res-card__swiper'), config);
@@ -2006,7 +2002,7 @@ class ResColorCard extends HTMLElement {
         }
         if (matched) {
           var url = self._data.productUrl + '?variant=' + matched.id;
-          self.querySelectorAll('.res-card__media-link, .res-card__info-link').forEach(function (link) {
+          self.querySelectorAll('.res-card__media-link, .res-card__title-link, .res-card__price-link').forEach(function (link) {
             link.href = url;
           });
         }
@@ -2040,10 +2036,17 @@ class ResColorCard extends HTMLElement {
       return;
     }
 
+    var firstActive = true;
     sizesEl.innerHTML = colorVariants.map(function (v) {
       var size = v.options[sizeIdx] || '?';
       var url = productUrl + '?variant=' + v.id;
-      var cls = 'res-card__size-btn' + (v.available ? '' : ' res-card__size-btn--unavailable');
+      var cls = 'res-card__size-btn';
+      if (!v.available) {
+        cls += ' res-card__size-btn--unavailable';
+      } else if (firstActive) {
+        cls += ' res-card__size-btn--active';
+        firstActive = false;
+      }
       return '<a href="' + url + '" class="' + cls + '">' + size + '</a>';
     }).join('');
   }

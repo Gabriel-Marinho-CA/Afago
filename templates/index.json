@@ -44,7 +44,7 @@
         "collection": "frontpage",
         "product_list": [],
         "show_button": true,
-        "add_to_cart": false,
+        "add_to_cart": true,
         "show_installments": true,
         "autoplay": false,
         "autoplay_time": 4,

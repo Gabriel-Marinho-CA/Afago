@@ -1964,10 +1964,15 @@ class ResColorCard extends HTMLElement {
 
     var multiSlide = images.length > 1;
     var paginationEl = this.querySelector('.res-card__img-dots');
+    var prevEl = this.querySelector('.res-card__nav--prev');
+    var nextEl = this.querySelector('.res-card__nav--next');
 
     var config = { loop: multiSlide };
     if (multiSlide && paginationEl) {
       config.pagination = { el: paginationEl, clickable: true };
+    }
+    if (multiSlide && prevEl && nextEl) {
+      config.navigation = { prevEl: prevEl, nextEl: nextEl };
     }
 
     this._swiper = new Swiper(this.querySelector('.res-card__swiper'), config);
@@ -1987,47 +1992,55 @@ class ResColorCard extends HTMLElement {
         });
         swatch.classList.add('res-card__swatch--active');
 
-        var colorIdx = self._data.colorOptionIndex || 0;
-        var matched = null;
-        if (self._data.variants) {
-          for (var i = 0; i < self._data.variants.length; i++) {
-            var v = self._data.variants[i];
-            if (v.options && v.options[colorIdx] === color) {
-              if (!matched || v.available) {
-                matched = v;
-                if (v.available) break;
-              }
-            }
-          }
-        }
-        if (matched) {
-          var url = self._data.productUrl + '?variant=' + matched.id;
-          self.querySelectorAll('.res-card__media-link, .res-card__title-link, .res-card__price-link').forEach(function (link) {
-            link.href = url;
-          });
-        }
-
         self._renderBuySizes(color);
         self._initSwiper();
       });
     });
   }
 
+  /* Atualiza o input[name="id"] do product-form e o estado do botão */
+  _updateVariant(variantId, available) {
+    var input = this.querySelector('.product-variant-id');
+    if (input) {
+      input.value = variantId;
+      input.disabled = !available;
+    }
+
+    var btn = this.querySelector('.res-card__btn[type="submit"]');
+    if (btn) {
+      btn.disabled = !available;
+      btn.classList.toggle('res-card__btn--disabled', !available);
+    }
+
+    /* Atualiza hrefs dos links para variante correta */
+    var url = this._data.productUrl + '?variant=' + variantId;
+    this.querySelectorAll('.res-card__media-link, .res-card__title-link, .res-card__price-link').forEach(function (link) {
+      link.href = url;
+    });
+  }
+
   _renderBuySizes(color) {
+    var self = this;
     var sizesEl = this.querySelector('.res-card__buy-sizes');
     if (!sizesEl) return;
 
     var sizeIdx = this._data.sizeOptionIndex;
     if (sizeIdx == null || sizeIdx < 0) {
+      /* Sem opção de tamanho: seleciona a variante pela cor diretamente */
+      var colorIdx = this._data.colorOptionIndex || 0;
+      var matched = null;
+      (this._data.variants || []).forEach(function (v) {
+        if (v.options && v.options[colorIdx] === color) {
+          if (!matched || v.available) matched = v;
+        }
+      });
+      if (matched) self._updateVariant(matched.id, matched.available);
       sizesEl.innerHTML = '';
       return;
     }
 
     var colorIdx = this._data.colorOptionIndex || 0;
-    var variants = this._data.variants || [];
-    var productUrl = this._data.productUrl || '';
-
-    var colorVariants = variants.filter(function (v) {
+    var colorVariants = (this._data.variants || []).filter(function (v) {
       return v.options && v.options[colorIdx] === color;
     });
 
@@ -2036,10 +2049,10 @@ class ResColorCard extends HTMLElement {
       return;
     }
 
+    /* Renderiza botões de tamanho (sem href — apenas seleção) */
     var firstActive = true;
     sizesEl.innerHTML = colorVariants.map(function (v) {
       var size = v.options[sizeIdx] || '?';
-      var url = productUrl + '?variant=' + v.id;
       var cls = 'res-card__size-btn';
       if (!v.available) {
         cls += ' res-card__size-btn--unavailable';
@@ -2047,8 +2060,29 @@ class ResColorCard extends HTMLElement {
         cls += ' res-card__size-btn--active';
         firstActive = false;
       }
-      return '<a href="' + url + '" class="' + cls + '">' + size + '</a>';
+      return (
+        '<button type="button" class="' + cls + '"' +
+        ' data-variant-id="' + v.id + '"' +
+        ' data-available="' + v.available + '">' +
+        size + '</button>'
+      );
     }).join('');
+
+    /* Pré-seleciona o primeiro tamanho disponível */
+    var firstAvailable = colorVariants.find(function (v) { return v.available; });
+    var preselect = firstAvailable || colorVariants[0];
+    if (preselect) self._updateVariant(preselect.id, preselect.available);
+
+    /* Bind clique nos botões de tamanho */
+    sizesEl.querySelectorAll('.res-card__size-btn:not(.res-card__size-btn--unavailable)').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        sizesEl.querySelectorAll('.res-card__size-btn').forEach(function (b) {
+          b.classList.remove('res-card__size-btn--active');
+        });
+        btn.classList.add('res-card__size-btn--active');
+        self._updateVariant(btn.dataset.variantId, btn.dataset.available === 'true');
+      });
+    });
   }
 }
 

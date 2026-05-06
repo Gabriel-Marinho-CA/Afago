@@ -37,7 +37,7 @@ res-color-card.res-card,
 .res-card__swiper .swiper-wrapper:not(:has(.swiper-slide[aria-label="1 / 2"])) {
   .res-card__nav,
   .res-card__img-dots {
-    display:none;
+    display:none !important;
   }
 
 }

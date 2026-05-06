@@ -1967,6 +1967,11 @@ class ResColorCard extends HTMLElement {
     var prevEl = this.querySelector('.res-card__nav--prev');
     var nextEl = this.querySelector('.res-card__nav--next');
 
+    /* Esconde dots e arrows quando só há 1 imagem para a cor ativa */
+    if (paginationEl) paginationEl.style.display = multiSlide ? '' : 'none';
+    if (prevEl) prevEl.style.display = multiSlide ? '' : 'none';
+    if (nextEl) nextEl.style.display = multiSlide ? '' : 'none';
+
     var config = { loop: multiSlide };
     if (multiSlide && paginationEl) {
       config.pagination = { el: paginationEl, clickable: true };

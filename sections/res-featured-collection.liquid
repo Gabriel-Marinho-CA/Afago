@@ -166,16 +166,18 @@
         const paginationEl = this.querySelector('.res-fc__pagination');
 
         const config = {
-          slidesPerView: 2.3,
+          slidesPerView: 2,
           spaceBetween: 12,
           breakpoints: {
             750: {
-              slidesPerView: 3,
-              spaceBetween: 20
+              slidesPerView: 2,
+              spaceBetween: 16,
+              grid: { rows: 2, fill: 'row' }
             },
             1024: {
               slidesPerView: 4,
-              spaceBetween: 24
+              spaceBetween: 20,
+              grid: { rows: 2, fill: 'row' }
             }
           },
           pagination: {

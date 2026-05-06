@@ -24,27 +24,22 @@
 -%}
 
 <res-color-card class="res-card">
-  {%- comment -%} Swatches {%- endcomment -%}
-  {% if res_color_values.size > 1 %}
-    <div class="res-card__swatches">
-      {% for color_value in res_color_values %}
-        {%- liquid
-          assign swatch_slug = color_value | downcase | replace: 'á', 'a' | replace: 'à', 'a' | replace: 'ã', 'a' | replace: 'â', 'a' | replace: 'é', 'e' | replace: 'ê', 'e' | replace: 'í', 'i' | replace: 'ó', 'o' | replace: 'ô', 'o' | replace: 'õ', 'o' | replace: 'ú', 'u' | replace: 'ü', 'u' | replace: 'ç', 'c' | replace: ' ', '-' | replace: '_', '-' | replace: '/', '-'
-        -%}
-        <button
-          class="res-card__swatch tp-swatch--{{ swatch_slug }}{% if forloop.first %} res-card__swatch--active{% endif %}"
-          data-color="{{ color_value | escape }}"
-          aria-label="{{ color_value | escape }}"
-          title="{{ color_value | escape }}"
-        ></button>
-      {% endfor %}
-    </div>
-  {% else %}
-    <div class="res-card__swatches res-card__swatches--empty" aria-hidden="true"></div>
-  {% endif %}
 
-  {%- comment -%} Image carousel {%- endcomment -%}
+  {%- comment -%} Imagem {%- endcomment -%}
   <div class="res-card__media-wrapper">
+
+    {% if res_product.compare_at_price > res_product.price %}
+      <div class="res-card__badges">
+        <span class="res-card__badge">OFERTA</span>
+      </div>
+    {% endif %}
+
+    <button class="res-card__wishlist" aria-label="Adicionar aos favoritos" type="button">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    </button>
+
     <a href="{{ res_product.url }}" class="res-card__media-link" aria-label="{{ res_product.title | escape }}">
       <div class="res-card__media">
         <div class="swiper res-card__swiper">
@@ -53,10 +48,12 @@
               {% if res_product.featured_image %}
                 {{
                   res_product.featured_image
-                  | image_url: width: 1000
+                  | image_url: width: 800
                   | image_tag:
                     loading: 'lazy',
-                    class: 'res-card__img'
+                    class: 'res-card__img',
+                    widths: '400, 600, 800',
+                    sizes: '(min-width: 1024px) 25vw, (min-width: 750px) 33vw, 50vw'
                 }}
               {% else %}
                 {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg res-card__img' }}
@@ -64,62 +61,71 @@
             </div>
           </div>
         </div>
-
-        {% if res_product.images.size > 1 %}
-          <button class="res-card__nav res-card__nav--prev" aria-label="Anterior" tabindex="-1">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-          <button class="res-card__nav res-card__nav--next" aria-label="Próximo" tabindex="-1">
-            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
-        {% endif %}
       </div>
     </a>
 
-    {%- comment -%} Buy strip — COMPRAR AGORA / tamanhos por cor {%- endcomment -%}
-    {% if res_product.variants.size > 1 %}
-      <div class="res-card__buy-strip">
-        <div class="res-card__buy-marquee" aria-hidden="true">
-          <div class="res-card__buy-track">
-            {%- for i in (1..12) -%}
-              <span class="res-card__buy-item">COMPRAR AGORA</span>
-            {%- endfor -%}
-          </div>
-        </div>
-        <div class="res-card__buy-sizes" aria-label="Escolha o tamanho"></div>
-      </div>
+    {%- comment -%} Indicador de imagens (barrinhas) {%- endcomment -%}
+    {% if res_product.images.size > 1 %}
+      <div class="res-card__img-dots swiper-pagination"></div>
     {% endif %}
+
   </div>
 
-  {%- comment -%} Product info {%- endcomment -%}
+  {%- comment -%} Info {%- endcomment -%}
   <div class="res-card__info">
-    <a class="res-card__info-link" href="{{ res_product.url }}">
-      {% if res_product.metafields.custom.pequena_descricao != blank %}
-        <div class="res-card__meta">
-          <p>{{ res_product.metafields.custom.pequena_descricao }}</p>
-        </div>
-      {% endif %}
+    <div class="res-card__info-grid">
 
-      <h3 class="res-card__title">{{ res_product.title | escape }}</h3>
+      <div class="res-card__col-left">
+        <a href="{{ res_product.url }}" class="res-card__title-link">
+          <h3 class="res-card__title">{{ res_product.title | escape }}</h3>
+        </a>
 
-      {% if show_price %}
-        <div class="res-card__price">
-          {% if res_product.compare_at_price > res_product.price %}
-            <s class="res-card__compare-price">
-              {{- res_product.compare_at_price | money_with_currency | remove: 'BRL' -}}
-            </s>
+        {% if res_size_option_index >= 0 %}
+          <div class="res-card__sizes-section">
+            <span class="res-card__variants-label">TAMANHOS</span>
+            <div class="res-card__buy-sizes"></div>
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="res-card__col-right">
+        <a href="{{ res_product.url }}" class="res-card__price-link">
+          {% if show_price %}
+            <div class="res-card__price">
+              <span class="res-card__regular-price">{{ res_product.price | money_with_currency | remove: 'BRL' }}</span>
+              {% if res_product.compare_at_price > res_product.price %}
+                <s class="res-card__compare-price">{{ res_product.compare_at_price | money_with_currency | remove: 'BRL' }}</s>
+              {% endif %}
+              {% if show_installments %}
+                <div class="res-card__installments-wrap">
+                  {% render 'tp-installments', tp_price: res_product.price %}
+                </div>
+              {% endif %}
+            </div>
           {% endif %}
-          <span class="res-card__regular-price">{{ res_product.price | money_with_currency | remove: 'BRL' }}</span>
-          {% if show_installments %}
-            {% render 'tp-installments', tp_price: res_product.price %}
-          {% endif %}
-        </div>
-      {% endif %}
-    </a>
+        </a>
+
+        {% if res_color_values.size > 1 %}
+          <div class="res-card__colors-section">
+            <span class="res-card__variants-label">CORES</span>
+            <div class="res-card__swatches">
+              {% for color_value in res_color_values %}
+                {%- liquid
+                  assign swatch_slug = color_value | downcase | replace: 'á', 'a' | replace: 'à', 'a' | replace: 'ã', 'a' | replace: 'â', 'a' | replace: 'é', 'e' | replace: 'ê', 'e' | replace: 'í', 'i' | replace: 'ó', 'o' | replace: 'ô', 'o' | replace: 'õ', 'o' | replace: 'ú', 'u' | replace: 'ü', 'u' | replace: 'ç', 'c' | replace: ' ', '-' | replace: '_', '-' | replace: '/', '-'
+                -%}
+                <button
+                  class="res-card__swatch tp-swatch--{{ swatch_slug }}{% if forloop.first %} res-card__swatch--active{% endif %}"
+                  data-color="{{ color_value | escape }}"
+                  aria-label="{{ color_value | escape }}"
+                  title="{{ color_value | escape }}"
+                ></button>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
 
     {% if show_button %}
       {% if add_to_cart and res_product.available %}
@@ -132,25 +138,22 @@
             novalidate: 'novalidate',
             data-type: 'add-to-cart-form'
           -%}
-            <input
-              type="hidden"
-              name="id"
-              value="{{ res_product.selected_or_first_available_variant.id }}"
-              class="product-variant-id"
-            >
-            <button id="{{ res_form_id }}-submit" class="tp-button" type="submit" name="add">
-              <span>{{ settings.tp_pc_btn_text | default: 'Adicionar ao carrinho' }}</span>
+            <input type="hidden" name="id" value="{{ res_product.selected_or_first_available_variant.id }}" class="product-variant-id">
+            <button id="{{ res_form_id }}-submit" class="res-card__btn" type="submit" name="add">
+              <span>ADICIONAR À SACOLA</span>
               {%- render 'loading-spinner' -%}
             </button>
           {%- endform -%}
         </product-form>
       {% elsif res_product.available == false %}
-        <button class="tp-button tp-button--disabled" type="button" disabled aria-disabled="true">Esgotado</button>
+        <button class="res-card__btn res-card__btn--disabled" type="button" disabled aria-disabled="true">ESGOTADO</button>
+      {% else %}
+        <a class="res-card__btn" href="{{ res_product.url }}">ADICIONAR À SACOLA</a>
       {% endif %}
     {% endif %}
   </div>
 
-  {%- comment -%} Variant + image data for JS {%- endcomment -%}
+  {%- comment -%} Dados de variantes/imagens para o JS {%- endcomment -%}
   <script type="application/json" class="res-card__data">
     {
       "productUrl": {{ res_product.url | json }},
@@ -166,9 +169,10 @@
       "images": [
         {%- for image in res_product.images -%}
           {%- unless forloop.first -%},{%- endunless -%}
-          {"src":{{ image | image_url: width: 1000 | json }},"alt":{{ image.alt | json }},"width":{{ image.width }},"height":{{ image.height }}}
+          {"src":{{ image | image_url: width: 800 | json }},"alt":{{ image.alt | json }},"width":{{ image.width }},"height":{{ image.height }}}
         {%- endfor -%}
       ]
     }
   </script>
+
 </res-color-card>

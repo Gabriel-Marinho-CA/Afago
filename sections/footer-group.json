@@ -1,7 +1,49 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "custom_colors_KLhtYG": {
+      "type": "custom-colors",
+      "blocks": {
+        "cor_Ai6WPR": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Rosa antigo",
+            "color_value": "#db5454"
+          }
+        },
+        "cor_4UyKzA": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Marrom",
+            "color_value": "#db9254"
+          }
+        },
+        "cor_rcU9yc": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Bronze",
+            "color_value": "#ffdc00"
+          }
+        }
+      },
+      "block_order": [
+        "cor_Ai6WPR",
+        "cor_4UyKzA",
+        "cor_rcU9yc"
+      ],
+      "name": "Cores de Variantes",
+      "settings": {}
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -23,7 +65,7 @@
           "type": "text",
           "settings": {
             "heading": "Our mission",
-            "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
           }
         }
       },
@@ -36,6 +78,7 @@
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
         "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
         "show_social": true,
         "enable_country_selector": false,
         "enable_language_selector": false,
@@ -48,6 +91,7 @@
     }
   },
   "order": [
+    "custom_colors_KLhtYG",
     "footer"
   ]
 }

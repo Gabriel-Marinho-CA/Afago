@@ -57,6 +57,49 @@ res-color-card.res-card,
   transform: scale(1.04);
 }
 
+/* ── Nav arrows (hover) ── */
+
+.res-card__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  border: none;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #05122B;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  padding: 0;
+  transition: opacity 150ms;
+}
+
+.res-card:hover .res-card__nav {
+  display: flex;
+}
+
+.res-card__nav:hover {
+  opacity: 0.8;
+}
+
+.res-card__nav.swiper-button-disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.res-card__nav--prev {
+  left: 8px;
+}
+
+.res-card__nav--next {
+  right: 8px;
+}
+
 /* ── Badge ── */
 
 .res-card__badges {

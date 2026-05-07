@@ -136,20 +136,32 @@ text-transform: uppercase;
 }
 
 .res-footer__nl-title {
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+font-weight: 500;
+font-style: Medium;
+font-size: 30px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+
   margin: 0 0 8px;
-  line-height: 1.2;
+
+    @media (min-width:1000px) and (max-width:1300px) {
+    font-size: 22px;
+  }
 }
 
 .res-footer__nl-subtitle {
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  opacity: 0.75;
-  margin: 0 0 28px;
-  line-height: 1.5;
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+color:#131313;
+    @media (min-width:1000px) and (max-width:1300px) {
+    font-size: 15px;
+  }
 }
 
 .res-footer__nl-fields {

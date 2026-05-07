@@ -186,6 +186,12 @@ res-color-card.res-card,
   gap: 12px;
   padding: 10px 0 0;
   flex: 1;
+
+  @media (max-width:750px) {
+    product-form {
+      display:none !important;
+    }
+  }
 }
 
 /* ── Info 2-column grid ── */
@@ -283,6 +289,10 @@ res-color-card.res-card,
   display: flex;
   flex-direction: column;
   gap: 6px;
+
+  @media (max-width:750px) {
+    display:none;
+  }
 }
 
 /* ── Colors section ── */
@@ -292,6 +302,9 @@ res-color-card.res-card,
   flex-direction: column;
   gap: 6px;
   align-items: flex-end;
+    @media (max-width:750px) {
+    display:none;
+  }
 }
 
 /* ── Variant labels (TAMANHOS / CORES) ── */

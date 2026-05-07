@@ -156,7 +156,7 @@
   height: 40px;
   border-radius: 50%;
   background: var(--tp-color-bg-primary, #fff);
-  border: 1px solid var(--tp-color-text-primary, #111);
+  border: none;
   color: var(--tp-color-text-primary, #111);
   cursor: pointer;
   padding: 0;

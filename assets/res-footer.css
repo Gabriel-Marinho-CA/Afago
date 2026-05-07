@@ -18,6 +18,10 @@
   gap: 48px 40px;
   padding-block: 56px;
   margin: 0 auto;
+
+  @media (max-width:1000px) {
+    gap: 1rem;
+  }
 }
 
 .res-footer__menus {

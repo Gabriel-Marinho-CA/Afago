@@ -1,0 +1,342 @@
+{{ 'tp-e-ig-section-v1.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  {% if section.settings.bg_custom %}
+    .{{ section.id }} {
+      {% if section.settings.background_type == 'gradient' and section.settings.bg_gradient != blank %}
+        background: {{ section.settings.bg_gradient }};
+      {% elsif section.settings.bg_color != blank %}
+        background: {{ section.settings.bg_color }};
+      {% endif %}
+    }
+  {% endif %}
+
+  {% if section.settings.title_custom %}
+    .{{ section.id }} .tp-e-ig-section-v1__title {
+      color: {{ section.settings.title_color }};
+      font-size: {{ section.settings.title_size_mobile }}px;
+      font-weight: {{ section.settings.title_weight }};
+    }
+
+    @media screen and (min-width: 768px) {
+      .{{ section.id }} .tp-e-ig-section-v1__title {
+        font-size: {{ section.settings.title_size_desktop }}px;
+      }
+    }
+  {% endif %}
+
+  {% if section.settings.btn_custom %}
+    .{{ section.id }} .tp-e-ig-section-v1__button {
+      {% if section.settings.btn_bg_color != blank %}
+        background: {{ section.settings.btn_bg_color }};
+      {% endif %}
+      {% if section.settings.btn_text_color != blank %}
+        color: {{ section.settings.btn_text_color }};
+      {% endif %}
+      border-radius: var(--tp-radius-{{ section.settings.btn_radius }});
+      font-size: {{ section.settings.btn_font_size_mobile }}px;
+      font-weight: {{ section.settings.btn_font_weight }};
+    }
+
+    @media screen and (min-width: 768px) {
+      .{{ section.id }} .tp-e-ig-section-v1__button {
+        font-size: {{ section.settings.btn_font_size_desktop }}px;
+      }
+    }
+  {% endif %}
+{% endstyle %}
+{% style %}
+  .{{ section.id }} {
+    padding-top: {{ section.settings.pad_top_desktop }}px;
+    padding-bottom: {{ section.settings.pad_bottom_desktop }}px;
+
+    @media (max-width:750px) {
+            padding-top: {{ section.settings.pad_top_mobile }}px;
+    padding-bottom: {{ section.settings.pad_bottom_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<section class="tp-e-ig-section-v1 {{ section.id }} scroll-trigger animate--fade-in">
+  <div class="tp-wrapper tp-e-ig-section-v1__wrapper" id="section-wrapper-{{ section.id }}">
+    <div class="tp-e-ig-section-v1__header">
+      {% if section.settings.title != blank %}
+        <h2 class="tp-e-ig-section-v1__title">{{ section.settings.title | escape }}</h2>
+      {% endif %}
+
+      {% if section.settings.button_text != blank %}
+        <a
+          class="tp-e-ig-section-v1__button"
+          href="{{ section.settings.button_url }}"
+          {% if section.settings.button_url == blank %}
+            aria-disabled="true"
+          {% endif %}
+        >
+          {{- section.settings.button_text | escape -}}
+        </a>
+      {% endif %}
+    </div>
+
+    {% if section.blocks.size > 0 %}
+      <div class="tp-e-ig-section-v1__feed">
+        {% for block in section.blocks %}
+          {% render block %}
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Instagram",
+  "class": "E__IG_SECTION__V1",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Conteúdo"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Título",
+      "default": "Nos siga no Instagram"
+    },
+    {
+      "type": "header",
+      "content": "Botão"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Texto",
+      "default": "@instagram"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "btn_custom",
+      "label": "Personalizar",
+      "default": false
+    },
+    {
+      "type": "color_background",
+      "id": "btn_bg_color",
+      "label": "Cor de fundo",
+      "visible_if": "{{ section.settings.btn_custom }}"
+    },
+    {
+      "type": "color",
+      "id": "btn_text_color",
+      "label": "Cor do texto",
+      "visible_if": "{{ section.settings.btn_custom }}"
+    },
+    {
+      "type": "select",
+      "id": "btn_radius",
+      "label": "Arredondamento",
+      "default": "full",
+      "options": [
+        { "label": "Nenhum", "value": "none" },
+        { "label": "Pequeno", "value": "sm" },
+        { "label": "Médio", "value": "md" },
+        { "label": "Grande", "value": "lg" },
+        { "label": "Extra Grande", "value": "xl" },
+        { "label": "Completo", "value": "full" }
+      ],
+      "visible_if": "{{ section.settings.btn_custom }}"
+    },
+    {
+      "type": "range",
+      "id": "btn_font_size_desktop",
+      "label": "Tamanho desktop (px)",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "default": 14,
+      "visible_if": "{{ section.settings.btn_custom }}"
+    },
+    {
+      "type": "range",
+      "id": "btn_font_size_mobile",
+      "label": "Tamanho mobile (px)",
+      "min": 12,
+      "max": 24,
+      "step": 2,
+      "default": 14,
+      "visible_if": "{{ section.settings.btn_custom }}"
+    },
+    {
+      "type": "select",
+      "id": "btn_font_weight",
+      "label": "Peso",
+      "default": "600",
+      "options": [
+        { "label": "Regular (400)", "value": "400" },
+        { "label": "Médio (500)", "value": "500" },
+        { "label": "Semi-negrito (600)", "value": "600" },
+        { "label": "Negrito (700)", "value": "700" }
+      ],
+      "visible_if": "{{ section.settings.btn_custom }}"
+    },
+    {
+      "type": "header",
+      "content": "Aparência"
+    },
+    {
+      "type": "select",
+      "id": "background_type",
+      "label": "Tipo de fundo",
+      "default": "color",
+      "options": [
+        { "label": "Cor sólida", "value": "color" },
+        { "label": "Gradiente", "value": "gradient" }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "bg_custom",
+      "label": "Personalizar fundo",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Cor de fundo",
+      "visible_if": "{{ section.settings.bg_custom and section.settings.background_type == 'color' }}"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_gradient",
+      "label": "Gradiente",
+      "visible_if": "{{ section.settings.bg_custom and section.settings.background_type == 'gradient' }}"
+    },
+    {
+      "type": "header",
+      "content": "Tipografia — Título"
+    },
+    {
+      "type": "checkbox",
+      "id": "title_custom",
+      "label": "Personalizar",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Cor",
+      "visible_if": "{{ section.settings.title_custom }}"
+    },
+    {
+      "type": "range",
+      "id": "title_size_desktop",
+      "label": "Tamanho desktop (px)",
+      "min": 18,
+      "max": 56,
+      "step": 2,
+      "default": 36,
+      "visible_if": "{{ section.settings.title_custom }}"
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "label": "Tamanho mobile (px)",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "default": 28,
+      "visible_if": "{{ section.settings.title_custom }}"
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Peso",
+      "default": "700",
+      "options": [
+        { "label": "Regular (400)", "value": "400" },
+        { "label": "Médio (500)", "value": "500" },
+        { "label": "Semi-negrito (600)", "value": "600" },
+        { "label": "Negrito (700)", "value": "700" }
+      ],
+      "visible_if": "{{ section.settings.title_custom }}"
+    },
+    {
+      "type": "header",
+      "content": "Personalizar espaçamento por dispositivo"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_pad_top_mobile",
+      "label": "Ativar padding superior no mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "pad_top_mobile",
+      "label": "Padding superior mobile (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 0,
+      "visible_if": "{{ section.settings.enable_pad_top_mobile }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_pad_bottom_mobile",
+      "label": "Ativar padding inferior no mobile",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "pad_bottom_mobile",
+      "label": "Padding inferior mobile (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 0,
+      "visible_if": "{{ section.settings.enable_pad_bottom_mobile }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_pad_top_desktop",
+      "label": "Ativar padding superior no desktop",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "pad_top_desktop",
+      "label": "Padding superior desktop (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 0,
+      "visible_if": "{{ section.settings.enable_pad_top_desktop }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_pad_bottom_desktop",
+      "label": "Ativar padding inferior no desktop",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "pad_bottom_desktop",
+      "label": "Padding inferior desktop (px)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 0,
+      "visible_if": "{{ section.settings.enable_pad_bottom_desktop }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

@@ -266,6 +266,39 @@
         "button_letter_spacing": 2,
         "button_color": "#000000"
       }
+    },
+    "res_instagram_FHn8MC": {
+      "type": "res-instagram",
+      "name": "Instagram",
+      "settings": {
+        "title": "@afago___",
+        "button_text": "@afago___",
+        "button_url": "",
+        "btn_custom": false,
+        "btn_bg_color": "",
+        "btn_text_color": "",
+        "btn_radius": "full",
+        "btn_font_size_desktop": 14,
+        "btn_font_size_mobile": 14,
+        "btn_font_weight": "600",
+        "background_type": "color",
+        "bg_custom": false,
+        "bg_color": "",
+        "bg_gradient": "",
+        "title_custom": true,
+        "title_color": "#131313",
+        "title_size_desktop": 40,
+        "title_size_mobile": 20,
+        "title_weight": "400",
+        "enable_pad_top_mobile": true,
+        "pad_top_mobile": 44,
+        "enable_pad_bottom_mobile": true,
+        "pad_bottom_mobile": 44,
+        "enable_pad_top_desktop": true,
+        "pad_top_desktop": 76,
+        "enable_pad_bottom_desktop": true,
+        "pad_bottom_desktop": 56
+      }
     }
   },
   "order": [
@@ -273,6 +306,7 @@
     "res_featured_collection_kKn9mh",
     "res_categories_igbYQY",
     "res_featured_collection_aXAMMg",
-    "res_categories_slider_rGBJqR"
+    "res_categories_slider_rGBJqR",
+    "res_instagram_FHn8MC"
   ]
 }

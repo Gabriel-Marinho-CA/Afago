@@ -146,6 +146,10 @@ text-transform: uppercase;
 
   margin: 0 0 8px;
 
+    @media (max-width:1000px) {
+        font-size:18px;
+         line-height:1.2;
+    }
     @media (min-width:1000px) and (max-width:1300px) {
     font-size: 22px;
   }
@@ -162,6 +166,11 @@ color:#131313;
     @media (min-width:1000px) and (max-width:1300px) {
     font-size: 15px;
   }
+
+      @media (max-width:1000px) {
+        font-size:14px;
+        line-height:1.2;
+    }
 }
 
 .res-footer__nl-fields {

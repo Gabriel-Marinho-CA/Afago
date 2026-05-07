@@ -276,7 +276,11 @@ color:#131313;
   }
 
   /* Newsletter vem primeiro, menus depois (order) */
-  .res-footer__newsletter { order: -1; }
+  .res-footer__newsletter {
+     order: -1; 
+     border-bottom: 1px solid #000;
+     padding-bottom: 2rem;
+    }
 
   /* Desktop menus ocultos, accordions visíveis */
   .res-footer__menus {

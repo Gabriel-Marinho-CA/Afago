@@ -13,7 +13,7 @@
 .tp-e-ig-section-v1__header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: var(--tp-space-4, 16px);
 }
 

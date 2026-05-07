@@ -5,6 +5,10 @@
 .res-footer {
   width: 100%;
   border-top: 1px solid currentColor;
+
+  .page-width {
+    max-width:1700px;
+  }
 }
 
 /* ── Top: menus + newsletter ────────────────────────── */
@@ -25,7 +29,6 @@
 /* ── Menu column (desktop) ──────────────────────────── */
 .res-footer__menu-col {
   flex: 1;
-  min-width: 0;
 }
 
 .res-footer__menu-heading {

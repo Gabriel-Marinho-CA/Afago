@@ -63,6 +63,9 @@
     @media (min-width:1000px) and (max-width:1220px) {
         font-size: 60px !important;
     }
+    @media (max-width:345px) {
+        letter-spacing:11px !important;
+    }
 }
 
 .res-categories__card:hover .res-categories__title {

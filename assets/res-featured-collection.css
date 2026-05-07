@@ -189,8 +189,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--tp-color-text-primary, #111);
-  border: 1px solid var(--tp-color-text-primary, #111);
+  background: #B7B7B7;
   opacity: 1;
   margin: 0;
   transition: background var(--tp-transition-base, 300ms);
@@ -198,5 +197,5 @@
 }
 
 .res-fc__pagination .swiper-pagination-bullet-active {
-  background: transparent;
+  background: #131313;
 }

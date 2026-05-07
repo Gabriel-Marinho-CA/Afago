@@ -283,7 +283,7 @@ color:#131313;
   .res-footer__newsletter {
      order: -1; 
      border-bottom: 1px solid #000;
-     padding-bottom: 2rem;
+     padding-bottom:5rem;
     }
 
   /* Desktop menus ocultos, accordions visíveis */

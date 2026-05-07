@@ -65,6 +65,7 @@
   transition: opacity var(--tp-transition-base, 300ms);
   box-sizing: border-box;
   border-bottom: 1px solid #826A4F;
+  color: #131313;
     padding-right: 0;
     padding-left: 10rem;
     font-weight: 400;

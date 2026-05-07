@@ -75,7 +75,7 @@
 .res-categories__card .img--mobile  { display: none;  }
 
 /* ── Mobile ─────────────────────────────────────────── */
-@media (max-width: 767px) {
+@media (max-width: 1000px) {
   .res-categories__grid {
     grid-template-columns: 1fr;
   }

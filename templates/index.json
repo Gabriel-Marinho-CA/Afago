@@ -79,7 +79,7 @@
             "title_font_size_desktop": 80,
             "title_font_size_mobile": 30,
             "title_font_weight": 300,
-            "title_letter_spacing": 10,
+            "title_letter_spacing": 17,
             "title_color": "#ffffff",
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"
@@ -97,7 +97,7 @@
             "title_font_size_desktop": 80,
             "title_font_size_mobile": 30,
             "title_font_weight": 300,
-            "title_letter_spacing": 10,
+            "title_letter_spacing": 17,
             "title_color": "#ffffff",
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"
@@ -115,7 +115,7 @@
             "title_font_size_desktop": 80,
             "title_font_size_mobile": 30,
             "title_font_weight": 300,
-            "title_letter_spacing": 10,
+            "title_letter_spacing": 17,
             "title_color": "#ffffff",
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"
@@ -133,7 +133,7 @@
             "title_font_size_desktop": 80,
             "title_font_size_mobile": 30,
             "title_font_weight": 300,
-            "title_letter_spacing": 10,
+            "title_letter_spacing": 17,
             "title_color": "#ffffff",
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"

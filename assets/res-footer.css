@@ -199,8 +199,6 @@ text-transform: uppercase;
 }
 
 .res-footer__nl-btn:hover {
-  background: currentColor;
-  color: #fff;
 }
 
 .res-footer__nl-success {

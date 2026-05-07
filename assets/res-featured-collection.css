@@ -128,7 +128,14 @@
 }
 
 .res-fc__swiper .swiper-slide {
-  height: auto;
+  height: auto !important;
+
+  res-color-card {
+    height: 100%;
+    .res-card__info {
+      justify-content:space-between;
+    }
+  }
 }
 
 /* ── Controls bar (prev · pagination · next) ── */

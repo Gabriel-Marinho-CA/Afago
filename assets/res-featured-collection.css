@@ -59,18 +59,21 @@
   align-items: center;
   justify-content: center;
   height: 48px;
-  padding: 0 var(--tp-space-8, 32px);
-  background: var(--tp-btn-primary-bg);
-  color: var(--tp-btn-primary-color);
-  border-radius: var(--tp-btn-primary-radius);
-  font-family: var(--tp-font-body);
-  font-size: var(--tp-btn-primary-font-size, 14px);
-  font-weight: var(--tp-font-semibold, 600);
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
   transition: opacity var(--tp-transition-base, 300ms);
   box-sizing: border-box;
+  border-bottom: 1px solid #826A4F;
+    padding-right: 0;
+    padding-left: 10rem;
+    font-family: "Mona Sans";
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 10%;
 }
 
 .res-fc__view-more:hover {

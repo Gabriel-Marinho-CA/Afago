@@ -85,49 +85,55 @@
             "title_alignment_mobile": "center"
           }
         },
-        "category_card_Hhgwyp": {
+        "category_card_F6Dd7Y": {
           "type": "category_card",
           "settings": {
             "show_card": true,
+            "image_desktop": "shopify://shop_images/88bb18a08939ceef671ab3f37d87fa086e161c51_1.png",
+            "image_mobile": "shopify://shop_images/88bb18a08939ceef671ab3f37d87fa086e161c51_1_223ede95-532a-4ce1-92c0-9975884f3dc9.png",
             "card_link": "",
             "show_title": true,
             "title": "VESTIDO",
-            "title_font_size_desktop": 20,
-            "title_font_size_mobile": 16,
-            "title_font_weight": 400,
-            "title_letter_spacing": 3,
+            "title_font_size_desktop": 80,
+            "title_font_size_mobile": 30,
+            "title_font_weight": 300,
+            "title_letter_spacing": 10,
             "title_color": "#ffffff",
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"
           }
         },
-        "category_card_tPyHwi": {
+        "category_card_Yn7YXx": {
           "type": "category_card",
           "settings": {
             "show_card": true,
+            "image_desktop": "shopify://shop_images/b3cdcb7c55d9b808b01977300f5a195173bb7c08.png",
+            "image_mobile": "shopify://shop_images/b3cdcb7c55d9b808b01977300f5a195173bb7c08_873b5fc1-a8c5-4b60-a488-82ce29a1b510.png",
             "card_link": "",
             "show_title": true,
             "title": "CONJUNTO",
-            "title_font_size_desktop": 20,
-            "title_font_size_mobile": 16,
-            "title_font_weight": 400,
-            "title_letter_spacing": 3,
+            "title_font_size_desktop": 80,
+            "title_font_size_mobile": 30,
+            "title_font_weight": 300,
+            "title_letter_spacing": 10,
             "title_color": "#ffffff",
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"
           }
         },
-        "category_card_fmX3BX": {
+        "category_card_THyrci": {
           "type": "category_card",
           "settings": {
             "show_card": true,
+            "image_desktop": "shopify://shop_images/a18adccc222fde566c86101ed08a9dfacc3d4e53.png",
+            "image_mobile": "shopify://shop_images/a18adccc222fde566c86101ed08a9dfacc3d4e53_8b695368-b24a-45c2-9b3f-dce4d74e7165.png",
             "card_link": "",
             "show_title": true,
             "title": "BLUSAS",
-            "title_font_size_desktop": 20,
-            "title_font_size_mobile": 16,
-            "title_font_weight": 400,
-            "title_letter_spacing": 3,
+            "title_font_size_desktop": 80,
+            "title_font_size_mobile": 30,
+            "title_font_weight": 300,
+            "title_letter_spacing": 10,
             "title_color": "#ffffff",
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"
@@ -136,9 +142,9 @@
       },
       "block_order": [
         "category_card_iL4njr",
-        "category_card_Hhgwyp",
-        "category_card_tPyHwi",
-        "category_card_fmX3BX"
+        "category_card_F6Dd7Y",
+        "category_card_Yn7YXx",
+        "category_card_THyrci"
       ],
       "name": "Categorias",
       "settings": {

@@ -73,6 +73,19 @@
     leading-trim: NONE;
     line-height: 100%;
     letter-spacing: 10%;
+
+    @media (max-width:750px) {
+      border: 1px solid #826A4F;
+      font-family: Montserrat;
+font-weight: 400;
+font-style: Regular;
+font-size: 14px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 10%;
+text-transform: uppercase;
+
+    }
 }
 
 .res-fc__view-more:hover {

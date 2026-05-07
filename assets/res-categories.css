@@ -105,6 +105,8 @@
   padding: 12px 48px;
   letter-spacing: 0.12em;
   transition: background 0.3s ease, color 0.3s ease;
+  width:100%;
+  max-width:436px;
 }
 
 .res-categories__btn:hover {

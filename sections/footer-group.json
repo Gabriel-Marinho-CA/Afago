@@ -44,6 +44,48 @@
       "name": "Cores de Variantes",
       "settings": {}
     },
+    "res_footer_hy8WHV": {
+      "type": "res-footer",
+      "blocks": {
+        "menu_BA3gra": {
+          "type": "menu",
+          "settings": {
+            "heading": "Minha Conta",
+            "menu": "main-menu"
+          }
+        },
+        "menu_rMGmdB": {
+          "type": "menu",
+          "settings": {
+            "heading": "Institucional",
+            "menu": "main-menu"
+          }
+        },
+        "menu_f94NDY": {
+          "type": "menu",
+          "settings": {
+            "heading": "Suporte",
+            "menu": "main-menu"
+          }
+        }
+      },
+      "block_order": [
+        "menu_BA3gra",
+        "menu_rMGmdB",
+        "menu_f94NDY"
+      ],
+      "name": "Footer Afago",
+      "settings": {
+        "brand_image": "shopify://shop_images/405f6cc87e4f31c1d65ac0a2a29daca7fa916c07.png",
+        "nl_title": "Inscreva-se em nossa newsletter",
+        "nl_subtitle": "E receba acesso antecipado aos lançamentos e promoções exclusivas!",
+        "nl_label_name": "NOME",
+        "nl_label_email": "E-MAIL",
+        "nl_btn_label": "CADASTRAR",
+        "nl_success": "Cadastro realizado com sucesso!",
+        "copy_text": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor"
+      }
+    },
     "footer": {
       "type": "footer",
       "blocks": {
@@ -74,6 +116,7 @@
         "footer-1",
         "footer-2"
       ],
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -92,6 +135,7 @@
   },
   "order": [
     "custom_colors_KLhtYG",
+    "res_footer_hy8WHV",
     "footer"
   ]
 }

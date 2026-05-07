@@ -1,0 +1,355 @@
+{{ 'res-categories.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  /* ── Títulos dos cards ──────────────────────────────── */
+  {% for block in section.blocks %}
+    #res-categories-{{ section.id }} .res-categories__card[data-block="{{ block.id }}"] .res-categories__title {
+      font-size: {{ block.settings.title_font_size_mobile }}px;
+      font-weight: {{ block.settings.title_font_weight }};
+      letter-spacing: {{ block.settings.title_letter_spacing }}px;
+      color: {{ block.settings.title_color }};
+      text-align: {{ block.settings.title_alignment_mobile }};
+    }
+  {% endfor %}
+
+  @media (min-width: 768px) {
+    {% for block in section.blocks %}
+      #res-categories-{{ section.id }} .res-categories__card[data-block="{{ block.id }}"] .res-categories__title {
+        font-size: {{ block.settings.title_font_size_desktop }}px;
+        text-align: {{ block.settings.title_alignment_desktop }};
+      }
+    {% endfor %}
+  }
+
+  /* ── Botão "Ver mais" ────────────────────────────────── */
+  {% if section.settings.show_button %}
+    #res-categories-{{ section.id }} .res-categories__btn {
+      font-size: {{ section.settings.button_font_size_mobile }}px;
+      font-weight: {{ section.settings.button_font_weight }};
+      letter-spacing: {{ section.settings.button_letter_spacing }}px;
+      color: {{ section.settings.button_color }};
+      text-align: {{ section.settings.button_alignment_mobile }};
+    }
+    @media (min-width: 768px) {
+      #res-categories-{{ section.id }} .res-categories__btn {
+        font-size: {{ section.settings.button_font_size_desktop }}px;
+        text-align: {{ section.settings.button_alignment_desktop }};
+      }
+    }
+  {% endif %}
+{% endstyle %}
+
+<section id="res-categories-{{ section.id }}" class="res-categories">
+  <div class="res-categories__grid">
+    {% for block in section.blocks %}
+      {% if block.settings.show_card %}
+        <a
+          class="res-categories__card"
+          href="{{ block.settings.card_link }}"
+          data-block="{{ block.id }}"
+          {{ block.shopify_attributes }}
+        >
+          {% comment %} Imagem Desktop {% endcomment %}
+          {% if block.settings.image_desktop != blank %}
+            <img
+              class="img--desktop"
+              src="{{ block.settings.image_desktop | image_url: width: 900 }}"
+              srcset="
+                {{ block.settings.image_desktop | image_url: width: 600 }} 600w,
+                {{ block.settings.image_desktop | image_url: width: 900 }} 900w,
+                {{ block.settings.image_desktop | image_url: width: 1200 }} 1200w
+              "
+              sizes="(min-width: 768px) 50vw, 100vw"
+              alt="{{ block.settings.title | escape }}"
+              loading="{% if forloop.first %}eager{% else %}lazy{% endif %}"
+              width="{{ block.settings.image_desktop.width }}"
+              height="{{ block.settings.image_desktop.height }}"
+            >
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'img--desktop placeholder-svg' }}
+          {% endif %}
+
+          {% comment %} Imagem Mobile {% endcomment %}
+          {% if block.settings.image_mobile != blank %}
+            <img
+              class="img--mobile"
+              src="{{ block.settings.image_mobile | image_url: width: 600 }}"
+              srcset="
+                {{ block.settings.image_mobile | image_url: width: 400 }} 400w,
+                {{ block.settings.image_mobile | image_url: width: 600 }} 600w,
+                {{ block.settings.image_mobile | image_url: width: 800 }} 800w
+              "
+              sizes="100vw"
+              alt="{{ block.settings.title | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image_mobile.width }}"
+              height="{{ block.settings.image_mobile.height }}"
+            >
+          {% elsif block.settings.image_desktop != blank %}
+            {% comment %} Fallback: usa desktop no mobile se não houver imagem mobile {% endcomment %}
+            <img
+              class="img--mobile"
+              src="{{ block.settings.image_desktop | image_url: width: 600 }}"
+              alt="{{ block.settings.title | escape }}"
+              loading="lazy"
+              width="{{ block.settings.image_desktop.width }}"
+              height="{{ block.settings.image_desktop.height }}"
+            >
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'img--mobile placeholder-svg' }}
+          {% endif %}
+
+          <div class="res-categories__overlay"></div>
+
+          <div class="res-categories__content">
+            {% if block.settings.show_title %}
+              <span class="res-categories__title">{{ block.settings.title }}</span>
+            {% endif %}
+          </div>
+        </a>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% if section.settings.show_button and section.settings.button_label != blank %}
+    <div class="res-categories__footer">
+      <a class="res-categories__btn" href="{{ section.settings.button_link }}">
+        <span>{{ section.settings.button_label }}</span>
+      </a>
+    </div>
+  {% endif %}
+</section>
+
+{% schema %}
+{
+  "name": "Categorias",
+  "tag": "section",
+  "class": "section",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Botão \"Ver mais\""
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Exibir botão",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Texto do botão",
+      "default": "VER MAIS"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link do botão"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_desktop",
+      "label": "Tamanho da fonte — Desktop",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "default": 13
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "label": "Tamanho da fonte — Mobile",
+      "min": 10,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_font_weight",
+      "label": "Peso da fonte",
+      "min": 300,
+      "max": 700,
+      "step": 100,
+      "default": 400
+    },
+    {
+      "type": "range",
+      "id": "button_letter_spacing",
+      "label": "Espaçamento entre letras",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "default": 2
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Cor",
+      "default": "#000000"
+    },
+    {
+      "type": "select",
+      "id": "button_alignment_desktop",
+      "label": "Alinhamento — Desktop",
+      "options": [
+        { "value": "left",   "label": "Esquerda" },
+        { "value": "center", "label": "Centro"   },
+        { "value": "right",  "label": "Direita"  }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "button_alignment_mobile",
+      "label": "Alinhamento — Mobile",
+      "options": [
+        { "value": "left",   "label": "Esquerda" },
+        { "value": "center", "label": "Centro"   },
+        { "value": "right",  "label": "Direita"  }
+      ],
+      "default": "center"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category_card",
+      "name": "Card de categoria",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_card",
+          "label": "Exibir card",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image_desktop",
+          "label": "Imagem — Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Imagem — Mobile (opcional)"
+        },
+        {
+          "type": "url",
+          "id": "card_link",
+          "label": "Link do card"
+        },
+        {
+          "type": "header",
+          "content": "Título"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_title",
+          "label": "Exibir título",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Título",
+          "default": "CATEGORIA"
+        },
+        {
+          "type": "range",
+          "id": "title_font_size_desktop",
+          "label": "Tamanho da fonte — Desktop",
+          "min": 10,
+          "max": 80,
+          "step": 1,
+          "unit": "px",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "title_font_size_mobile",
+          "label": "Tamanho da fonte — Mobile",
+          "min": 10,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "title_font_weight",
+          "label": "Peso da fonte",
+          "min": 300,
+          "max": 700,
+          "step": 100,
+          "default": 400
+        },
+        {
+          "type": "range",
+          "id": "title_letter_spacing",
+          "label": "Espaçamento entre letras",
+          "min": 0,
+          "max": 10,
+          "step": 1,
+          "unit": "px",
+          "default": 3
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Cor do título",
+          "default": "#ffffff"
+        },
+        {
+          "type": "select",
+          "id": "title_alignment_desktop",
+          "label": "Alinhamento — Desktop",
+          "options": [
+            { "value": "left",   "label": "Esquerda" },
+            { "value": "center", "label": "Centro"   },
+            { "value": "right",  "label": "Direita"  }
+          ],
+          "default": "center"
+        },
+        {
+          "type": "select",
+          "id": "title_alignment_mobile",
+          "label": "Alinhamento — Mobile",
+          "options": [
+            { "value": "left",   "label": "Esquerda" },
+            { "value": "center", "label": "Centro"   },
+            { "value": "right",  "label": "Direita"  }
+          ],
+          "default": "center"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Categorias",
+      "blocks": [
+        {
+          "type": "category_card",
+          "settings": { "title": "CALÇA" }
+        },
+        {
+          "type": "category_card",
+          "settings": { "title": "VESTIDO" }
+        },
+        {
+          "type": "category_card",
+          "settings": { "title": "CONJUNTO" }
+        },
+        {
+          "type": "category_card",
+          "settings": { "title": "BLUSAS" }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

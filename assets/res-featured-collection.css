@@ -189,7 +189,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: #B7B7B7;
+  background: #B7B7B7 !important;
   opacity: 1;
   margin: 0;
   transition: background var(--tp-transition-base, 300ms);
@@ -197,5 +197,5 @@
 }
 
 .res-fc__pagination .swiper-pagination-bullet-active {
-  background: #131313;
+  background: #131313 !important;
 }

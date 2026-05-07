@@ -51,21 +51,21 @@
           "type": "menu",
           "settings": {
             "heading": "Minha Conta",
-            "menu": "main-menu"
+            "menu": "minha-conta"
           }
         },
         "menu_rMGmdB": {
           "type": "menu",
           "settings": {
             "heading": "Institucional",
-            "menu": "main-menu"
+            "menu": "institucional"
           }
         },
         "menu_f94NDY": {
           "type": "menu",
           "settings": {
             "heading": "Suporte",
-            "menu": "main-menu"
+            "menu": "suporte"
           }
         }
       },

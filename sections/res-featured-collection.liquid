@@ -69,6 +69,7 @@
   class="res-fc {{ section.id }} scroll-trigger animate--fade-in"
   data-autoplay="{{ autoplay }}"
   data-autoplay-time="{{ autoplay_time }}"
+  data-two-rows="{{ section.settings.two_rows }}"
 >
   <div class="res-fc__wrapper page-width">
 
@@ -162,6 +163,7 @@
 
         const autoplay     = this.dataset.autoplay === 'true';
         const autoplayMs   = parseInt(this.dataset.autoplayTime) || 3000;
+        const twoRows      = this.dataset.twoRows === 'true';
         const prevEl       = this.querySelector('.res-fc__nav--prev');
         const nextEl       = this.querySelector('.res-fc__nav--next');
         const paginationEl = this.querySelector('.res-fc__pagination');
@@ -173,12 +175,12 @@
             750: {
               slidesPerView: 2,
               spaceBetween: 16,
-              grid: { rows: 2, fill: 'row' }
+              ...(twoRows ? { grid: { rows: 2, fill: 'row' } } : {})
             },
             1024: {
               slidesPerView: 4,
               spaceBetween: 20,
-              grid: { rows: 2, fill: 'row' }
+              ...(twoRows ? { grid: { rows: 2, fill: 'row' } } : {})
             }
           },
           pagination: {
@@ -267,6 +269,13 @@
     {
       "type": "header",
       "content": "Slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "two_rows",
+      "label": "Exibir 2 linhas",
+      "default": true,
+      "info": "Ativo: 2 linhas de produtos. Inativo: 1 linha."
     },
     {
       "type": "checkbox",

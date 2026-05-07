@@ -16,8 +16,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px 40px;
-  padding: 56px 40px 48px;
-  max-width: 1400px;
+  padding-block: 56px;
   margin: 0 auto;
 }
 

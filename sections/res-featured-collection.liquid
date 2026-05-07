@@ -16,6 +16,7 @@
 
 {% style %}
   .{{ section.id }} {
+    display:block;
     {% if section.settings.background_type == 'image' and section.settings.background_image_mobile != blank %}
       background-image: url('{{ section.settings.background_image_mobile | image_url }}');
     {% elsif section.settings.background_type == 'color' and section.settings.background_color != blank %}
@@ -32,11 +33,7 @@
       {% if section.settings.background_type == 'image' and section.settings.background_image_desktop != blank %}
         background-image: url('{{ section.settings.background_image_desktop | image_url }}');
       {% endif %}
-     
-    }
-
-    .res-fc.{{ section.id }} {
- padding-top: {{ section.settings.pad_top_desktop }}px;
+      padding-top: {{ section.settings.pad_top_desktop }}px;
       padding-bottom: {{ section.settings.pad_bottom_desktop }}px;
     }
   }

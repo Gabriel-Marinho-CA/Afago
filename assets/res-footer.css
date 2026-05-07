@@ -40,6 +40,10 @@ letter-spacing: 0%;
 text-transform: uppercase;
 
   margin: 0 0 20px;
+
+  @media (min-width:1000px) and (max-width:1300px) {
+    font-size:22px;
+  }
 }
 
 .res-footer__menu-list {
@@ -60,6 +64,10 @@ line-height: 100%;
 letter-spacing: 0%;
 text-transform: uppercase;
 text-decoration:none;
+
+  @media (min-width:1000px) and (max-width:1300px) {
+    font-size: 15px;
+  }
 }
 
 .res-footer__menu-list a:hover {

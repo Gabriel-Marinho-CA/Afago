@@ -332,6 +332,7 @@ font-weight: 400;
 font-style: Regular;
 font-size: 16px;
 leading-trim: NONE;
+width:fit-content;
 line-height: 100%;
 letter-spacing: 0%;
 text-transform: uppercase;
@@ -343,6 +344,7 @@ position:relative;
   width: 70%;
   height: 1px;
   background: #826A4F;
+  bottom:-3px;
 }
 }
 

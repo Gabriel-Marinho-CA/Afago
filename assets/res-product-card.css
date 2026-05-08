@@ -341,6 +341,7 @@ line-height: 100%;
 letter-spacing: 0%;
 text-transform: uppercase;
 position:relative;
+padding-bottom: 1rem;
 
 &::before {
   content: "";
@@ -348,7 +349,7 @@ position:relative;
   width: 70%;
   height: 1px;
   background: #826A4F;
-  bottom:-3px;
+  bottom:5px;
 }
 }
 

@@ -1,10 +1,10 @@
 {{ 'res-featured-collection.css' | asset_url | stylesheet_tag }}
 
 {% liquid
-  assign autoplay          = section.settings.autoplay
-  assign autoplay_time     = section.settings.autoplay_time | times: 1000
-  assign show_button       = section.settings.show_button
-  assign add_to_cart       = section.settings.add_to_cart
+  assign autoplay = section.settings.autoplay
+  assign autoplay_time = section.settings.autoplay_time | times: 1000
+  assign show_button = section.settings.show_button
+  assign add_to_cart = section.settings.add_to_cart
   assign show_installments = section.settings.show_installments
 
   if section.settings.product_list.size > 0
@@ -72,7 +72,6 @@
   data-two-rows="{{ section.settings.two_rows }}"
 >
   <div class="res-fc__wrapper page-width">
-
     {%- comment -%} Header: título + botão "Ver mais" (desktop) {%- endcomment -%}
     <div class="res-fc__header">
       {% if section.settings.title != blank %}
@@ -138,7 +137,6 @@
         {{ section.settings.view_more_text | escape }}
       </a>
     {% endif %}
-
   </div>
 </res-featured-collection>
 
@@ -168,19 +166,46 @@
         const nextEl       = this.querySelector('.res-fc__nav--next');
         const paginationEl = this.querySelector('.res-fc__pagination');
 
-        const config = {
+
+        let config = "";
+
+        if(twoRows) {
+            config = {
+            slidesPerView: 2.2,
+            spaceBetween: 12,
+            breakpoints: {
+              750: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                  grid: { rows: 2, fill: 'row' } 
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 20,
+                  grid: { rows: 2, fill: 'row' } 
+              }
+            },
+            pagination: {
+              el: paginationEl,
+              clickable: true
+            },
+            navigation: {
+              prevEl: prevEl,
+              nextEl: nextEl
+            }
+          };
+        } else {
+                   config = {
           slidesPerView: 2.2,
           spaceBetween: 12,
           breakpoints: {
             750: {
               slidesPerView: 2,
               spaceBetween: 16,
-              ...(twoRows ? { grid: { rows: 2, fill: 'row' } } : {})
             },
             1024: {
               slidesPerView: 4,
               spaceBetween: 20,
-              ...(twoRows ? { grid: { rows: 2, fill: 'row' } } : {})
             }
           },
           pagination: {
@@ -191,7 +216,10 @@
             prevEl: prevEl,
             nextEl: nextEl
           }
-        };
+        }; 
+        }
+
+
 
         if (autoplay) {
           config.autoplay = { delay: autoplayMs, disableOnInteraction: false };
@@ -405,25 +433,41 @@
       "type": "range",
       "id": "pad_top_mobile",
       "label": "Padding TOP (mobile)",
-      "min": 0, "max": 200, "step": 4, "default": 32, "unit": "px"
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 32,
+      "unit": "px"
     },
     {
       "type": "range",
       "id": "pad_bottom_mobile",
       "label": "Padding BOTTOM (mobile)",
-      "min": 0, "max": 200, "step": 4, "default": 48, "unit": "px"
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 48,
+      "unit": "px"
     },
     {
       "type": "range",
       "id": "pad_top_desktop",
       "label": "Padding TOP (desktop)",
-      "min": 0, "max": 200, "step": 4, "default": 64, "unit": "px"
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 64,
+      "unit": "px"
     },
     {
       "type": "range",
       "id": "pad_bottom_desktop",
       "label": "Padding BOTTOM (desktop)",
-      "min": 0, "max": 200, "step": 4, "default": 96, "unit": "px"
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "default": 96,
+      "unit": "px"
     }
   ],
   "presets": [

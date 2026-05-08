@@ -278,9 +278,9 @@ text-transform: uppercase;
 
 .res-card__regular-price {
 font-family: "Montserrat";
-font-weight: 400;
+font-weight: 500;
 font-style: Regular;
-font-size: 20px;
+font-size: 17px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
@@ -299,7 +299,7 @@ color:#131313;
 font-family: "Montserrat";
 font-weight: 400;
 font-style: Regular;
-font-size: 16px;
+font-size: 14px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;

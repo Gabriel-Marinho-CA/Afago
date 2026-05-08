@@ -66,7 +66,7 @@
 {% endstyle %}
 
 <res-featured-collection
-  class="res-fc {{ section.id }}"
+  class="res-fc {{ section.id }} scroll-trigger animate--fade-in"
   data-autoplay="{{ autoplay }}"
   data-autoplay-time="{{ autoplay_time }}"
   data-two-rows="{{ section.settings.two_rows }}"
@@ -144,7 +144,17 @@
   (function () {
     class ResFeaturedCollection extends HTMLElement {
       connectedCallback() {
-        requestAnimationFrame(() => this._init());
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              io.disconnect();
+              this._init();
+            }
+          }, { threshold: 0 });
+          io.observe(this);
+        } else {
+          requestAnimationFrame(() => this._init());
+        }
       }
 
       disconnectedCallback() {
@@ -173,16 +183,18 @@
             config = {
             slidesPerView: 2.2,
             spaceBetween: 12,
+            observer: true,
+            observeParents: true,
             breakpoints: {
               750: {
                 slidesPerView: 2,
                 spaceBetween: 16,
-                  grid: { rows: 2, fill: 'row' } 
+                  grid: { rows: 2, fill: 'row' }
               },
               1024: {
                 slidesPerView: 4,
                 spaceBetween: 20,
-                  grid: { rows: 2, fill: 'row' } 
+                  grid: { rows: 2, fill: 'row' }
               }
             },
             pagination: {
@@ -198,6 +210,8 @@
                    config = {
           slidesPerView: 2.2,
           spaceBetween: 12,
+          observer: true,
+          observeParents: true,
           breakpoints: {
             750: {
               slidesPerView: 2,
@@ -216,7 +230,7 @@
             prevEl: prevEl,
             nextEl: nextEl
           }
-        }; 
+        };
         }
 
 
@@ -226,6 +240,7 @@
         }
 
         this._swiper = new Swiper(this.querySelector('.res-fc__swiper'), config);
+        setTimeout(() => { if (this._swiper) this._swiper.update(); }, 150);
       }
     }
 

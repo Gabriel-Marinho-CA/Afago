@@ -433,6 +433,10 @@ text-decoration-offset: 0%;
 text-decoration-thickness: 0%;
 text-decoration-skip-ink: auto;
 
+  @media (max-width:750px) {
+    font-size:10px;
+  }
+
 }
 
 .cd-item__remove:hover { color: var(--tp-color-text-primary, #0C3A21); }

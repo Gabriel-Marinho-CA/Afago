@@ -467,6 +467,7 @@ padding-top: 2rem;
 .res-card__btn:hover {
   background: #968C82;
   color: #fff;
+   border-color: #968C82;
 }
 
 .res-card__btn--disabled {

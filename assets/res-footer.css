@@ -224,6 +224,9 @@ color:#131313;
 }
 
 .res-footer__nl-btn:hover {
+  background: #968c82;
+    color: #fff;
+    border-color: #968c82;
 }
 
 .res-footer__nl-success {

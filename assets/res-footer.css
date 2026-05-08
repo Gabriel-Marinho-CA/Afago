@@ -300,7 +300,7 @@ color:#131313;
   /* Desktop menus ocultos, accordions visíveis */
   .res-footer__menus {
     flex-direction: column;
-    gap: 0;
+    gap: 2rem;
   }
 
   .res-footer__menu-col  { display: none; }

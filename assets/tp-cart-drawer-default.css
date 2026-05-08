@@ -432,10 +432,17 @@ text-transform: uppercase;
 }
 
 .cd-totals__value {
-  font-size: 18px;
-  font-weight: 600;
+font-family: "Montserrat";
+font-weight: 700;
+font-style: Bold;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+
   color: var(--tp-color-text-primary, #0C3A21);
-  letter-spacing: -0.01em;
+
 }
 
 /* CTAs */

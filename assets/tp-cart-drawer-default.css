@@ -27,9 +27,14 @@
 }
 
 .cd-header__title {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+font-family: "Montserrat";
+font-weight: 700;
+font-style: Bold;
+font-size: 24.48px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+
   text-transform: uppercase;
   color: var(--tp-color-text-primary, #0C3A21);
   margin: 0;

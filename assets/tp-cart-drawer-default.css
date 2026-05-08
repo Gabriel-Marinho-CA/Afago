@@ -165,6 +165,9 @@ vertical-align: middle;
       @media (max-width:750px) {
         width: 105px;
   }
+      @media (max-width:340px) {
+        width: 88px;
+  }
   
 }
 
@@ -178,6 +181,9 @@ vertical-align: middle;
     @media (max-width:750px) {
         width: 105px;
     height: 100%;
+  }
+        @media (max-width:340px) {
+        width: 88px;
   }
 }
 

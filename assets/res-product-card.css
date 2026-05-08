@@ -269,10 +269,14 @@ text-transform: uppercase;
 }
 
 .res-card__regular-price {
-  color: #05122B;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.2;
+font-family: "Montserrat";
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+
   text-align: right;
 }
 
@@ -283,10 +287,15 @@ text-transform: uppercase;
 }
 
 .res-card__compare-price {
-  color: #6D727C;
-  font-size: 11px;
-  font-weight: 400;
-  text-decoration: line-through;
+font-family: "Montserrat";
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+text-decoration: line-through;
+
   text-align: right;
 }
 

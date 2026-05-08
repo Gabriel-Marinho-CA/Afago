@@ -276,6 +276,7 @@ font-size: 20px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
+color:#131313;
 
   text-align: right;
 }
@@ -295,7 +296,7 @@ leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
 text-decoration: line-through;
-
+  color:#717171;
   text-align: right;
 }
 

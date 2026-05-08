@@ -107,6 +107,10 @@
   transition: background 0.3s ease, color 0.3s ease;
   width:100%;
   max-width:436px;
+
+  @media (max-width:750px) {
+    height:38px;
+  }
 }
 
 .res-categories__btn:hover {

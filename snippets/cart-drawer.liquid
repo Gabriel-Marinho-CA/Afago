@@ -68,9 +68,6 @@
         </div>
       {%- endif -%}
 
-      {% if cart != empty %}
-        <div class="shipping-container">{% render 'shipping-bar' %}</div>
-      {% endif %}
 
       <!-- ── Items ── -->
       <cart-drawer-items{% if cart == empty %} class="is-empty"{% endif %}>
@@ -97,8 +94,6 @@
                         | image_tag:
                           class: 'cd-item__image',
                           loading: 'lazy',
-                          widths: '150, 300',
-                          sizes: '110px',
                           alt: item.image.alt | escape
                       }}
                     {%- else -%}

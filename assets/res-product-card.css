@@ -7,6 +7,14 @@ res-color-card.res-card,
   background: var(--tp-color-bg-primary, #fff);
   position: relative;
   height: 100%;
+
+  &:hover {
+      product-form,
+      .res-card__sizes-section,
+      .res-card__colors-section {
+        opacity: 1;
+      }
+  }
 }
 
 /* ── Media wrapper ── */

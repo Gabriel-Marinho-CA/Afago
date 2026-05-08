@@ -66,14 +66,18 @@ if (!customElements.get('product-form')) {
               return;
             }
 
-            const startMarker = CartPerformance.createStartingMarker('add:wait-for-subscribers');
+            const startMarker = typeof CartPerformance !== 'undefined'
+              ? CartPerformance.createStartingMarker('add:wait-for-subscribers')
+              : null;
             if (!this.error)
               publish(PUB_SUB_EVENTS.cartUpdate, {
                 source: 'product-form',
                 productVariantId: formData.get('id'),
                 cartData: response,
               }).then(() => {
-                CartPerformance.measureFromMarker('add:wait-for-subscribers', startMarker);
+                if (typeof CartPerformance !== 'undefined' && startMarker) {
+                  CartPerformance.measureFromMarker('add:wait-for-subscribers', startMarker);
+                }
               });
             this.error = false;
             const quickAddModal = this.closest('quick-add-modal');
@@ -82,18 +86,14 @@ if (!customElements.get('product-form')) {
                 'modalClosed',
                 () => {
                   setTimeout(() => {
-                    CartPerformance.measure("add:paint-updated-sections", () => {
-                      this.cart.renderContents(response);
-                    });
+                    this.cart.renderContents(response);
                   });
                 },
                 { once: true }
               );
               quickAddModal.hide(true);
             } else {
-              CartPerformance.measure("add:paint-updated-sections", () => {
-                this.cart.renderContents(response);
-              });
+              this.cart.renderContents(response);
             }
           })
           .catch((e) => {
@@ -105,7 +105,7 @@ if (!customElements.get('product-form')) {
             if (!this.error) this.submitButton.removeAttribute('aria-disabled');
             this.querySelector('.loading__spinner').classList.add('hidden');
 
-            CartPerformance.measureFromEvent("add:user-action", evt);
+            if (typeof CartPerformance !== 'undefined') CartPerformance.measureFromEvent("add:user-action", evt);
           });
       }
 

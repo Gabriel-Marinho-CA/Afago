@@ -442,7 +442,7 @@ text-decoration-skip-ink: auto;
 .cd-ctas__checkout {
   width: 100%;
   padding: 14px;
-  background: #041F60;
+  background: #131313;
   color: #fff;
   border: none;
   border-radius: 0px;
@@ -472,7 +472,7 @@ text-transform: uppercase;
   padding: 12px;
   background: transparent;
   color: var(--tp-color-text-primary, #0C3A21);
-  border: 1px solid var(--tp-color-text-primary, #0C3A21);
+  border: 1px solid var(--tp-color-text-primary, #131313);
   border-radius: 0px;
   font-family: "Montserrat";
 font-weight: 700;

@@ -144,7 +144,7 @@ res-color-card.res-card,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.85);
+  background: none;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -153,8 +153,8 @@ res-color-card.res-card,
   transition: background var(--tp-transition-fast, 150ms);
 }
 
-.res-card__wishlist:hover {
-  background: #fff;
+.res-card__wishlist:hover svg {
+  fill: #826A4F;
 }
 
 /* ── Image indicator (barrinhas) ── */

@@ -3,6 +3,229 @@
   Usage: {% render 'menu-drawer-mobile' %}
 {% endcomment %}
 
+<style>
+  .mdm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .mdm__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.8rem 2rem;
+    flex-shrink: 0;
+  }
+
+  .mdm__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .mdm__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--color-foreground));
+  }
+
+  .mdm__close .svg-wrapper svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .mdm__divider {
+    border: none;
+    border-top: 1px solid rgba(var(--color-foreground), 0.12);
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .mdm__body {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ——— Navigation ——— */
+  .mdm__nav {
+    padding: 0.8rem 0;
+  }
+
+  .mdm__nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mdm__nav-item {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.06);
+  }
+
+  .mdm__nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .mdm__nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+  }
+
+  .mdm__nav-link:hover {
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  .mdm__nav-link.active {
+    color: rgb(var(--color-foreground));
+    font-weight: 600;
+  }
+
+  /* Dropdown */
+  .mdm__dropdown > summary {
+    list-style: none;
+  }
+
+  .mdm__dropdown > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mdm__arrow {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .mdm__arrow .svg-wrapper svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .mdm__dropdown[open] > summary .mdm__arrow {
+    transform: rotate(180deg);
+  }
+
+  .mdm__submenu {
+    padding: 0.4rem 0 0.8rem;
+    background-color: rgba(var(--color-foreground), 0.02);
+  }
+
+  .mdm__submenu li {
+    border: none;
+  }
+
+  .mdm__nav-link--child {
+    padding-left: 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .mdm__nav-link--child:hover {
+    color: rgb(var(--color-foreground));
+  }
+
+  /* ——— Products Section ——— */
+  .mdm__products {
+    padding: 2rem 2rem 1.6rem;
+  }
+
+  .mdm__products-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 1.4rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .mdm__products-swiper {
+    overflow: visible;
+    margin-bottom: 1.6rem;
+  }
+
+  .mdm__products-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .mdm__products-swiper .swiper-slide {
+    height: auto;
+  }
+
+  .mdm__products-btn {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(var(--color-foreground), 0.3);
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    background: transparent;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .mdm__products-btn:hover {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+  }
+
+  /* ——— Footer ——— */
+  .mdm__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    padding: 1.8rem 2rem;
+    flex-shrink: 0;
+  }
+
+  .mdm__footer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+  }
+
+  .mdm__footer-icon .svg-wrapper svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .mdm__footer-icon:hover {
+    opacity: 0.7;
+  }
+</style>
+
 <header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
   <details id="Details-menu-drawer-container" class="menu-drawer-container">
     <summary
@@ -24,7 +247,7 @@
           <button
             class="mdm__close focus-inset"
             aria-label="Fechar menu"
-            onclick="this.closest('details').removeAttribute('open'); document.body.classList.remove('overflow-hidden');"
+            onclick="this.closest('header-drawer').closeMenuDrawer(event, this.closest('header-drawer').querySelector('details > summary'))"
           >
             <span class="svg-wrapper">{{- 'icon-close.svg' | inline_asset_content -}}</span>
           </button>

@@ -22,6 +22,7 @@
   justify-content: space-between;
   padding: 20px 24px;
   flex-shrink: 0;
+  border-bottom: 1px solid #826A4F;
 }
 
 .cd-header__title {
@@ -54,6 +55,7 @@
   color: var(--tp-color-text-primary, #0C3A21);
   padding: 0;
   transition: opacity 0.2s ease;
+  position:initial !important;
 }
 
 .cd-header__close:hover { opacity: 0.5; }
@@ -168,14 +170,15 @@
 }
 
 .cd-item__title {
-  display: block;
-  font-size: 11px;
-  font-weight: 400;
-  line-height: 1.35;
-  color: var(--tp-color-text-primary, #0C3A21);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
+font-family: "Montserrat";
+font-weight: 400;
+font-style: Regular;
+font-size: 18px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+color:#131313;
   margin-bottom: 8px;
 }
 
@@ -233,18 +236,28 @@
 }
 
 .cd-item__price {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--tp-color-text-primary, #0C3A21);
+font-family: "Montserrat";
+font-weight: 400;
+font-style: Regular;
+font-size: 20px;
+leading-trim: NONE;
+color:#131313;
+line-height: 100%;
+letter-spacing: 0%;
+
   white-space: nowrap;
 }
 
 .cd-item__compare-price {
-  font-size: 10px;
-  font-weight: 400;
-  color: #aaa;
-  white-space: nowrap;
-  text-decoration: line-through;
+font-family: "Montserrat";
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+text-decoration: line-through;
+color:#717171;
 }
 
 /* Bottom row: qty + remove */
@@ -309,16 +322,28 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #aaa;
   text-decoration: underline;
   text-underline-offset: 2px;
   padding: 0;
   transition: color 0.2s ease;
   font-family: inherit;
+
+  font-family: "Montserrat";
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1px;
+text-align: center;
+vertical-align: middle;
+text-transform: uppercase;
+text-decoration: underline;
+text-decoration-style: solid;
+text-decoration-offset: 0%;
+text-decoration-thickness: 0%;
+text-decoration-skip-ink: auto;
+
 }
 
 .cd-item__remove:hover { color: var(--tp-color-text-primary, #0C3A21); }

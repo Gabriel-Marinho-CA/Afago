@@ -327,12 +327,23 @@ res-color-card.res-card,
 /* ── Variant labels (TAMANHOS / CORES) ── */
 
 .res-card__variants-label {
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #6D727C;
-  line-height: 1;
+font-family: "Mona Sans";
+font-weight: 400;
+font-style: Regular;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+text-transform: uppercase;
+position:relative;
+
+&::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 1px;
+  background: #826A4F;
+}
 }
 
 /* ── Size buttons ── */

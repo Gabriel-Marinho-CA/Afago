@@ -362,9 +362,7 @@ color:#717171;
   gap: 10px;
   justify-content:space-between;
   margin-top: 10px;
-   quantity-popover {
-    display:flex !important;
-   }
+
     @media (max-width:750px) {
     flex-direction:column;
 

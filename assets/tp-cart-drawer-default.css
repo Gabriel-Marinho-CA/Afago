@@ -221,7 +221,7 @@ vertical-align: middle;
 font-family: "Montserrat";
 font-weight: 400;
 font-style: Regular;
-font-size: 18px;
+font-size: 16px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
@@ -323,9 +323,9 @@ color:#131313;
 
 .cd-item__price {
 font-family: "Montserrat";
-font-weight: 400;
+font-weight: 500;
 font-style: Regular;
-font-size: 20px;
+font-size: 18px;
 leading-trim: NONE;
 color:#131313;
 line-height: 100%;
@@ -343,7 +343,7 @@ letter-spacing: 0%;
 font-family: "Montserrat";
 font-weight: 400;
 font-style: Regular;
-font-size: 16px;
+font-size: 14px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
@@ -362,6 +362,9 @@ color:#717171;
   gap: 10px;
   justify-content:space-between;
   margin-top: 10px;
+   quantity-popover {
+    display:flex !important;
+   }
     @media (max-width:750px) {
     flex-direction:column;
 
@@ -437,7 +440,7 @@ color:#717171;
   font-family: "Montserrat";
 font-weight: 500;
 font-style: Medium;
-font-size: 16px;
+font-size: 14px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 1px;

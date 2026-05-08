@@ -461,11 +461,11 @@ padding-top: 2rem;
   text-decoration: none;
   cursor: pointer;
   box-sizing: border-box;
-  transition: background var(--tp-transition-fast, 150ms), color var(--tp-transition-fast, 150ms);
+  transition: background var(--tp-transition-fast, 350ms), color var(--tp-transition-fast, 350ms);
 }
 
 .res-card__btn:hover {
-  background: #05122B;
+  background: #968C82;
   color: #fff;
 }
 

@@ -173,16 +173,18 @@
             config = {
             slidesPerView: 2.2,
             spaceBetween: 12,
+            observer: true,
+            observeParents: true,
             breakpoints: {
               750: {
                 slidesPerView: 2,
                 spaceBetween: 16,
-                  grid: { rows: 2, fill: 'row' } 
+                  grid: { rows: 2, fill: 'row' }
               },
               1024: {
                 slidesPerView: 4,
                 spaceBetween: 20,
-                  grid: { rows: 2, fill: 'row' } 
+                  grid: { rows: 2, fill: 'row' }
               }
             },
             pagination: {
@@ -198,6 +200,8 @@
                    config = {
           slidesPerView: 2.2,
           spaceBetween: 12,
+          observer: true,
+          observeParents: true,
           breakpoints: {
             750: {
               slidesPerView: 2,
@@ -216,7 +220,7 @@
             prevEl: prevEl,
             nextEl: nextEl
           }
-        }; 
+        };
         }
 
 

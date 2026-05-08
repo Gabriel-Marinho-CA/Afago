@@ -1513,6 +1513,12 @@ details[open] > .share-button__fallback {
     }
   }
 }
+
+@media (max-width:750px) {
+  .header__icons.header__icons--localization.header-localization {
+    gap:2rem;
+  }
+}
 .share-button__fallback button:hover {
   color: rgba(var(--color-foreground), 0.75);
 }

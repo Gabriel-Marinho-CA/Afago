@@ -8,6 +8,7 @@
 /* Layout base do drawer */
 .drawer__inner {
   display: flex;
+  padding-inline:0;
   flex-direction: column;
   height: 100%;
   overflow: hidden;

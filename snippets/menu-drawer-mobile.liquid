@@ -1,0 +1,419 @@
+{% comment %}
+  Mobile menu drawer — novo design com dropdown inline, produtos e footer.
+  Usage: {% render 'menu-drawer-mobile' %}
+{% endcomment %}
+
+<style>
+  .mdm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .mdm__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.8rem 2rem;
+    flex-shrink: 0;
+  }
+
+  .mdm__title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .mdm__close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--color-foreground));
+  }
+
+  .mdm__close .svg-wrapper svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .mdm__divider {
+    border: none;
+    border-top: 1px solid rgba(var(--color-foreground), 0.12);
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .mdm__body {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* ——— Navigation ——— */
+  .mdm__nav {
+    padding: 0.8rem 0;
+  }
+
+  .mdm__nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mdm__nav-item {
+    border-bottom: 1px solid rgba(var(--color-foreground), 0.06);
+  }
+
+  .mdm__nav-item:last-child {
+    border-bottom: none;
+  }
+
+  .mdm__nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 2rem;
+    text-decoration: none;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-body-family);
+    font-style: var(--font-body-style);
+    font-weight: var(--font-body-weight);
+  }
+
+  .mdm__nav-link:hover {
+    background-color: rgba(var(--color-foreground), 0.04);
+  }
+
+  .mdm__nav-link.active {
+    color: rgb(var(--color-foreground));
+    font-weight: 600;
+  }
+
+  /* Dropdown */
+  .mdm__dropdown > summary {
+    list-style: none;
+  }
+
+  .mdm__dropdown > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mdm__arrow {
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+
+  .mdm__arrow .svg-wrapper svg {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+
+  .mdm__dropdown[open] > summary .mdm__arrow {
+    transform: rotate(180deg);
+  }
+
+  .mdm__submenu {
+    padding: 0.4rem 0 0.8rem;
+    background-color: rgba(var(--color-foreground), 0.02);
+  }
+
+  .mdm__submenu li {
+    border: none;
+  }
+
+  .mdm__nav-link--child {
+    padding-left: 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(var(--color-foreground), 0.75);
+  }
+
+  .mdm__nav-link--child:hover {
+    color: rgb(var(--color-foreground));
+  }
+
+  /* ——— Products Section ——— */
+  .mdm__products {
+    padding: 2rem 2rem 1.6rem;
+  }
+
+  .mdm__products-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 0 1.4rem;
+    color: rgb(var(--color-foreground));
+  }
+
+  .mdm__products-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin-bottom: 1.6rem;
+  }
+
+  .mdm__product-card a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+
+  .mdm__product-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+  }
+
+  .mdm__product-img.placeholder-svg {
+    background: rgba(var(--color-foreground), 0.06);
+    aspect-ratio: 3/4;
+  }
+
+  .mdm__product-info {
+    padding: 0.6rem 0 0;
+  }
+
+  .mdm__product-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin: 0 0 0.3rem;
+    line-height: 1.3;
+    color: rgb(var(--color-foreground));
+  }
+
+  .mdm__product-price {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+    color: rgb(var(--color-foreground));
+  }
+
+  .mdm__product-installments {
+    font-size: 1rem;
+    color: rgba(var(--color-foreground), 0.65);
+    margin: 0;
+  }
+
+  .mdm__products-btn {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(var(--color-foreground), 0.3);
+    text-decoration: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgb(var(--color-foreground));
+    background: transparent;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .mdm__products-btn:hover {
+    background: rgb(var(--color-foreground));
+    color: rgb(var(--color-background));
+  }
+
+  /* ——— Footer ——— */
+  .mdm__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    padding: 1.8rem 2rem;
+    flex-shrink: 0;
+  }
+
+  .mdm__footer-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(var(--color-foreground));
+    text-decoration: none;
+  }
+
+  .mdm__footer-icon .svg-wrapper svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .mdm__footer-icon:hover {
+    opacity: 0.7;
+  }
+</style>
+
+<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}">
+  <details id="Details-menu-drawer-container" class="menu-drawer-container">
+    <summary
+      class="header__icon header__icon--menu header__icon--summary link focus-inset"
+      aria-label="{{ 'sections.header.menu' | t }}"
+    >
+      <span>
+        {{- 'icon-hamburger.svg' | inline_asset_content -}}
+        {{- 'icon-close.svg' | inline_asset_content -}}
+      </span>
+    </summary>
+
+    <div id="menu-drawer" class="menu-drawer gradient motion-reduce color-{{ section.settings.menu_color_scheme }}">
+      <div class="mdm">
+
+        {%- comment -%} ── Header ── {%- endcomment -%}
+        <div class="mdm__header">
+          <p class="mdm__title">Menu</p>
+          <button
+            class="mdm__close focus-inset"
+            aria-label="Fechar menu"
+            onclick="this.closest('details').removeAttribute('open'); document.body.classList.remove('overflow-hidden');"
+          >
+            <span class="svg-wrapper">{{- 'icon-close.svg' | inline_asset_content -}}</span>
+          </button>
+        </div>
+        <hr class="mdm__divider">
+
+        {%- comment -%} ── Body (scroll) ── {%- endcomment -%}
+        <div class="mdm__body">
+
+          {%- comment -%} ── Navigation ── {%- endcomment -%}
+          <nav class="mdm__nav" aria-label="Menu principal">
+            <ul role="list">
+              {%- for link in section.settings.menu.links -%}
+                <li class="mdm__nav-item">
+                  {%- if link.links != blank -%}
+                    <details class="mdm__dropdown" id="mdm-dropdown-{{ forloop.index }}">
+                      <summary class="mdm__nav-link{% if link.child_active %} active{% endif %}">
+                        {{ link.title | escape }}
+                        <span class="mdm__arrow">
+                          <span class="svg-wrapper">{{- 'icon-caret.svg' | inline_asset_content -}}</span>
+                        </span>
+                      </summary>
+                      <ul class="mdm__submenu" role="list">
+                        {%- for childlink in link.links -%}
+                          <li>
+                            <a
+                              href="{{ childlink.url }}"
+                              class="mdm__nav-link mdm__nav-link--child{% if childlink.current %} active{% endif %}"
+                              {% if childlink.current %}aria-current="page"{% endif %}
+                            >
+                              {{ childlink.title | escape }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    </details>
+                  {%- else -%}
+                    <a
+                      href="{{ link.url }}"
+                      class="mdm__nav-link{% if link.current %} active{% endif %}"
+                      {% if link.current %}aria-current="page"{% endif %}
+                    >
+                      {{ link.title | escape }}
+                    </a>
+                  {%- endif -%}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </nav>
+
+          {%- comment -%} ── Products Section ── {%- endcomment -%}
+          {%- if section.settings.drawer_products_collection != blank -%}
+            {%- assign drawer_col = collections[section.settings.drawer_products_collection] -%}
+            {%- if drawer_col != blank -%}
+              <hr class="mdm__divider">
+              <div class="mdm__products">
+                {%- if section.settings.drawer_products_heading != blank -%}
+                  <h3 class="mdm__products-title">{{ section.settings.drawer_products_heading | escape }}</h3>
+                {%- endif -%}
+
+                <div class="mdm__products-grid">
+                  {%- for product in drawer_col.products limit: 4 -%}
+                    <div class="mdm__product-card">
+                      <a href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+                        {%- if product.featured_image -%}
+                          {{
+                            product.featured_image
+                            | image_url: width: 400
+                            | image_tag:
+                              loading: 'lazy',
+                              class: 'mdm__product-img',
+                              widths: '200, 400',
+                              sizes: '(max-width: 989px) 40vw, 20vw',
+                              alt: product.featured_image.alt | escape
+                          }}
+                        {%- else -%}
+                          {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg mdm__product-img' }}
+                        {%- endif -%}
+                        <div class="mdm__product-info">
+                          <p class="mdm__product-title">{{ product.title | escape | upcase }}</p>
+                          <p class="mdm__product-price">{{ product.price | money }}</p>
+                          {%- if settings.installment == true -%}
+                            <p class="mdm__product-installments">
+                              {%- render 'res-installments', tp_price: product.price -%}
+                            </p>
+                          {%- endif -%}
+                        </div>
+                      </a>
+                    </div>
+                  {%- endfor -%}
+                </div>
+
+                {%- if section.settings.drawer_products_button_link != blank -%}
+                  <a
+                    href="{{ section.settings.drawer_products_button_link }}"
+                    class="mdm__products-btn"
+                  >
+                    {{- section.settings.drawer_products_button_label | default: 'Ver Mais' | escape -}}
+                  </a>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+          {%- endif -%}
+
+        </div>
+        {%- comment -%} ── Footer ── {%- endcomment -%}
+        <hr class="mdm__divider">
+        <div class="mdm__footer">
+          <a href="#" class="mdm__footer-icon" aria-label="Favoritos">
+            <span class="svg-wrapper">{{- 'icon-heart.svg' | inline_asset_content -}}</span>
+          </a>
+          {%- if shop.customer_accounts_enabled -%}
+            <a
+              href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+              class="mdm__footer-icon"
+              rel="nofollow"
+              aria-label="Minha conta"
+            >
+              {%- if section.settings.enable_customer_avatar and customer and customer.has_avatar? -%}
+                <account-icon>{{ customer | avatar }}</account-icon>
+              {%- else -%}
+                <span class="svg-wrapper">{{- 'icon-account.svg' | inline_asset_content -}}</span>
+              {%- endif -%}
+            </a>
+          {%- endif -%}
+        </div>
+
+      </div>
+    </div>
+  </details>
+</header-drawer>

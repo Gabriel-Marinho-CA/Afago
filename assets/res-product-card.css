@@ -352,6 +352,7 @@ letter-spacing: 0%;
 text-transform: uppercase;
 position:relative;
 padding-bottom: 1rem;
+padding-top: 2rem;
 
 &::before {
   content: "";
@@ -379,6 +380,7 @@ padding-bottom: 1rem;
   height: 26px;
   padding: 0 5px;
   background: transparent;
+  border:none;
   color: #05122B;
   font-size: 10px;
   font-weight: 700;

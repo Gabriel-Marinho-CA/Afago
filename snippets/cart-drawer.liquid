@@ -404,7 +404,7 @@
             <div class="cd-totals__left">
               <span class="cd-totals__label">SUBTOTAL</span>
               <span class="cd-totals__installments">
-                {%- render 'res-installments', tp_price: cart.total_price -%}
+                ou 6x de {{ cart.total_price | divided_by: 6 | money }}
               </span>
             </div>
             <span class="cd-totals__value">{{ cart.total_price | money }}</span>

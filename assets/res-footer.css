@@ -253,6 +253,10 @@ color:#131313;
   max-height: 60px;
   width: auto;
   display: block;
+
+  @media (max-width:750px) {
+    max-height:21px;
+  }
 }
 
 .res-footer__brand-text {

@@ -247,7 +247,6 @@ text-transform: uppercase;
 
 /* ── Brand ──────────────────────────────────────────── */
 .res-footer__brand {
-  border-top: 1px solid currentColor;
   display: flex;
   justify-content: center;
   align-items: center;

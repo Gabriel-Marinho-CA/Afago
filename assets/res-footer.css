@@ -137,9 +137,9 @@ text-transform: uppercase;
 }
 
 .res-footer__nl-title {
-font-weight: 500;
+font-weight: 600;
 font-style: Medium;
-font-size: 30px;
+font-size: 18px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
@@ -159,7 +159,7 @@ text-transform: uppercase;
 .res-footer__nl-subtitle {
 font-weight: 400;
 font-style: Regular;
-font-size: 18px;
+font-size: 15px;
 line-height: 100%;
 letter-spacing: 0%;
 text-transform: uppercase;
@@ -209,7 +209,7 @@ color:#131313;
   width: 100%;
   max-width: 200px;
   background: transparent;
-  border: 1px solid currentColor;
+  border: 1px solid #826A4F;
   padding: 13px 20px;
   font-size: 11px;
   font-weight: 500;
@@ -218,6 +218,18 @@ color:#131313;
   color: inherit;
   font-family: inherit;
   transition: background 0.25s ease, color 0.25s ease;
+
+
+  font-family: "Montserrat";
+font-weight: 400;
+font-style: Regular;
+font-size: 14px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+color:#131313;
+text-transform: uppercase;
+
 }
 
 .res-footer__nl-btn:hover {

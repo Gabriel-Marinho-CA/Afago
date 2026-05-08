@@ -378,8 +378,6 @@ padding-bottom: 1rem;
   min-width: 26px;
   height: 26px;
   padding: 0 5px;
-  border: 1px solid #D0D0D0;
-  border-radius: 3px;
   background: transparent;
   color: #05122B;
   font-size: 10px;
@@ -393,9 +391,7 @@ padding-bottom: 1rem;
 }
 
 .res-card__size-btn--active {
-  border-color: #05122B;
-  background: #05122B;
-  color: #fff;
+  border: 1px solid #826A4F;
 }
 
 .res-card__size-btn:hover:not(.res-card__size-btn--active):not(.res-card__size-btn--unavailable) {

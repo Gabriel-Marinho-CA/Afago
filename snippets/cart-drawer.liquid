@@ -328,7 +328,7 @@
             <div class="cd-totals__left">
               <span class="cd-totals__label">SUBTOTAL</span>
               <span class="cd-totals__installments">
-                {%- render 'tp-installments', tp_price: cart.total_price -%}
+                {%- render 'res-installments', tp_price: cart.total_price -%}
               </span>
             </div>
             <span class="cd-totals__value">{{ cart.total_price | money }}</span>

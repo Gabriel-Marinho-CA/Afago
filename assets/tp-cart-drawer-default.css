@@ -193,6 +193,10 @@ vertical-align: middle;
   justify-content: center;
       gap: 4rem;
   min-width: 0;
+
+    @media (max-width:750px) {
+      gap: 2rem;
+  }
 }
 
 .cd-item__top {
@@ -319,6 +323,7 @@ letter-spacing: 0%;
 
     @media (max-width:750px) {
     font-size:13px;
+    font-weight:bold;
   }
 }
 

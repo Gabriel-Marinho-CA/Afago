@@ -35,9 +35,9 @@
 }
 
 .res-footer__menu-heading {
-font-weight: 500;
+font-weight: 600;
 font-style: Medium;
-font-size: 30px;
+font-size: 18px;
 leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
@@ -45,9 +45,6 @@ text-transform: uppercase;
 
   margin: 0 0 20px;
 
-  @media (min-width:1000px) and (max-width:1300px) {
-    font-size:22px;
-  }
 }
 
 .res-footer__menu-list {

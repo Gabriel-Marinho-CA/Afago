@@ -12,6 +12,7 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
+  width: 58rem;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
@@ -178,6 +179,7 @@ leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
 text-transform: uppercase;
+text-decoration:none;
 color:#131313;
   margin-bottom: 8px;
 }

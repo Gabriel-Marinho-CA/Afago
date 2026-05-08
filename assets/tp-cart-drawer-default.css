@@ -284,6 +284,11 @@ color:#131313;
   border: 1.5px solid rgba(0, 0, 0, 0.12);
   flex-shrink: 0;
   background-color: #ccc;
+
+    @media (max-width:750px) {
+     width: 15px;
+  height: 15px;
+  }
 }
 .wrapper-swatch {
       min-width: 34px;

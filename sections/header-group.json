@@ -52,7 +52,11 @@
         "enable_customer_avatar": true,
         "margin_bottom": 0,
         "padding_top": 20,
-        "padding_bottom": 20
+        "padding_bottom": 20,
+        "drawer_products_heading": "New to Sale",
+        "drawer_products_collection": "colecao-menu-mobile-header",
+        "drawer_products_button_label": "Ver Mais",
+        "drawer_products_button_link": ""
       }
     }
   },

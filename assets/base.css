@@ -2131,6 +2131,12 @@ input[type='checkbox'] {
   bottom: 0.8rem;
   left: 2.2rem;
   line-height: calc(1 + 0.1 / var(--font-body-scale));
+
+  @media (max-width:750px) {
+    right: -11px;
+    left: auto;
+    top: 9px;
+  }
 }
 
 /* utility-bar */

@@ -165,55 +165,17 @@
     color: rgb(var(--color-foreground));
   }
 
-  .mdm__products-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.2rem;
+  .mdm__products-swiper {
+    overflow: visible;
     margin-bottom: 1.6rem;
   }
 
-  .mdm__product-card a {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+  .mdm__products-swiper .swiper-wrapper {
+    align-items: stretch;
   }
 
-  .mdm__product-img {
-    width: 100%;
-    aspect-ratio: 3/4;
-    object-fit: cover;
-    display: block;
-  }
-
-  .mdm__product-img.placeholder-svg {
-    background: rgba(var(--color-foreground), 0.06);
-    aspect-ratio: 3/4;
-  }
-
-  .mdm__product-info {
-    padding: 0.6rem 0 0;
-  }
-
-  .mdm__product-title {
-    font-size: 1.1rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    margin: 0 0 0.3rem;
-    line-height: 1.3;
-    color: rgb(var(--color-foreground));
-  }
-
-  .mdm__product-price {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin: 0;
-    color: rgb(var(--color-foreground));
-  }
-
-  .mdm__product-installments {
-    font-size: 1rem;
-    color: rgba(var(--color-foreground), 0.65);
-    margin: 0;
+  .mdm__products-swiper .swiper-slide {
+    height: auto;
   }
 
   .mdm__products-btn {
@@ -346,37 +308,37 @@
                   <h3 class="mdm__products-title">{{ section.settings.drawer_products_heading | escape }}</h3>
                 {%- endif -%}
 
-                <div class="mdm__products-grid">
-                  {%- for product in drawer_col.products limit: 4 -%}
-                    <div class="mdm__product-card">
-                      <a href="{{ product.url }}" aria-label="{{ product.title | escape }}">
-                        {%- if product.featured_image -%}
-                          {{
-                            product.featured_image
-                            | image_url: width: 400
-                            | image_tag:
-                              loading: 'lazy',
-                              class: 'mdm__product-img',
-                              widths: '200, 400',
-                              sizes: '(max-width: 989px) 40vw, 20vw',
-                              alt: product.featured_image.alt | escape
-                          }}
-                        {%- else -%}
-                          {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg mdm__product-img' }}
-                        {%- endif -%}
-                        <div class="mdm__product-info">
-                          <p class="mdm__product-title">{{ product.title | escape | upcase }}</p>
-                          <p class="mdm__product-price">{{ product.price | money }}</p>
-                          {%- if settings.installment == true -%}
-                            <p class="mdm__product-installments">
-                              {%- render 'res-installments', tp_price: product.price -%}
-                            </p>
-                          {%- endif -%}
-                        </div>
-                      </a>
-                    </div>
-                  {%- endfor -%}
+                {%- render 'swiper-cdn' -%}
+                <div class="swiper mdm__products-swiper" id="mdm-products-swiper-{{ section.id }}">
+                  <div class="swiper-wrapper">
+                    {%- for product in drawer_col.products limit: 8 -%}
+                      <div class="swiper-slide">
+                        {%- render 'res-product-card',
+                          res_product: product,
+                          show_price: true,
+                          show_button: false,
+                          show_installments: true
+                        -%}
+                      </div>
+                    {%- endfor -%}
+                  </div>
                 </div>
+                <script>
+                  (function () {
+                    function initMdmSwiper() {
+                      if (typeof Swiper === 'undefined') {
+                        setTimeout(initMdmSwiper, 80);
+                        return;
+                      }
+                      new Swiper('#mdm-products-swiper-{{ section.id }}', {
+                        slidesPerView: 2.2,
+                        spaceBetween: 12,
+                        grabCursor: true,
+                      });
+                    }
+                    initMdmSwiper();
+                  })();
+                </script>
 
                 {%- if section.settings.drawer_products_button_link != blank -%}
                   <a

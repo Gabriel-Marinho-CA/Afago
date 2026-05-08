@@ -110,7 +110,9 @@
 }
 
 .res-categories__btn:hover {
-  background: currentColor;
+  background: #968c82;
+    color: #fff;
+    border-color: #968c82;
 }
 
 .res-categories__btn:hover span {

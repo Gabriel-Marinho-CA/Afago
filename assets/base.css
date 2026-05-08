@@ -1499,10 +1499,18 @@ details[open] > .share-button__fallback {
 .header__icon .svg-wrapper,
 .header__icon {
   width:2.4rem !important;
+
+  @media (max-width:750px) {
+    width: 1.4rem !important;
+  }
 }
 .header__icons {
   svg {
     width:2.4rem !important;
+
+    @media (max-width:750px) {
+      width: 1.4rem !important;
+    }
   }
 }
 .share-button__fallback button:hover {

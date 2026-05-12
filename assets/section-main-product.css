@@ -308,7 +308,34 @@ letter-spacing: 0.8px;
 vertical-align: middle;
 color:#717171;
     padding-bottom: .4rem;
-    padding-top: .32rem;
+    padding-top: .32rem; 
+}
+fieldset.js.product-form__input.product-form__input--swatch,
+.fieldset.js.product-form__input.product-form__input--pill {
+  .form__label {
+    font-family: 'Montserrat';
+font-weight: 700;
+font-style: Bold;
+font-size: 15px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1.6px;
+vertical-align: middle;
+text-transform: uppercase;
+
+  }
+}
+
+.product-form__input--pill input[type=radio]+label {
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 2px;
+
 }
 .product__title > a {
   display: none;

@@ -2091,6 +2091,71 @@ class ResColorCard extends HTMLElement {
   }
 }
 
+class ResWishlistBtn extends HTMLElement {
+  static STORAGE_KEY = 'res-wishlist';
+
+  connectedCallback() {
+    this._handle = this.dataset.handle;
+    this._sync();
+    this.addEventListener('click', this._toggle.bind(this));
+    this.addEventListener('keydown', (e) => {
+      if (e.code === 'Space' || e.code === 'Enter') {
+        e.preventDefault();
+        this._toggle();
+      }
+    });
+  }
+
+  disconnectedCallback() {
+    this.removeEventListener('click', this._toggle);
+  }
+
+  _getList() {
+    try {
+      return JSON.parse(localStorage.getItem(ResWishlistBtn.STORAGE_KEY) || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  _saveList(list) {
+    localStorage.setItem(ResWishlistBtn.STORAGE_KEY, JSON.stringify(list));
+  }
+
+  _isActive() {
+    return this._handle ? this._getList().includes(this._handle) : false;
+  }
+
+  _sync() {
+    const active = this._isActive();
+    this.classList.toggle('res-card__wishlist--active', active);
+    this.setAttribute('aria-pressed', String(active));
+    const path = this.querySelector('svg path');
+    if (path) path.setAttribute('fill', active ? 'currentColor' : 'none');
+  }
+
+  _toggle() {
+    if (!this._handle) return;
+    const list = this._getList();
+    const idx = list.indexOf(this._handle);
+    if (idx === -1) {
+      list.push(this._handle);
+    } else {
+      list.splice(idx, 1);
+    }
+    this._saveList(list);
+    this._sync();
+    this.dispatchEvent(new CustomEvent('wishlist:change', {
+      bubbles: true,
+      detail: { handle: this._handle, active: this._isActive() }
+    }));
+  }
+}
+
+if (!customElements.get('res-wishlist-btn')) {
+  customElements.define('res-wishlist-btn', ResWishlistBtn);
+}
+
 if (!customElements.get('res-color-card')) {
   customElements.define('res-color-card', ResColorCard);
 }

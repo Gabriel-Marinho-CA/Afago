@@ -34,15 +34,11 @@
             "swatch_shape": "circle"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_gift_card_recipient": true
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
           }
         },
         "description": {
@@ -52,43 +48,28 @@
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materials",
-            "icon": "leather",
-            "content": "",
+            "heading": "DESCRIÇÃO DO PRODUTO",
+            "icon": "none",
+            "content": "{{ product.description }}",
             "page": ""
           }
         },
-        "collapsible-row-1": {
+        "collapsible_tab_ceN3i3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Shipping & Returns",
-            "icon": "truck",
-            "content": "",
+            "heading": "Composição e cuidados",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.composicao_e_cuidados | metafield_tag }}",
             "page": ""
           }
         },
-        "collapsible-row-2": {
+        "collapsible_tab_RpRUUU": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Dimensions",
-            "icon": "ruler",
-            "content": "",
+            "heading": "Entrega e devolução",
+            "icon": "none",
+            "content": "{{ product.metafields.custom.entrega_e_devolucao | metafield_tag }}",
             "page": ""
-          }
-        },
-        "collapsible-row-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Care Instructions",
-            "icon": "heart",
-            "content": "",
-            "page": ""
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
           }
         }
       },
@@ -97,14 +78,11 @@
         "text_BDtyiB",
         "price",
         "variant_picker",
-        "quantity_selector",
         "buy_buttons",
         "description",
         "collapsible-row-0",
-        "collapsible-row-1",
-        "collapsible-row-2",
-        "collapsible-row-3",
-        "share"
+        "collapsible_tab_ceN3i3",
+        "collapsible_tab_RpRUUU"
       ],
       "settings": {
         "enable_sticky_info": true,

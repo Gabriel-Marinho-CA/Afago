@@ -252,8 +252,28 @@ a.product__text {
 
 .product__title > * {
   margin: 0;
+  font-family: "Montserrat";
+font-weight: 700;
+font-style: Bold;
+font-size: 28px;
+leading-trim: NONE;
+line-height: 33.6px;
+letter-spacing: 1.12px;
+vertical-align: middle;
+text-transform: uppercase;
+color:#131313;
 }
-
+p.product__text.inline-richtext {
+  font-family: Montserrat;
+font-weight: 400;
+font-style: Regular;
+font-size: 13px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0.8px;
+vertical-align: middle;
+color:#717171;
+}
 .product__title > a {
   display: none;
 }

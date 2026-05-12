@@ -337,6 +337,9 @@ text-transform: uppercase;
     border-radius: 2px !important;
 
 }
+.product-form__input--pill input[type=radio]:disabled+label, .product-form__input--pill input[type=radio].disabled+label {
+  opacity: .5;
+}
 .product__title > a {
   display: none;
 }

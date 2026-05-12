@@ -1492,3 +1492,36 @@ a.product__text {
     border: none;
   }
 }
+
+
+
+/* Shipping banner block */
+
+.shipping-banner {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 1.6rem;
+  border-radius: var(--inputs-radius, 4px);
+}
+
+.shipping-banner__icon {
+  display: flex;
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.shipping-banner__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.shipping-banner__text {
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+.shipping-banner__text p {
+  margin: 0;
+}

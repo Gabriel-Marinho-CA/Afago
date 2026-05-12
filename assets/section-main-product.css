@@ -249,6 +249,36 @@ a.product__text {
   word-break: break-word;
   margin-bottom: 1.5rem;
 }
+.price-card-product {
+      display: flex;
+    flex-direction: column;
+    .compare-price {
+          font-size: 15px;
+    color: #939393;
+    }
+    .spot-price {
+      font-family: "Montserrat";
+font-weight: 700;
+font-style: Bold;
+font-size: 24px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+
+    }
+    .installments {
+      font-family: "Montserrat";
+font-weight: 400;
+font-style: Regular;
+font-size: 13px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0%;
+vertical-align: middle;
+
+    }
+}
 
 .product__title > * {
   margin: 0;

@@ -45,10 +45,6 @@
             "show_gift_card_recipient": false
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {}
-        },
         "shipping_banner_9QJnLG": {
           "type": "shipping-banner",
           "settings": {
@@ -87,9 +83,7 @@
         "size_guide_afk9Mw": {
           "type": "size-guide",
           "settings": {
-            "heading": "Guia de tamanhos",
-            "metafield_namespace": "custom",
-            "metafield_key": "guia_de_tamanhos"
+            "heading": "Guia de tamanhos"
           }
         }
       },
@@ -100,7 +94,6 @@
         "price",
         "variant_picker",
         "buy_buttons",
-        "description",
         "shipping_banner_9QJnLG",
         "collapsible-row-0",
         "collapsible_tab_ceN3i3",

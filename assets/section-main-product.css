@@ -362,10 +362,16 @@ vertical-align: middle;
 text-transform: uppercase;
 background:none;
 border: 1px solid #131313;
+color:#131313;
+transition: all .3s ease;
 
 &::before,
 &::after {
   display:none;
+}
+&:hover {
+  background: #131313;
+  color:#fff;
 }
   }
 }

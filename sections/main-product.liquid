@@ -769,9 +769,8 @@
                 {% render 'icon-with-text', block: block %}
               {%- when 'size-guide' -%}
                 {%- liquid
-                  assign size_guide_ns = block.settings.metafield_namespace | default: 'custom'
-                  assign size_guide_key = block.settings.metafield_key | default: 'guia_de_tamanhos'
-                  assign size_guide_image = product.metafields[size_guide_ns][size_guide_key]
+                  
+                  assign size_guide_image = product.metafields.custom.guia_de_tamanhos
                 -%}
                 {%- if size_guide_image != blank -%}
                   <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
@@ -2243,20 +2242,6 @@
           "id": "heading",
           "label": "Título",
           "default": "Guia de tamanhos"
-        },
-        {
-          "type": "text",
-          "id": "metafield_namespace",
-          "label": "Namespace do metafield",
-          "default": "custom",
-          "info": "Namespace do metafield da imagem (ex: custom)"
-        },
-        {
-          "type": "text",
-          "id": "metafield_key",
-          "label": "Chave do metafield",
-          "default": "guia_de_tamanhos",
-          "info": "Chave do metafield da imagem (ex: guia_de_tamanhos)"
         }
       ]
     },

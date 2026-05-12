@@ -385,6 +385,24 @@ a.product__text {
     }
 }
 
+
+.wrapper-tags {
+  .tag-pdp {
+    background: #131313;
+    font-family: "Montserrat";
+    padding-inline:5px;
+font-weight: 700;
+font-style: Bold;
+font-size: 13px;
+leading-trim: NONE;
+line-height: 100%;
+color:#fff;
+letter-spacing: 1.44px;
+vertical-align: middle;
+text-transform: uppercase;
+
+  }
+}
 .product-form__quantity-top .form__label {
   margin-bottom: 1.2rem;
 }

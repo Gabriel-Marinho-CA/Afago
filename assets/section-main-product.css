@@ -390,7 +390,7 @@ a.product__text {
   .tag-pdp {
     background: #131313;
     font-family: "Montserrat";
-    padding-inline:5px;
+    padding:3px 5px;
 font-weight: 700;
 font-style: Bold;
 font-size: 13px;

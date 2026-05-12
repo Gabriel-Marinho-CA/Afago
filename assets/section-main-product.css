@@ -325,17 +325,18 @@ text-transform: uppercase;
  margin-bottom:1.75rem !important;
   }
   label {
-    margin:0 !important;
+    margin-top:0 !important;
   }
 }
 
 .product-form__input--pill {
   .form__label {
-   
+    margin-bottom:1.75rem !important;
   }
 }
 .product-form__input--pill input[type=radio]+label {
     padding: 0 !important;
+    margin: 0 !important;
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;

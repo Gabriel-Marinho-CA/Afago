@@ -326,7 +326,11 @@ text-transform: uppercase;
   }
 }
 
-
+.product-form__input--pill {
+  .form__label {
+    margin-bottom:2rem;
+  }
+}
 .product-form__input--pill input[type=radio]+label {
     padding: 0 !important;
     margin: 0 !important;

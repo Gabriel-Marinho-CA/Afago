@@ -368,12 +368,11 @@ a.product__text {
     font-weight: 500;
     font-style: Medium;
     font-size: 13px;
-        padding: 0 0 3rem 0;
+     padding: 0 0 3rem 0;
     line-height: 100%;
     letter-spacing: 1.2px;
     vertical-align: middle;
     text-transform: uppercase;
-    padding: 0;
     gap: 2rem;
     color:#717171;
 

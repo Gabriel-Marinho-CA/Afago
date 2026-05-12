@@ -12,22 +12,15 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": {
-          "type": "text",
-          "settings": {
-            "text": "{{ product.vendor }}",
-            "text_style": "uppercase"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {}
         },
-        "caption": {
+        "text_BDtyiB": {
           "type": "text",
           "settings": {
-            "text": "{{ product.metafields.descriptors.subtitle.value }}",
-            "text_style": "subtitle"
+            "text": "{{ product.metafields.custom.texto_pequeno_referencia.value }}",
+            "text_style": "body"
           }
         },
         "price": {
@@ -100,9 +93,8 @@
         }
       },
       "block_order": [
-        "vendor",
         "title",
-        "caption",
+        "text_BDtyiB",
         "price",
         "variant_picker",
         "quantity_selector",

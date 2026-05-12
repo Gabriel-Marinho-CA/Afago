@@ -311,7 +311,7 @@ color:#717171;
     padding-top: .32rem; 
 }
 fieldset.js.product-form__input.product-form__input--swatch,
-.fieldset.js.product-form__input.product-form__input--pill {
+fieldset.js.product-form__input.product-form__input--pill {
   .form__label {
     font-family: 'Montserrat';
 font-weight: 700;
@@ -325,6 +325,7 @@ text-transform: uppercase;
 
   }
 }
+
 
 .product-form__input--pill input[type=radio]+label {
     padding: 0 !important;

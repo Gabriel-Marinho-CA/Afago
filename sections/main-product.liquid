@@ -208,6 +208,7 @@
                     show_badges: true,
                     price_class: 'price--large'
                   -%}
+                  {% render 'res-installments' tp_price: product.price%}
                 </div>
                 {%- if product.quantity_price_breaks_configured? -%}
                   <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">

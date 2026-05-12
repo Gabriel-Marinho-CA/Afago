@@ -348,6 +348,27 @@ text-transform: uppercase;
 .product-form__input--pill input[type=radio]:disabled+label, .product-form__input--pill input[type=radio].disabled+label {
   opacity: .5;
 }
+.product__info-container product-form{
+  button {
+    font-family: "Montserrat";
+font-weight: 700;
+font-style: Bold;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1.98px;
+text-align: center;
+vertical-align: middle;
+text-transform: uppercase;
+background:none;
+border: 1px solid #131313;
+
+&::before,
+&::after {
+  display:none;
+}
+  }
+}
 .product__title > a {
   display: none;
 }

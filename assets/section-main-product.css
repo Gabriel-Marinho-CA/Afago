@@ -359,6 +359,33 @@ a.product__text {
   margin-bottom: 0rem;
 }
 
+.breadcrumbs__list {
+      display: flex;
+    align-items: center;
+    margin: 0;
+    list-style: none;
+    font-family: Montserrat;
+    font-weight: 500;
+    font-style: Medium;
+    font-size: 10px;
+    leading-trim: NONE;
+    line-height: 100%;
+    letter-spacing: 1.2px;
+    vertical-align: middle;
+    text-transform: uppercase;
+    padding: 0;
+    gap: 2rem;
+    color:#717171;
+
+    a {
+    text-decoration: none;
+
+    &[aria-current="page"] {
+      color:#131313;
+    }
+    }
+}
+
 .product-form__quantity-top .form__label {
   margin-bottom: 1.2rem;
 }

@@ -581,6 +581,9 @@
                   section_id: section.id,
                   show_pickup_availability: true
                 -%}
+                <div class="wishlist-wrapper">
+                  <button class="wishlist-btn">Lista de Desejos</button>
+                </div>
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}
                   <div class="rating-wrapper">

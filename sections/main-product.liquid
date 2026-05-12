@@ -172,6 +172,16 @@
             {%- case block.type -%}
               {%- when '@app' -%}
                 {% render block %}
+              {% when 'tag' %}
+                <div class="wrapper-tags">
+                  {% for item in product.tags %}
+                      {% unless item == 'oferta' or item == 'Oferta' %}
+                        <span class="tag-pdp">
+                          {{ item }}
+                        </span>
+                      {% endunless %}
+                  {% endfor %}
+                </div>
               {%- when 'text' -%}
                 <p
                   class="product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -1274,6 +1284,11 @@
           "content": "t:sections.main-product.blocks.rating.settings.paragraph.content"
         }
       ]
+    },
+    {
+      "type":"tag",
+      "name":"Tag",
+      "limit":1
     },
     {
       "type": "complementary",

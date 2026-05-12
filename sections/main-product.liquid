@@ -175,8 +175,7 @@
               {% when 'tag' %}
                 <div class="wrapper-tags">
                   {% for item in product.tags %}
-                    {% assign item_lower = item | downcase %}
-                      {% unless item_lower == 'oferta'  %}
+                      {% unless item == 'oferta' or item == 'Oferta' %}
                         <span class="tag-pdp">
                           {{ item }}
                         </span>
@@ -768,6 +767,25 @@
                 </product-recommendations>
               {%- when 'icon-with-text' -%}
                 {% render 'icon-with-text', block: block %}
+              {%- when 'shipping-banner' -%}
+                {%- style -%}
+                  .shipping-banner-{{ block.id }} {
+                    background-color: {{ block.settings.bg_color }};
+                    color: {{ block.settings.text_color }};
+                  }
+                  .shipping-banner-{{ block.id }} svg {
+                    fill: {{ block.settings.text_color }};
+                    color: {{ block.settings.text_color }};
+                  }
+                {%- endstyle -%}
+                <div class="shipping-banner shipping-banner-{{ block.id }}" {{ block.shopify_attributes }}>
+                  <span class="shipping-banner__icon">
+                    {{- 'icon-truck-pdp.svg' | inline_asset_content -}}
+                  </span>
+                  <div class="shipping-banner__text rte">
+                    {{- block.settings.text -}}
+                  </div>
+                </div>
             {%- endcase -%}
           {%- endfor -%}
           <a href="{{ product.url }}" class="link product__view-details animate-arrow">
@@ -2183,6 +2201,30 @@
           "default": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.default",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
+        }
+      ]
+    },
+    {
+      "type": "shipping-banner",
+      "name": "Banner de frete",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Texto",
+          "default": "<p><strong>Frete grátis</strong> em compras acima de R$ 500 · Calcule o prazo abaixo</p>"
+        },
+        {
+          "type": "color",
+          "id": "bg_color",
+          "label": "Cor de fundo",
+          "default": "#F5F5F5"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Cor do texto",
+          "default": "#121212"
         }
       ]
     }

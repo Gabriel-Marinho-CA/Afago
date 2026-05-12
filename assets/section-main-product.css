@@ -322,13 +322,13 @@ line-height: 100%;
 letter-spacing: 1.6px;
 vertical-align: middle;
 text-transform: uppercase;
-
+ margin-bottom:1.75rem !important;
   }
 }
 
 .product-form__input--pill {
   .form__label {
-    margin-bottom:2rem;
+   
   }
 }
 .product-form__input--pill input[type=radio]+label {

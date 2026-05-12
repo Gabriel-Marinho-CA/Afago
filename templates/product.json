@@ -49,6 +49,14 @@
           "type": "description",
           "settings": {}
         },
+        "shipping_banner_9QJnLG": {
+          "type": "shipping-banner",
+          "settings": {
+            "text": "<p><strong>Frete grátis</strong> em compras acima de R$ 500 · Calcule o prazo abaixo</p>",
+            "bg_color": "#f5f3ef",
+            "text_color": "#131313"
+          }
+        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
           "settings": {
@@ -85,6 +93,7 @@
         "variant_picker",
         "buy_buttons",
         "description",
+        "shipping_banner_9QJnLG",
         "collapsible-row-0",
         "collapsible_tab_ceN3i3",
         "collapsible_tab_RpRUUU"

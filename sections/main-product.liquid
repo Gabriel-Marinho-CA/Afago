@@ -175,7 +175,8 @@
               {% when 'tag' %}
                 <div class="wrapper-tags">
                   {% for item in product.tags %}
-                      {% unless item == 'oferta' or item == 'Oferta' %}
+                    {% assign item_lower = item | downcase %}
+                      {% unless item_lower == 'oferta'  %}
                         <span class="tag-pdp">
                           {{ item }}
                         </span>

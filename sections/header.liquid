@@ -80,6 +80,10 @@
   .header {
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
   }
+   sticky-header  {
+     
+     border-bottom: 1px solid #cecece;
+   }
 
   .section-header {
     position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
@@ -115,6 +119,7 @@
 
     sticky-header {
         background: transparent;
+        border-bottom: 0;
         .icon-hamburger *{
  fill: #fff;
         }

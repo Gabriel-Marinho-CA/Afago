@@ -253,6 +253,8 @@ a.product__text {
       display: flex;
     flex-direction: column;
     gap:.75rem;
+    border-bottom: 1px solid #DCDCDC;
+        padding-bottom: 2rem;
     .compare-price {
           font-size: 15px;
     color: #939393;
@@ -305,6 +307,8 @@ line-height: 100%;
 letter-spacing: 0.8px;
 vertical-align: middle;
 color:#717171;
+padding-bottom: 2.4rem;
+padding-top: 2rem;
 }
 .product__title > a {
   display: none;

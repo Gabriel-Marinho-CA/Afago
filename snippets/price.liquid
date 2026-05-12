@@ -31,4 +31,7 @@
     <s class="compare-price">{{ compare_at_price | money }}</s>
   {% endif %}
   <span class="spot-price">{{ money_price }}</span>
+  <span class="installments">
+    ou 6× de  {{ price  | divided_by: 6 | money }} sem juros
+  </span>
 </div>

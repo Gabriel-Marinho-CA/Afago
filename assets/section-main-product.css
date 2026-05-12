@@ -324,6 +324,9 @@ vertical-align: middle;
 text-transform: uppercase;
  margin-bottom:1.75rem !important;
   }
+  label {
+    margin:0 !important;
+  }
 }
 
 .product-form__input--pill {
@@ -333,7 +336,6 @@ text-transform: uppercase;
 }
 .product-form__input--pill input[type=radio]+label {
     padding: 0 !important;
-    margin: 0 !important;
     display: inline-flex !important;
     justify-content: center !important;
     align-items: center !important;

@@ -364,11 +364,11 @@ a.product__text {
     align-items: center;
     margin: 0;
     list-style: none;
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-weight: 500;
     font-style: Medium;
-    font-size: 10px;
-    leading-trim: NONE;
+    font-size: 13px;
+        padding: 0 0 3rem 0;
     line-height: 100%;
     letter-spacing: 1.2px;
     vertical-align: middle;

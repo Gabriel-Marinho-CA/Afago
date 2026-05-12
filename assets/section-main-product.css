@@ -252,9 +252,11 @@ a.product__text {
 .price-card-product {
       display: flex;
     flex-direction: column;
+    gap:.75rem;
     .compare-price {
           font-size: 15px;
     color: #939393;
+    line-height:1;
     }
     .spot-price {
       font-family: "Montserrat";

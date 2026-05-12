@@ -307,8 +307,8 @@ line-height: 100%;
 letter-spacing: 0.8px;
 vertical-align: middle;
 color:#717171;
-padding-bottom: 2.4rem;
-padding-top: 2rem;
+    padding-bottom: .4rem;
+    padding-top: .32rem;
 }
 .product__title > a {
   display: none;

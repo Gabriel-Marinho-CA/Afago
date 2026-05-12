@@ -431,6 +431,9 @@ letter-spacing: 0%;
 vertical-align: middle;
 
 }
+product-info {
+  border-bottom: 1px solid #DCDCDC;
+}
 .product__title > a {
   display: none;
 }

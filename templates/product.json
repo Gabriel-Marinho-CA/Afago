@@ -83,6 +83,14 @@
             "content": "{{ product.metafields.custom.entrega_e_devolucao | metafield_tag }}",
             "page": ""
           }
+        },
+        "size_guide_afk9Mw": {
+          "type": "size-guide",
+          "settings": {
+            "heading": "Guia de tamanhos",
+            "metafield_namespace": "custom",
+            "metafield_key": "guia_de_tamanhos"
+          }
         }
       },
       "block_order": [
@@ -96,7 +104,8 @@
         "shipping_banner_9QJnLG",
         "collapsible-row-0",
         "collapsible_tab_ceN3i3",
-        "collapsible_tab_RpRUUU"
+        "collapsible_tab_RpRUUU",
+        "size_guide_afk9Mw"
       ],
       "settings": {
         "enable_sticky_info": true,

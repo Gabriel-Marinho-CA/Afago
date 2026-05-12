@@ -12,6 +12,10 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "tag_jMJEy6": {
+          "type": "tag",
+          "settings": {}
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -74,6 +78,7 @@
         }
       },
       "block_order": [
+        "tag_jMJEy6",
         "title",
         "text_BDtyiB",
         "price",

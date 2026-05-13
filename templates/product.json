@@ -146,7 +146,7 @@
         "view_more_text": "Ver mais",
         "view_more_url": "",
         "products_to_show": 8,
-        "show_button": false,
+        "show_button": true,
         "add_to_cart": false,
         "show_installments": true,
         "two_rows": false,

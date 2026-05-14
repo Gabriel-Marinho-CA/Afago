@@ -36,6 +36,66 @@
   }
 {%- endstyle -%}
 
+{% liquid
+  assign col_img_desktop = collection.metafields.custom.banner_desktop.value
+  assign col_img_mobile = collection.metafields.custom.banner_mobile.value
+  assign txt_collection = collection.metafields.custom.texto_colecao
+
+  assign has_banner_image = false
+  if col_img_desktop != blank or col_img_mobile != blank
+    assign has_banner_image = true
+  endif
+
+%}
+
+<div class="res-collection-banner {{ section.id }}-banner">
+  {% if has_banner_image %}
+    <div class="res-collection-banner__image" aria-hidden="true">
+      {% if col_img_mobile != blank %}
+        {{ col_img_mobile | image_url: width: 800 | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'res-collection-banner__img res-collection-banner__img--mobile',
+          sizes: '100vw',
+          widths: '375, 750, 800',
+          alt: ''
+        }}
+      {% elsif col_img_desktop != blank %}
+        {{ col_img_desktop | image_url: width: 800 | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'res-collection-banner__img res-collection-banner__img--mobile',
+          sizes: '100vw',
+          widths: '375, 750, 800',
+          alt: ''
+        }}
+      {% endif %}
+      {% if col_img_desktop != blank %}
+        {{ col_img_desktop | image_url: width: 1920 | image_tag:
+          loading: 'eager',
+          fetchpriority: 'high',
+          class: 'res-collection-banner__img res-collection-banner__img--desktop',
+          sizes: '100vw',
+          widths: '750, 1100, 1500, 1780, 1920',
+          alt: ''
+        }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="res-collection-banner__content">
+    <div class="res-wrapper">
+      <div class="res-collection-banner__inner">
+        <p class="res-collection-text">
+          {{ txt_collection }}
+        </p>
+        <h1 class="res-collection-banner__title">{{ collection.title | escape }}</h1>
+        <p class="number-product-collection">{{ collection.products_count }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
@@ -165,17 +225,12 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
-                    card_product: product,
-                    media_aspect_ratio: section.settings.image_ratio,
-                    image_shape: section.settings.image_shape,
-                    show_secondary_image: section.settings.show_secondary_image,
-                    show_vendor: section.settings.show_vendor,
-                    show_rating: section.settings.show_rating,
-                    lazy_load: lazy_load,
-                    skip_styles: skip_card_product_styles,
-                    quick_add: section.settings.quick_add,
-                    section_id: section.id
+                  {% render 'res-product-card',
+                    res_product: rec_product,
+                    show_price: true,
+                    show_button: show_button,
+                    add_to_cart: add_to_cart,
+                    show_installments: show_installments
                   %}
                 </li>
                 {%- assign skip_card_product_styles = true -%}

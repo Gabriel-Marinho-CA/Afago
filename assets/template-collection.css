@@ -105,6 +105,15 @@
     width:100%;
     height: auto;
   }
+
+  &:not(:has(img)) {
+    .res-collection-banner__content {
+      position:initial;
+      * {
+        color: #000 !important;
+      }
+    }
+  }
   .res-collection-banner__content {
         position: absolute;
     top: 50%;

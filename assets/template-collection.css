@@ -167,6 +167,14 @@
     gap: 1rem;
     list-style: none;
 
+    li {&:first-child {
+  &::after {
+    content: " > "
+  }
+}
+
+    }
+
     a {
       font-family: "Montserrat",sans-serif;
 font-weight: 500;
@@ -179,6 +187,8 @@ vertical-align: middle;
 text-transform: uppercase;
 color:#717171;
 text-decoration:none; 
+
+
 &[aria-current="page"] {
   color:#131313;
 }

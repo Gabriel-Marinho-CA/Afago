@@ -158,3 +158,30 @@
     }
   }
 }
+
+.breadcrumbs {
+  .breadcrumbs__list {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+
+    a {
+      font-family: "Montserrat",sans-serif;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1.2px;
+vertical-align: middle;
+text-transform: uppercase;
+color:#717171;
+text-decoration:none; 
+&[aria-current="page"] {
+  color:#131313;
+}
+    }
+  }
+}

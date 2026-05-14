@@ -169,7 +169,7 @@
 
     li {&:first-child {
   &::after {
-    content: " > "
+    content: " › "
   }
 }
 

@@ -205,3 +205,9 @@ text-decoration:none;
     }
   }
 }
+
+facet-filters-form.facets.facets-pill.small-hide {
+      border-top: 1px solid #DCDCDC;
+    margin-top: 10px;
+    padding-top: 1rem;
+}

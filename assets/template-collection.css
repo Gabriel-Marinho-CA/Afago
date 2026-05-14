@@ -160,6 +160,7 @@
 }
 
 .breadcrumbs {
+  border-bottom: 1px solid #DCDCDC;
   .breadcrumbs__list {
     padding: 0;
     display: flex;

@@ -238,4 +238,17 @@ facet-filters-form.facets.facets-pill.small-hide {
   span.mobile-facets__open {
      height: 37px;
   }
+  span.mobile-facets__open-label.button-label.small-hide {
+    font-family: "Montserrat",sans-serif;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1.4px;
+text-align: center;
+vertical-align: middle;
+text-transform: uppercase;
+
+  }
 }

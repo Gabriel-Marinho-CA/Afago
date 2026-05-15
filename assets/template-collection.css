@@ -263,4 +263,19 @@ letter-spacing: 0.8px;
 vertical-align: middle;
 color:#717171;
   }
+  span.active-facets__button-inner.button.button--tertiary {
+        background: #131313;
+    color: #ffff;
+    border-radius: 0;
+    height: 42px;font-family: "Montserrat";
+font-weight: 600;
+font-style: SemiBold;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1px;
+vertical-align: middle;
+text-transform: uppercase;
+
+  }
 }

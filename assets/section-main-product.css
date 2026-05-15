@@ -538,7 +538,11 @@ product-info {
 .price-per-item__label.form__label {
   margin-bottom: 0rem;
 }
-
+@media (max-width:750px) {
+  .breadcrumbs {
+    display:none;
+  }
+}
 .breadcrumbs__list {
       display: flex;
     align-items: center;

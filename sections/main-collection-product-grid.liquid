@@ -37,8 +37,8 @@
 {%- endstyle -%}
 
 {% liquid
-  assign col_img_desktop = collection.metafields.custom.banner_desktop.value
-  assign col_img_mobile = collection.metafields.custom.banner_mobile.value
+  assign col_img_desktop = collection.metafields.custom.banner_mobile.value
+  assign col_img_mobile = collection.metafields.custom.banner_desktop.value
   assign txt_collection = collection.metafields.custom.texto_colecao
 
   assign has_banner_image = false

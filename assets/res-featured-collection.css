@@ -150,6 +150,11 @@
   align-items: center;
   justify-content: center;
   gap: var(--tp-space-4, 16px);
+
+
+}
+.res-fc__controls:has(.res-fc__nav--prev.swiper-button-disabled):has(.res-fc__nav--next.swiper-button-disabled) {
+  display: none;
 }
 
 @media screen and (min-width: 750px) {

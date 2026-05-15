@@ -455,6 +455,11 @@ padding-top: 2rem;
   width: 100%;
 }
 
+wishlist-button[active] svg {
+  fill: #826A4F;
+
+}
+
 .res-card__btn {
   display: flex;
   align-items: center;

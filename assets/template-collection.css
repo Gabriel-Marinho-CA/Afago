@@ -211,3 +211,13 @@ facet-filters-form.facets.facets-pill.small-hide {
     margin-top: 10px;
     padding-top: 1rem;
 }
+
+
+@media (min-width:750px) {
+  .menu-drawer.mobile-facets__wrapper {
+    order:-2;
+  }
+  .product-count.light {
+      order:-1;
+  }
+}

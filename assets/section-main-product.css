@@ -463,6 +463,11 @@ text-align: center;
 vertical-align: middle;
 text-transform: uppercase;
 color:#131313;
+@media (max-width:750px) {
+  font-size: 10px;
+  text-align:start;
+  min-height:auto;
+}
 }
 .accordion__content *{
   font-family: "Montserrat";
@@ -1826,6 +1831,9 @@ text-transform: uppercase;
 .shipping-banner__text {
   font-size: 1.4rem;
   line-height: 1.4;
+  @media (max-width:750px) {
+  font-size: 10px;
+}
 }
 
 .shipping-banner__text p {

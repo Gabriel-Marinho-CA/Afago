@@ -44,6 +44,9 @@
   font-size: 2.4rem;
   line-height: var(--tp-leading-tight, 1.2);
   margin: 0;
+  @media (max-width:750px) {
+  text-align:center;
+}
 }
 
 @media screen and (min-width: 750px) {

@@ -582,7 +582,7 @@
                   show_pickup_availability: true
                 -%}
                 <div class="wishlist-wrapper">
-                  <button class="wishlist-btn">Lista de Desejos</button>
+                   <wishlist-button  product-id="{{ product.selected_or_first_available_variant.id }}" class="wishlist-btn">Lista de Desejos</wishlist-button>
                 </div>
               {%- when 'rating' -%}
                 {%- if product.metafields.reviews.rating.value != blank -%}

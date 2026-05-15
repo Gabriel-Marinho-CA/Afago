@@ -93,6 +93,7 @@
     }
 
     _onClick(e) {
+        console.log("@@")
       e.preventDefault();
       WishlistStore.toggle(this._id);
       this._animate();

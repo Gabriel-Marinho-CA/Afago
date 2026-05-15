@@ -296,6 +296,30 @@ color:#717171;
   h2.facet-filters__label.caption-large.text-body {
     display:none;
   }
+.facets-container.facets-container-drawer.scroll-trigger.animate--fade-in {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+menu-drawer.mobile-facets__wrapper {
+  width: 100%;
+  details.mobile-facets__disclosure.disclosure-has-popup {
+    width: 100%;
+    summary.mobile-facets__open-wrapper.focus-offset {
+      width: 100%;
+    }
+  }
+}
+    facet-filters-form.facets {
+      grid-column-start: auto;
+
+      #FacetSortDrawerForm {
+        display:block;
+      }
+
+      .facet-filters {
+        padding:0;
+      }
+    }
+}
 
 }
 

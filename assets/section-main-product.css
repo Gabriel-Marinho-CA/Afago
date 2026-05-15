@@ -542,6 +542,19 @@ product-info {
   .breadcrumbs {
     display:none;
   }
+  li.product__media-item.grid__item.slider__slide.scroll-trigger.animate--fade-in.is-active {
+    margin: 0;
+    width: 100%;
+
+    .product-media-container.media-type-image.media-fit-contain.global-media-settings.gradient.constrain-height {
+      margin: 0;
+    width: 100%;
+
+    img {
+      height:auto !important;
+    }
+    }
+  }
 }
 .breadcrumbs__list {
       display: flex;

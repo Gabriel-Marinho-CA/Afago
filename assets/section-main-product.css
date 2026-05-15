@@ -539,6 +539,9 @@ product-info {
   margin-bottom: 0rem;
 }
 @media (max-width:750px) {
+  product-info {
+    padding-top:0 !important;
+  }
   .breadcrumbs {
     display:none;
   }
@@ -546,6 +549,7 @@ product-info {
     margin: 0;
     width: 100%;
 
+            padding: 0;
     .product-media-container.media-type-image.media-fit-contain.global-media-settings.gradient.constrain-height {
       margin: 0;
     width: 100%;

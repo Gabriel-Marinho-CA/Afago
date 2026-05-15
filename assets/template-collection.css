@@ -294,4 +294,22 @@ vertical-align: middle;
 text-transform: uppercase;
 color:#717171;
   }
+  a.active-facets__button-remove.underlined-link {
+    font-family: "Montserrat";
+font-weight: 600;
+font-style: SemiBold;
+font-size: 13px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 1px;
+text-align: center;
+vertical-align: middle;
+text-transform: uppercase;
+text-decoration: underline;
+text-decoration-style: solid;
+text-decoration-offset: 0%;
+text-decoration-thickness: 0%;
+text-decoration-skip-ink: auto;
+color:#717171;
+  }
 }

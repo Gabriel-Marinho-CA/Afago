@@ -109,6 +109,10 @@
   &:not(:has(img)) {
     .res-collection-banner__content {
       position:initial;
+      transform:none;
+      max-width:var(--page-width);
+      padding-inline:5rem;
+      padding-top: 3.5rem;
       * {
         color: #000 !important;
       }

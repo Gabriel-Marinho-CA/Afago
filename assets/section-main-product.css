@@ -410,6 +410,10 @@ transition: all .3s ease;
   color:#fff;
 }
   }
+
+  @media (max-width:750px) {
+  font-size: 12px;
+}
 }
 .wishlist-wrapper {
   margin-top: -9px;
@@ -441,6 +445,9 @@ cursor:pointer;
       background: #826A4F;
       color: #fff;
     }
+      @media (max-width:750px) {
+  font-size: 12px;
+}
   }
 }
 .accordion__title {

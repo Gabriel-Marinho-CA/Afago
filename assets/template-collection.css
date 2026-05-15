@@ -114,6 +114,9 @@
       padding-inline:5rem;
       padding-top: 3.5rem;
       margin-inline:auto;
+      .res-collection-banner__title {
+        font-size:40px !important;
+      }
       * {
         color: #000 !important;
       }

@@ -474,6 +474,11 @@ padding-top: 2rem;
   cursor: pointer;
   box-sizing: border-box;
   transition: background var(--tp-transition-fast, 350ms), color var(--tp-transition-fast, 350ms);
+
+  &::before,
+  &::after {
+    display:none;
+  }
 }
 
 .res-card__btn:hover {

@@ -259,6 +259,9 @@ a.product__text {
           font-size: 15px;
     color: #939393;
     line-height:1;
+    @media (max-width:750px) {
+  font-size: 13px;
+}
     }
     .spot-price {
       font-family: "Montserrat";
@@ -269,7 +272,9 @@ leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
 vertical-align: middle;
-
+@media (max-width:750px) {
+  font-size: 16px;
+}
     }
     .installments {
       font-family: "Montserrat";
@@ -280,10 +285,16 @@ leading-trim: NONE;
 line-height: 100%;
 letter-spacing: 0%;
 vertical-align: middle;
-
+@media (max-width:750px) {
+  font-size: 11px;
+}
     }
 }
-
+.product__title {
+  @media (max-width:750px) {
+    margin: 0 !important;
+  }
+}
 .product__title > * {
   margin: 0;
   font-family: "Montserrat";
@@ -296,6 +307,9 @@ letter-spacing: 1.12px;
 vertical-align: middle;
 text-transform: uppercase;
 color:#131313;
+@media (max-width:750px) {
+  font-size: 18px;
+}
 }
 p.product__text.inline-richtext {
   font-family: Montserrat;
@@ -309,6 +323,10 @@ vertical-align: middle;
 color:#717171;
     padding-bottom: .4rem;
     padding-top: .32rem; 
+    @media (max-width:750px) {
+  font-size: 10px;
+  margin-top: 0;
+}
 }
 fieldset.js.product-form__input.product-form__input--swatch,
 fieldset.js.product-form__input.product-form__input--pill {
@@ -323,6 +341,9 @@ letter-spacing: 1.6px;
 vertical-align: middle;
 text-transform: uppercase;
  margin-bottom:1.75rem !important;
+ @media (max-width:750px) {
+  font-size: 10px;
+}
   }
   label {
     margin-top:0 !important;
@@ -616,7 +637,9 @@ color:#fff;
 letter-spacing: 1.44px;
 vertical-align: middle;
 text-transform: uppercase;
-
+@media (max-width:750px) {
+  font-size: 10px;
+}
   }
 }
 .product-form__quantity-top .form__label {

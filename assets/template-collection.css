@@ -248,7 +248,19 @@ line-height: 100%;
 letter-spacing: 1.4px;
 text-align: center;
 vertical-align: middle;
+color:#131313;
 text-transform: uppercase;
 
+  }
+  span#ProductCount {
+    font-family: "Montserrat",sans-serif;
+font-weight: 500;
+font-style: Medium;
+font-size: 16px;
+leading-trim: NONE;
+line-height: 100%;
+letter-spacing: 0.8px;
+vertical-align: middle;
+color:#717171;
   }
 }

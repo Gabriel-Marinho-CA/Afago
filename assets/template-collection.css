@@ -344,3 +344,10 @@ text-decoration-skip-ink: auto;
 color:#717171;
   }
 }
+
+@media (max-width:750px) {
+  .product-count.light {
+    display:none;
+  }
+  
+}

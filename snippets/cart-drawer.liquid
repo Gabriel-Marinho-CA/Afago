@@ -455,14 +455,13 @@
 
           <div class="cd-ctas">
             <button
-              onclick="yampiClick()"
-              id="CartDrawer-Checkout"
-              class="cd-ctas__checkout"
-              name="checkout"
-              form="CartDrawer-Form"
-              {% if cart == empty %}
-                disabled
-              {% endif %}
+            id="CartDrawer-Checkout"
+            class="cart__checkout-button button"
+            name="checkout"
+            onclick="yampiClick()"
+            {% if cart == empty %}
+              disabled
+            {% endif %}
             >
               FINALIZAR COMPRA
             </button>

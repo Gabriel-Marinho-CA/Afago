@@ -185,6 +185,10 @@
 
 .breadcrumbs {
   border-bottom: 1px solid #DCDCDC;
+
+  @media (max-width:750px) {
+    display:none;
+  }
   .breadcrumbs__list {
     padding: 0;
     display: flex;

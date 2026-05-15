@@ -294,7 +294,17 @@ letter-spacing: 0.8px;
 vertical-align: middle;
 color:#717171;
   }
-  span.active-facets__button-inner.button.button--tertiary {
+ 
+}
+
+@media (max-width:750px) {
+  .product-count.light {
+    display:none;
+  }
+
+}
+
+ span.active-facets__button-inner.button.button--tertiary {
         background: #131313;
     color: #ffff;
     border-radius: 0;
@@ -343,11 +353,3 @@ text-decoration-thickness: 0%;
 text-decoration-skip-ink: auto;
 color:#717171;
   }
-}
-
-@media (max-width:750px) {
-  .product-count.light {
-    display:none;
-  }
-  
-}

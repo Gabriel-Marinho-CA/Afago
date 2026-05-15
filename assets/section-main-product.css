@@ -541,6 +541,13 @@ product-info {
 @media (max-width:750px) {
   product-info {
     padding-top:0 !important;
+    .page-width {
+          padding-inline: 0;
+
+          ul.thumbnail-list.list-unstyled.slider.slider--mobile.slider--tablet-up {
+            padding:0;
+          }
+    }
   }
   .breadcrumbs {
     display:none;
@@ -558,6 +565,9 @@ product-info {
       height:auto !important;
     }
     }
+  }
+  .product__info-wrapper.grid__item.scroll-trigger.animate--slide-in {
+    padding-inline:16px;
   }
 }
 .breadcrumbs__list {

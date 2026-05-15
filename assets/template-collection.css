@@ -223,13 +223,16 @@ facet-filters-form.facets.facets-pill.small-hide {
   h2.facet-filters__label.caption-large.text-body {
     display:none;
   }
+  .select {
+  .svg-wrapper {
+      right: 7px;
+    }
+  }
   select#SortBy {
         border: 1px solid #DCDCDC;
     height: 46px;
     padding-inline: 2rem;
 
-    .svg-wrapper {
-      right: 7px;
-    }
+  
   }
 }

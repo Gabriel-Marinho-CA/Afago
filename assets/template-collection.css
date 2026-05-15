@@ -292,7 +292,8 @@ color:#717171;
 }
 
 @media (max-width:750px) {
-  .product-count.light {
+  .product-count.light,
+  h2.facet-filters__label.caption-large.text-body {
     display:none;
   }
 

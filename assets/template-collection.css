@@ -235,4 +235,7 @@ facet-filters-form.facets.facets-pill.small-hide {
     padding-inline: 2rem;
 
   }
+  span.mobile-facets__open {
+     height: 37px;
+  }
 }

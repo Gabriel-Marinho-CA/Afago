@@ -409,11 +409,12 @@ transition: all .3s ease;
   background: #131313;
   color:#fff;
 }
-  }
-
   @media (max-width:750px) {
   font-size: 12px;
 }
+  }
+
+
 }
 .wishlist-wrapper {
   margin-top: -9px;

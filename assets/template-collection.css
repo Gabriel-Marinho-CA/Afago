@@ -120,6 +120,7 @@
       }
       .res-collection-banner__title {
         font-size:40px !important;
+        line-height:1.2 !important;
          @media (max-width:750px) {
           font-size:20px !important;
          }

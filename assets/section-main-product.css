@@ -347,7 +347,13 @@ text-transform: uppercase;
   }
   label {
     margin-top:0 !important;
-    @media (max-width:750px) {
+
+  }
+}
+
+fieldset.js.product-form__input.product-form__input--swatch {
+  label {
+        @media (max-width:750px) {
   width: 25px !important;
   height: 25px !important;
 }

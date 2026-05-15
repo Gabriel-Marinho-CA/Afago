@@ -375,6 +375,11 @@ fieldset.js.product-form__input.product-form__input--swatch {
     height: 40px !important;
     border-radius: 2px !important;
 
+      @media (max-width:750px) {
+            width: 32px !important;
+    height: 32px !important;
+      }
+
 }
 .product-form__input--pill input[type=radio]:disabled+label, .product-form__input--pill input[type=radio].disabled+label {
   opacity: .5;

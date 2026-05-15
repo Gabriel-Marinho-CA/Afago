@@ -311,6 +311,10 @@ menu-drawer.mobile-facets__wrapper {
     facet-filters-form.facets {
       grid-column-start: auto;
 
+      .svg-wrapper {
+        right: 8px;
+      }
+
       #FacetSortDrawerForm {
         display:block;
       }
@@ -336,7 +340,10 @@ line-height: 100%;
 letter-spacing: 1px;
 vertical-align: middle;
 text-transform: uppercase;
-
+@media (max-width:750px) {
+     font-size: 10px;
+     height: 35px;
+}
   }
   facet-filters-form.facets.facets-pill.small-hide {
         display: flex;

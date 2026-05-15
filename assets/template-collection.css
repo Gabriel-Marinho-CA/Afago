@@ -228,11 +228,11 @@ facet-filters-form.facets.facets-pill.small-hide {
       right: 7px;
     }
   }
-  select#SortBy {
+  select#SortBy,
+  span.mobile-facets__open {
         border: 1px solid #DCDCDC;
     height: 46px;
     padding-inline: 2rem;
 
-  
   }
 }

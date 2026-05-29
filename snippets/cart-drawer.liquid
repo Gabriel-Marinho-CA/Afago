@@ -455,16 +455,17 @@
 
           <div class="cd-ctas">
             <button
+            type="submit"
             id="CartDrawer-Checkout"
             class="cart__checkout-button button"
             name="checkout"
-            type="submit"
+            form="CartDrawer-Form"
             {% if cart == empty %}
               disabled
             {% endif %}
-            >
-              FINALIZAR COMPRA
-            </button>
+          >
+             FINALIZAR COMPRA
+          </button>
             <a href="{{ routes.cart_url }}" class="cd-ctas__cart-link"> VER SACOLA COMPLETA </a>
           </div>
         </div>

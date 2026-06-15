@@ -18,7 +18,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Estampado Rosa Amarela",
-            "color_value": "#EB13B9"
+            "color_value": "#eb13b9"
           }
         },
         "cor_pJKh9w": {
@@ -48,6 +48,13 @@
             "color_name": "Bronze",
             "color_value": "#ffdc00"
           }
+        },
+        "cor_YtnwyC": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Estampado Rosa Verde",
+            "color_value": "#00FF59"
+          }
         }
       },
       "block_order": [
@@ -55,7 +62,8 @@
         "cor_pJKh9w",
         "cor_Ai6WPR",
         "cor_4UyKzA",
-        "cor_rcU9yc"
+        "cor_rcU9yc",
+        "cor_YtnwyC"
       ],
       "name": "Cores de Variantes",
       "settings": {}

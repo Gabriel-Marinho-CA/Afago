@@ -14,6 +14,13 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_DhwbGe": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Estampado Rosa Amarela",
+            "color_value": "#EB13B9"
+          }
+        },
         "cor_pJKh9w": {
           "type": "cor",
           "settings": {
@@ -44,6 +51,7 @@
         }
       },
       "block_order": [
+        "cor_DhwbGe",
         "cor_pJKh9w",
         "cor_Ai6WPR",
         "cor_4UyKzA",

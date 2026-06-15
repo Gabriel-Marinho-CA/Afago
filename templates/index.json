@@ -40,7 +40,7 @@
       "settings": {
         "title": "NEW TO SALE",
         "view_more_text": "Ver mais",
-        "view_more_url": "",
+        "view_more_url": "shopify://collections/blusas",
         "collection": "blusas",
         "product_list": [],
         "show_button": true,

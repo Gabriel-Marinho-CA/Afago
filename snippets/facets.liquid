@@ -114,6 +114,11 @@
                 assign total_active_values = total_active_values | plus: filter.active_values.size
                 assign presentation = filter.presentation | default: default_presentation
 
+                assign filter_label_lower = filter.label | downcase
+                if filter_label_lower == 'cor' or filter_label_lower == 'color' or filter_label_lower == 'colour' or filter_label_lower == 'cores'
+                  assign presentation = 'swatch'
+                endif
+
                 if presentation == 'image'
                   assign show_more_number = 12
                   assign visual_layout_class = 'facets-layout facets-layout-grid facets-layout-grid--' | append: presentation
@@ -513,6 +518,12 @@
                 {%- for filter in results.filters -%}
                   {% liquid
                     assign presentation = filter.presentation | default: default_presentation
+
+                    assign filter_label_lower = filter.label | downcase
+                    if filter_label_lower == 'cor' or filter_label_lower == 'color' or filter_label_lower == 'colour' or filter_label_lower == 'cores'
+                      assign presentation = 'swatch'
+                    endif
+
                     if presentation == 'image'
                       assign visual_layout_class = 'facets-layout facets-layout-grid facets-layout-grid--' | append: presentation
                     else

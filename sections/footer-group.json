@@ -21,6 +21,13 @@
             "color_value": "#eb13b9"
           }
         },
+        "cor_KFMnYE": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Vinho",
+            "color_value": "#3C2025"
+          }
+        },
         "cor_pJKh9w": {
           "type": "cor",
           "settings": {
@@ -53,12 +60,13 @@
           "type": "cor",
           "settings": {
             "color_name": "Estampado Rosa Verde",
-            "color_value": "#00FF59"
+            "color_value": "#00ff59"
           }
         }
       },
       "block_order": [
         "cor_DhwbGe",
+        "cor_KFMnYE",
         "cor_pJKh9w",
         "cor_Ai6WPR",
         "cor_4UyKzA",

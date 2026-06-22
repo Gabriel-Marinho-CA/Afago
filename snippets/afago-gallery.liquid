@@ -1,0 +1,216 @@
+{% comment %}
+  Galeria de mídia customizada da Afago.
+
+  Layout:
+  - Desktop: imagem grande + thumbnails embaixo
+  - Mobile: apenas a imagem grande com um leve "peek" da próxima imagem à direita
+
+  Substitui a galeria padrão do Dawn (media-gallery.js + tp-color-gallery).
+  O filtro de cor é feito por `data-group-color` (a partir do alt da imagem),
+  pela própria web component em `afago-gallery.js`.
+
+  Reaproveita o snippet `product-thumbnail` para manter o zoom/modal/vídeo/3D.
+
+  Accepts:
+  - product: {Object} Product liquid object
+  - variant_images: {Array} Imagens associadas a uma variante
+  - limit: {Number} (opcional) Limita a quantidade de mídias renderizadas
+
+  Usage:
+  {% render 'afago-gallery' %}
+{% endcomment %}
+
+{%- liquid
+  assign media_count = product.media.size
+  if section.settings.hide_variants and media_count > 1 and variant_images.size > 0
+    assign media_count = media_count | minus: variant_images.size | plus: 1
+  endif
+
+  if section.settings.media_size == 'large'
+    assign media_width = 0.65
+  elsif section.settings.media_size == 'medium'
+    assign media_width = 0.55
+  elsif section.settings.media_size == 'small'
+    assign media_width = 0.45
+  endif
+
+  assign color_index = ''
+  for opt in product.options
+    assign opt_lower = opt | downcase
+    if opt_lower == 'cor' or opt_lower == 'color' or opt_lower == 'colour' or opt_lower == 'cores'
+      assign color_index = forloop.index0
+      break
+    endif
+  endfor
+-%}
+
+<afago-gallery
+  id="MediaGallery-{{ section.id }}"
+  class="afago-gallery{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
+  data-section="{{ section.id }}"
+  data-color-index="{{ color_index }}"
+  role="region"
+  aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
+>
+  <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
+
+  <a class="skip-to-content-link button visually-hidden quick-add-hidden" href="#ProductInfo-{{ section.id }}">
+    {{ 'accessibility.skip_to_product_info' | t }}
+  </a>
+
+  <div class="afago-gallery__stage">
+    <ul class="afago-gallery__media list-unstyled" data-gallery-media role="list">
+      {%- if product.selected_or_first_available_variant.featured_media != null -%}
+        {%- assign featured_media = product.selected_or_first_available_variant.featured_media -%}
+        <li
+          id="Slide-{{ section.id }}-{{ featured_media.id }}"
+          class="afago-gallery__slide is-active{% if featured_media.media_type != 'image' %} afago-gallery__slide--full{% endif %}"
+          data-media-id="{{ section.id }}-{{ featured_media.id }}"
+          data-group-color="{{ featured_media.alt | escape }}"
+        >
+          {%- assign media_position = 1 -%}
+          {% render 'product-thumbnail',
+            media: featured_media,
+            media_count: media_count,
+            position: media_position,
+            desktop_layout: 'stacked',
+            mobile_layout: 'stacked',
+            loop: section.settings.enable_video_looping,
+            modal_id: section.id,
+            xr_button: true,
+            media_width: media_width,
+            media_fit: section.settings.media_fit,
+            constrain_to_viewport: section.settings.constrain_to_viewport,
+            lazy_load: false
+          %}
+        </li>
+      {%- endif -%}
+      {%- for media in product.media -%}
+        {% if media_position >= limit
+          or media_position >= 1
+          and section.settings.hide_variants
+          and variant_images contains media.src
+        %}
+          {% continue %}
+        {% endif %}
+
+        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          {%- liquid
+            assign media_position = media_position | default: 0 | plus: 1
+            assign lazy_load = false
+            if media_position > 1
+              assign lazy_load = true
+            endif
+          -%}
+          <li
+            id="Slide-{{ section.id }}-{{ media.id }}"
+            class="afago-gallery__slide{% if product.selected_or_first_available_variant.featured_media == nil and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} afago-gallery__slide--full{% endif %}"
+            data-media-id="{{ section.id }}-{{ media.id }}"
+            data-group-color="{{ media.alt | escape }}"
+          >
+            {% render 'product-thumbnail',
+              media: media,
+              media_count: media_count,
+              position: media_position,
+              desktop_layout: 'stacked',
+              mobile_layout: 'stacked',
+              loop: section.settings.enable_video_looping,
+              modal_id: section.id,
+              xr_button: true,
+              media_width: media_width,
+              media_fit: section.settings.media_fit,
+              constrain_to_viewport: section.settings.constrain_to_viewport,
+              lazy_load: lazy_load
+            %}
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+
+  {%- if first_3d_model -%}
+    <button
+      class="button button--full-width product__xr-button"
+      type="button"
+      aria-label="{{ 'products.product.xr_button_label' | t }}"
+      data-shopify-xr
+      data-shopify-model3d-id="{{ first_3d_model.id }}"
+      data-shopify-title="{{ product.title | escape }}"
+      data-shopify-xr-hidden
+    >
+      <span class="svg-wrapper">
+        {{- 'icon-3d-model.svg' | inline_asset_content -}}
+      </span>
+      {{ 'products.product.xr_button' | t }}
+    </button>
+  {%- endif -%}
+
+  {%- if media_count > 1 -%}
+    <ul class="afago-gallery__thumbs list-unstyled" data-gallery-thumbs role="list">
+      {%- if featured_media != null -%}
+        <li
+          class="afago-gallery__thumb is-active"
+          data-target="{{ section.id }}-{{ featured_media.id }}"
+          data-group-color="{{ featured_media.alt | escape }}"
+        >
+          <button
+            type="button"
+            class="afago-gallery__thumb-button"
+            aria-current="true"
+            aria-controls="MediaGallery-{{ section.id }}"
+            aria-label="{{ 'products.product.media.load_image' | t: index: 1 }}"
+          >
+            {%- if featured_media.media_type == 'video' or featured_media.media_type == 'external_video' -%}
+              <span class="afago-gallery__thumb-badge svg-wrapper">{{- 'icon-play.svg' | inline_asset_content -}}</span>
+            {%- elsif featured_media.media_type == 'model' -%}
+              <span class="afago-gallery__thumb-badge svg-wrapper">{{- 'icon-3d-model.svg' | inline_asset_content -}}</span>
+            {%- endif -%}
+            {{
+              featured_media.preview_image
+              | image_url: width: 416
+              | image_tag:
+                loading: 'lazy',
+                widths: '54, 74, 104, 162, 208, 324, 416',
+                alt: featured_media.alt
+            }}
+          </button>
+        </li>
+      {%- endif -%}
+      {%- assign thumb_index = 1 -%}
+      {%- for media in product.media -%}
+        {% if section.settings.hide_variants and variant_images contains media.src %}
+          {% continue %}
+        {% endif %}
+        {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+          {%- assign thumb_index = thumb_index | plus: 1 -%}
+          <li
+            class="afago-gallery__thumb{% if product.selected_or_first_available_variant.featured_media == nil and forloop.index == 1 %} is-active{% endif %}"
+            data-target="{{ section.id }}-{{ media.id }}"
+            data-group-color="{{ media.alt | escape }}"
+          >
+            <button
+              type="button"
+              class="afago-gallery__thumb-button"
+              aria-controls="MediaGallery-{{ section.id }}"
+              aria-label="{{ 'products.product.media.load_image' | t: index: thumb_index }}"
+            >
+              {%- if media.media_type == 'video' or media.media_type == 'external_video' -%}
+                <span class="afago-gallery__thumb-badge svg-wrapper">{{- 'icon-play.svg' | inline_asset_content -}}</span>
+              {%- elsif media.media_type == 'model' -%}
+                <span class="afago-gallery__thumb-badge svg-wrapper">{{- 'icon-3d-model.svg' | inline_asset_content -}}</span>
+              {%- endif -%}
+              {{
+                media.preview_image
+                | image_url: width: 416
+                | image_tag:
+                  loading: 'lazy',
+                  widths: '54, 74, 104, 162, 208, 324, 416',
+                  alt: media.alt
+              }}
+            </button>
+          </li>
+        {%- endunless -%}
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</afago-gallery>

@@ -1,0 +1,122 @@
+/*
+ * Galeria de mídia customizada da Afago.
+ * Desktop: imagem grande + thumbnails embaixo.
+ * Mobile: imagem grande em carrossel com "peek" da próxima imagem à direita.
+ */
+
+.afago-gallery {
+  display: block;
+}
+
+.afago-gallery__stage {
+  position: relative;
+}
+
+.afago-gallery__media {
+  margin: 0;
+  padding: 0;
+}
+
+.afago-gallery__slide.is-hidden,
+.afago-gallery__thumb.is-hidden {
+  display: none !important;
+}
+
+/* ----- Mobile: carrossel com peek ----- */
+@media screen and (max-width: 749px) {
+  .afago-gallery__media {
+    display: flex;
+    gap: 0.8rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .afago-gallery__media::-webkit-scrollbar {
+    display: none;
+  }
+
+  .afago-gallery__slide {
+    flex: 0 0 87%;
+    scroll-snap-align: start;
+  }
+
+  .afago-gallery__thumbs {
+    display: none;
+  }
+}
+
+/* ----- Desktop: imagem grande + thumbnails ----- */
+@media screen and (min-width: 750px) {
+  .afago-gallery__media {
+    position: relative;
+  }
+
+  .afago-gallery__slide {
+    display: none;
+  }
+
+  .afago-gallery__slide.is-active {
+    display: block;
+  }
+
+  .afago-gallery__thumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin: 1rem 0 0;
+    padding: 0;
+  }
+
+  /* 5 thumbnails por linha (4 gaps de 0.8rem) */
+  .afago-gallery__thumb {
+    flex: 0 0 calc((100% - 3.2rem) / 5);
+    margin: 0;
+  }
+
+  .afago-gallery__thumb-button {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 0.1rem solid rgba(var(--color-foreground), 0.12);
+    border-radius: var(--media-radius, 0);
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.15s ease, opacity 0.15s ease;
+  }
+
+  .afago-gallery__thumb-button:hover {
+    border-color: rgba(var(--color-foreground), 0.45);
+  }
+
+  .afago-gallery__thumb.is-active .afago-gallery__thumb-button {
+    border-color: rgb(var(--color-foreground));
+  }
+
+  .afago-gallery__thumb-button img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .afago-gallery__thumb-badge {
+    position: absolute;
+    inset-block-end: 0.4rem;
+    inset-inline-end: 0.4rem;
+    z-index: 1;
+    display: flex;
+    padding: 0.3rem;
+    border-radius: 50%;
+    background: rgba(var(--color-background), 0.8);
+  }
+
+  .afago-gallery__thumb-badge svg {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+}

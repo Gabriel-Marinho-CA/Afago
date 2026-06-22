@@ -94,11 +94,17 @@ if (!customElements.get('afago-gallery')) {
 
       // Assinatura compatível com product-info.js: setActiveMedia(mediaId, scroll)
       setActiveMedia(mediaId, scroll) {
-        const target = this.markActive(mediaId);
-        if (!target) {
-          this.activateFirstVisible();
-          return;
+        let target = this.slides.find((slide) => slide.dataset.mediaId === mediaId);
+
+        // Se a mídia pedida não existe ou está oculta pelo filtro de cor
+        // (ex.: featured_media da variante com alt que não bate com a cor),
+        // cai na primeira imagem visível da cor selecionada.
+        if (!target || target.classList.contains('is-hidden')) {
+          target = this.firstVisibleSlide();
         }
+        if (!target) return;
+
+        this.markActive(target.dataset.mediaId);
 
         if (this.isMobile) {
           this.stage.scrollTo({
@@ -108,8 +114,12 @@ if (!customElements.get('afago-gallery')) {
         }
       }
 
+      firstVisibleSlide() {
+        return this.slides.find((slide) => !slide.classList.contains('is-hidden'));
+      }
+
       activateFirstVisible() {
-        const first = this.slides.find((slide) => !slide.classList.contains('is-hidden'));
+        const first = this.firstVisibleSlide();
         if (first) this.setActiveMedia(first.dataset.mediaId, false);
       }
 

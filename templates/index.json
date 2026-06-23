@@ -12,6 +12,15 @@
     "banner_hero_aXaABc": {
       "type": "banner-hero",
       "blocks": {
+        "banner_ifEVTx": {
+          "type": "banner",
+          "settings": {
+            "image_mobile": "shopify://shop_images/Grupo_140.png",
+            "image_desktop": "shopify://shop_images/Grupo_219.png",
+            "url": "",
+            "image_alt": "Imagem Hero"
+          }
+        },
         "banner_48WxEH": {
           "type": "banner",
           "settings": {
@@ -20,21 +29,11 @@
             "url": "shopify://collections/blusas",
             "image_alt": "É Copa na AFAGO"
           }
-        },
-        "banner_yJh6xY": {
-          "type": "banner",
-          "disabled": true,
-          "settings": {
-            "image_mobile": "shopify://shop_images/Grupo_140.png",
-            "image_desktop": "shopify://shop_images/Grupo_219.png",
-            "url": "",
-            "image_alt": "Imagem Hero"
-          }
         }
       },
       "block_order": [
-        "banner_48WxEH",
-        "banner_yJh6xY"
+        "banner_ifEVTx",
+        "banner_48WxEH"
       ],
       "name": "res - Banner Principal",
       "settings": {

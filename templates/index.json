@@ -15,8 +15,10 @@
         "banner_48WxEH": {
           "type": "banner",
           "settings": {
-            "url": "",
-            "image_alt": "Imagem Hero"
+            "image_mobile": "shopify://shop_images/copa-na-afago.webp",
+            "image_desktop": "shopify://shop_images/copa-na-afago.webp",
+            "url": "shopify://collections/blusas",
+            "image_alt": "É Copa na AFAGO"
           }
         },
         "banner_yJh6xY": {

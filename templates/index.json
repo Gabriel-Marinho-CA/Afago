@@ -12,15 +12,6 @@
     "banner_hero_aXaABc": {
       "type": "banner-hero",
       "blocks": {
-        "banner_yRmnYH": {
-          "type": "banner",
-          "settings": {
-            "image_mobile": "shopify://shop_images/copa-na-afago.webp",
-            "image_desktop": "shopify://shop_images/copa-na-afago.webp",
-            "url": "",
-            "image_alt": "Imagem Hero"
-          }
-        },
         "banner_yJh6xY": {
           "type": "banner",
           "settings": {
@@ -32,7 +23,6 @@
         }
       },
       "block_order": [
-        "banner_yRmnYH",
         "banner_yJh6xY"
       ],
       "name": "res - Banner Principal",

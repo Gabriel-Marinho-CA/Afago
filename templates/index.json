@@ -23,6 +23,7 @@
         },
         "banner_yJh6xY": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "image_mobile": "shopify://shop_images/Grupo_140.png",
             "image_desktop": "shopify://shop_images/Grupo_219.png",

@@ -23,6 +23,7 @@
         },
         "banner_48WxEH": {
           "type": "banner",
+          "disabled": true,
           "settings": {
             "image_mobile": "shopify://shop_images/copa-na-afago.webp",
             "image_desktop": "shopify://shop_images/copa-na-afago.webp",
@@ -48,10 +49,10 @@
       "type": "res-featured-collection",
       "name": "Vitrine Result",
       "settings": {
-        "title": "NEW TO SALE",
+        "title": "CALÇAS",
         "view_more_text": "Ver mais",
-        "view_more_url": "shopify://collections/blusas",
-        "collection": "blusas",
+        "view_more_url": "shopify://collections/calcas",
+        "collection": "calcas",
         "product_list": [],
         "show_button": true,
         "add_to_cart": true,

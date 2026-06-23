@@ -85,9 +85,27 @@
             "show_card": true,
             "image_desktop": "shopify://shop_images/e72aeccf986322c0e8ce8aafd65536a79a342852.png",
             "image_mobile": "shopify://shop_images/e72aeccf986322c0e8ce8aafd65536a79a342852.png",
+            "card_link": "shopify://collections/calcas",
+            "show_title": true,
+            "title": "CALÇAS",
+            "title_font_size_desktop": 80,
+            "title_font_size_mobile": 30,
+            "title_font_weight": 300,
+            "title_letter_spacing": 17,
+            "title_color": "#FFFFFF",
+            "title_alignment_desktop": "center",
+            "title_alignment_mobile": "center"
+          }
+        },
+        "category_card_THyrci": {
+          "type": "category_card",
+          "settings": {
+            "show_card": true,
+            "image_desktop": "shopify://shop_images/a18adccc222fde566c86101ed08a9dfacc3d4e53.png",
+            "image_mobile": "shopify://shop_images/a18adccc222fde566c86101ed08a9dfacc3d4e53_8b695368-b24a-45c2-9b3f-dce4d74e7165.png",
             "card_link": "",
             "show_title": true,
-            "title": "CALÇA",
+            "title": "BLUSAS",
             "title_font_size_desktop": 80,
             "title_font_size_mobile": 30,
             "title_font_weight": 300,
@@ -132,31 +150,13 @@
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"
           }
-        },
-        "category_card_THyrci": {
-          "type": "category_card",
-          "settings": {
-            "show_card": true,
-            "image_desktop": "shopify://shop_images/a18adccc222fde566c86101ed08a9dfacc3d4e53.png",
-            "image_mobile": "shopify://shop_images/a18adccc222fde566c86101ed08a9dfacc3d4e53_8b695368-b24a-45c2-9b3f-dce4d74e7165.png",
-            "card_link": "",
-            "show_title": true,
-            "title": "BLUSAS",
-            "title_font_size_desktop": 80,
-            "title_font_size_mobile": 30,
-            "title_font_weight": 300,
-            "title_letter_spacing": 17,
-            "title_color": "#ffffff",
-            "title_alignment_desktop": "center",
-            "title_alignment_mobile": "center"
-          }
         }
       },
       "block_order": [
         "category_card_iL4njr",
+        "category_card_THyrci",
         "category_card_F6Dd7Y",
-        "category_card_Yn7YXx",
-        "category_card_THyrci"
+        "category_card_Yn7YXx"
       ],
       "name": "Categorias",
       "settings": {
@@ -176,7 +176,7 @@
       "type": "res-featured-collection",
       "name": "Vitrine Result",
       "settings": {
-        "title": "NEW TO SALE",
+        "title": "BLUSAS",
         "view_more_text": "Ver mais",
         "view_more_url": "",
         "collection": "frontpage",
@@ -215,6 +215,24 @@
             "card_link": "",
             "show_title": true,
             "title": "INFANTIL",
+            "title_font_size_desktop": 40,
+            "title_font_size_mobile": 17,
+            "title_font_weight": 400,
+            "title_letter_spacing": 4,
+            "title_color": "#ffffff",
+            "title_alignment_desktop": "center",
+            "title_alignment_mobile": "center"
+          }
+        },
+        "category_card_i9iaBQ": {
+          "type": "category_card",
+          "settings": {
+            "show_card": true,
+            "image_desktop": "shopify://shop_images/d9a4a46c048ee224dedb61e22e6a4435663b53eb.png",
+            "image_mobile": "shopify://shop_images/d9a4a46c048ee224dedb61e22e6a4435663b53eb_6033f5c1-e161-41b0-b674-1f05da273cb0.png",
+            "card_link": "",
+            "show_title": true,
+            "title": "ADULTO",
             "title_font_size_desktop": 40,
             "title_font_size_mobile": 17,
             "title_font_weight": 400,
@@ -263,6 +281,7 @@
       },
       "block_order": [
         "category_card_PB6tmg",
+        "category_card_i9iaBQ",
         "category_card_xAxnQR",
         "category_card_94jLaX"
       ],

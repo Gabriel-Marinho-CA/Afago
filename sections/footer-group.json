@@ -14,6 +14,13 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_DQWLxj": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Amarelo",
+            "color_value": "#FFFF00"
+          }
+        },
         "cor_DhwbGe": {
           "type": "cor",
           "settings": {
@@ -21,11 +28,18 @@
             "color_value": "#eb13b9"
           }
         },
+        "cor_Q8Qyyj": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_KFMnYE": {
           "type": "cor",
           "settings": {
             "color_name": "Vinho",
-            "color_value": "#3C2025"
+            "color_value": "#3c2025"
           }
         },
         "cor_pJKh9w": {
@@ -49,6 +63,13 @@
             "color_value": "#db9254"
           }
         },
+        "cor_Ve3Yx7": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_rcU9yc": {
           "type": "cor",
           "settings": {
@@ -65,11 +86,14 @@
         }
       },
       "block_order": [
+        "cor_DQWLxj",
         "cor_DhwbGe",
+        "cor_Q8Qyyj",
         "cor_KFMnYE",
         "cor_pJKh9w",
         "cor_Ai6WPR",
         "cor_4UyKzA",
+        "cor_Ve3Yx7",
         "cor_rcU9yc",
         "cor_YtnwyC"
       ],

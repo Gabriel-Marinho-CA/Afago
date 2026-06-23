@@ -12,6 +12,13 @@
     "banner_hero_aXaABc": {
       "type": "banner-hero",
       "blocks": {
+        "banner_48WxEH": {
+          "type": "banner",
+          "settings": {
+            "url": "",
+            "image_alt": "Imagem Hero"
+          }
+        },
         "banner_yJh6xY": {
           "type": "banner",
           "settings": {
@@ -23,6 +30,7 @@
         }
       },
       "block_order": [
+        "banner_48WxEH",
         "banner_yJh6xY"
       ],
       "name": "res - Banner Principal",

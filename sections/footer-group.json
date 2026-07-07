@@ -14,6 +14,20 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_6hhFMk": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Marrom",
+            "color_value": "#710B0B"
+          }
+        },
+        "cor_t3Fn4g": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_XMHD7M": {
           "type": "cor",
           "settings": {
@@ -184,6 +198,8 @@
         }
       },
       "block_order": [
+        "cor_6hhFMk",
+        "cor_t3Fn4g",
         "cor_XMHD7M",
         "cor_tdtCJc",
         "cor_7GAKzJ",

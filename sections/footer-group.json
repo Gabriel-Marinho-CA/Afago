@@ -24,8 +24,8 @@
         "cor_t3Fn4g": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Manteiga",
+            "color_value": "#DFDA92"
           }
         },
         "cor_XMHD7M": {
@@ -117,6 +117,13 @@
           "settings": {
             "color_name": "Cashemire Vermelho",
             "color_value": "#ca1a1a"
+          }
+        },
+        "cor_pyAH4r": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
           }
         },
         "cor_JxXwgc": {
@@ -220,6 +227,7 @@
         "cor_GjUqga",
         "cor_TfUjCP",
         "cor_JnDKLh",
+        "cor_pyAH4r",
         "cor_JxXwgc",
         "cor_f6JL7N",
         "cor_DQWLxj",

@@ -14,6 +14,14 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_WcBYAH": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Jeans",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-07_at_15.47.53.jpg"
+          }
+        },
         "cor_6hhFMk": {
           "type": "cor",
           "settings": {
@@ -237,6 +245,7 @@
         }
       },
       "block_order": [
+        "cor_WcBYAH",
         "cor_6hhFMk",
         "cor_t3Fn4g",
         "cor_XMHD7M",

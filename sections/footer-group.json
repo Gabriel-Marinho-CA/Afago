@@ -63,6 +63,13 @@
             "color_value": "#111111"
           }
         },
+        "cor_ABBy3t": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Rosa",
+            "color_value": "#DE38AC"
+          }
+        },
         "cor_zaqeMb": {
           "type": "cor",
           "settings": {
@@ -205,6 +212,7 @@
         "cor_7GAKzJ",
         "cor_pNapL8",
         "cor_dm4KDK",
+        "cor_ABBy3t",
         "cor_zaqeMb",
         "cor_QDGmPM",
         "cor_FRVgR8",

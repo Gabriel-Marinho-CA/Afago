@@ -14,6 +14,13 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_EXCTpy": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Lilás",
+            "color_value": "#D5B3DA"
+          }
+        },
         "cor_WcBYAH": {
           "type": "cor",
           "settings": {
@@ -119,6 +126,13 @@
             "color_name": "Paisley fundo Off",
             "color_value": "#111111",
             "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-07_at_15.49.19.jpg"
+          }
+        },
+        "cor_CLAymE": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
           }
         },
         "cor_HgAjCL": {
@@ -233,8 +247,8 @@
         "cor_phzz84": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Amarelo",
+            "color_value": "#EBE52A"
           }
         },
         "cor_YtnwyC": {
@@ -246,6 +260,7 @@
         }
       },
       "block_order": [
+        "cor_EXCTpy",
         "cor_WcBYAH",
         "cor_6hhFMk",
         "cor_t3Fn4g",
@@ -261,6 +276,7 @@
         "cor_GjUqga",
         "cor_89jk47",
         "cor_4pBWhn",
+        "cor_CLAymE",
         "cor_HgAjCL",
         "cor_TfUjCP",
         "cor_JnDKLh",

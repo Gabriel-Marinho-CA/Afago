@@ -119,6 +119,13 @@
             "color_value": "#111111"
           }
         },
+        "cor_HgAjCL": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_TfUjCP": {
           "type": "cor",
           "settings": {
@@ -143,8 +150,8 @@
         "cor_JxXwgc": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Off White",
+            "color_value": "#F9F9F9"
           }
         },
         "cor_f6JL7N": {
@@ -217,6 +224,20 @@
             "color_value": "#ffdc00"
           }
         },
+        "cor_A34BFn": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_phzz84": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_YtnwyC": {
           "type": "cor",
           "settings": {
@@ -241,6 +262,7 @@
         "cor_GjUqga",
         "cor_89jk47",
         "cor_4pBWhn",
+        "cor_HgAjCL",
         "cor_TfUjCP",
         "cor_JnDKLh",
         "cor_pyAH4r",
@@ -255,6 +277,8 @@
         "cor_4UyKzA",
         "cor_Ve3Yx7",
         "cor_rcU9yc",
+        "cor_A34BFn",
+        "cor_phzz84",
         "cor_YtnwyC"
       ],
       "name": "Cores de Variantes",

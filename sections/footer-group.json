@@ -88,7 +88,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Azul",
-            "color_value": "#3625EA"
+            "color_value": "#3625ea"
           }
         },
         "cor_rkDXyM": {
@@ -137,7 +137,8 @@
           "type": "cor",
           "settings": {
             "color_name": "Cashemire Vermelho",
-            "color_value": "#ca1a1a"
+            "color_value": "#ca1a1a",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-07_at_15.33.12.jpg"
           }
         },
         "cor_pyAH4r": {

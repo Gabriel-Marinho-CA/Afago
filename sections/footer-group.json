@@ -150,8 +150,9 @@
         "cor_JxXwgc": {
           "type": "cor",
           "settings": {
-            "color_name": "Off White",
-            "color_value": "#F9F9F9"
+            "color_name": "Paisley fundo Marrom",
+            "color_value": "#f9f9f9",
+            "color_image": "shopify://shop_images/estampa_paisley_350kb.jpg"
           }
         },
         "cor_f6JL7N": {
@@ -214,7 +215,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Conhaque",
-            "color_value": "#DB8D59"
+            "color_value": "#db8d59"
           }
         },
         "cor_rcU9yc": {

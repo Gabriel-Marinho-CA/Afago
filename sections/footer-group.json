@@ -91,13 +91,6 @@
             "color_value": "#3625ea"
           }
         },
-        "cor_rkDXyM": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
-          }
-        },
         "cor_GjUqga": {
           "type": "cor",
           "settings": {
@@ -139,13 +132,6 @@
             "color_name": "Cashemire Vermelho",
             "color_value": "#ca1a1a",
             "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-07_at_15.33.12.jpg"
-          }
-        },
-        "cor_pyAH4r": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
           }
         },
         "cor_JxXwgc": {
@@ -235,13 +221,6 @@
             "color_value": "#ffdc00"
           }
         },
-        "cor_A34BFn": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
-          }
-        },
         "cor_phzz84": {
           "type": "cor",
           "settings": {
@@ -269,14 +248,12 @@
         "cor_zaqeMb",
         "cor_QDGmPM",
         "cor_FRVgR8",
-        "cor_rkDXyM",
         "cor_GjUqga",
         "cor_89jk47",
         "cor_4pBWhn",
         "cor_HgAjCL",
         "cor_TfUjCP",
         "cor_JnDKLh",
-        "cor_pyAH4r",
         "cor_JxXwgc",
         "cor_f6JL7N",
         "cor_DQWLxj",
@@ -289,7 +266,6 @@
         "cor_4UyKzA",
         "cor_Ve3Yx7",
         "cor_rcU9yc",
-        "cor_A34BFn",
         "cor_phzz84",
         "cor_YtnwyC"
       ],

@@ -116,8 +116,9 @@
         "cor_4pBWhn": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Paisley fundo Off",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-07_at_15.49.19.jpg"
           }
         },
         "cor_HgAjCL": {

@@ -172,8 +172,9 @@
         "cor_DhwbGe": {
           "type": "cor",
           "settings": {
-            "color_name": "Estampado Rosa Amarela",
-            "color_value": "#eb13b9"
+            "color_name": "Paisley com Azul",
+            "color_value": "#eb13b9",
+            "color_image": "shopify://shop_images/991A3070.jpg"
           }
         },
         "cor_Q8Qyyj": {

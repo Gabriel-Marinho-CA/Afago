@@ -14,11 +14,67 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_pNapL8": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Azul Marinho",
+            "color_value": "#0C0E8E"
+          }
+        },
+        "cor_dm4KDK": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_zaqeMb": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_QDGmPM": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_FRVgR8": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_rkDXyM": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_GjUqga": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_TfUjCP": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Azul Claro",
+            "color_value": "#A8CBD2"
+          }
+        },
         "cor_JnDKLh": {
           "type": "cor",
           "settings": {
             "color_name": "Cashemire Vermelho",
-            "color_value": "#CA1A1A"
+            "color_value": "#ca1a1a"
           }
         },
         "cor_JxXwgc": {
@@ -107,6 +163,14 @@
         }
       },
       "block_order": [
+        "cor_pNapL8",
+        "cor_dm4KDK",
+        "cor_zaqeMb",
+        "cor_QDGmPM",
+        "cor_FRVgR8",
+        "cor_rkDXyM",
+        "cor_GjUqga",
+        "cor_TfUjCP",
         "cor_JnDKLh",
         "cor_JxXwgc",
         "cor_f6JL7N",

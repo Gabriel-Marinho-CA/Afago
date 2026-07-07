@@ -14,6 +14,13 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_7GAKzJ": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Branco",
+            "color_value": "#FFFFFF"
+          }
+        },
         "cor_pNapL8": {
           "type": "cor",
           "settings": {
@@ -163,6 +170,7 @@
         }
       },
       "block_order": [
+        "cor_7GAKzJ",
         "cor_pNapL8",
         "cor_dm4KDK",
         "cor_zaqeMb",

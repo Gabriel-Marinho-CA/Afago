@@ -14,11 +14,70 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_iaVhEC": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Azul bebê",
+            "color_value": "#CADCE0",
+            "color_image": "shopify://shop_images/download_2.jpg"
+          }
+        },
+        "cor_4JyqrQ": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_z64HrE": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_VMNF64": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Marrom",
+            "color_value": "#654321",
+            "color_image": "shopify://shop_images/24_30.jpg"
+          }
+        },
+        "cor_VCFDDD": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_wijqyY": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_Pq4hz9": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Estampado rosa coração",
+            "color_value": "#DB6594",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-08_at_12.10.04.jpg"
+          }
+        },
+        "cor_b6MbDG": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_EXCTpy": {
           "type": "cor",
           "settings": {
             "color_name": "Lilás",
-            "color_value": "#D5B3DA"
+            "color_value": "#d5b3da"
           }
         },
         "cor_WcBYAH": {
@@ -147,7 +206,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Lavanda",
-            "color_value": "#D1BDD5"
+            "color_value": "#d1bdd5"
           }
         },
         "cor_TfUjCP": {
@@ -256,7 +315,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Amarelo",
-            "color_value": "#EBE52A"
+            "color_value": "#ebe52a"
           }
         },
         "cor_YtnwyC": {
@@ -268,6 +327,14 @@
         }
       },
       "block_order": [
+        "cor_iaVhEC",
+        "cor_4JyqrQ",
+        "cor_z64HrE",
+        "cor_VMNF64",
+        "cor_VCFDDD",
+        "cor_wijqyY",
+        "cor_Pq4hz9",
+        "cor_b6MbDG",
         "cor_EXCTpy",
         "cor_WcBYAH",
         "cor_6hhFMk",

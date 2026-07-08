@@ -14,6 +14,22 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_pVngUy": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Verone",
+            "color_value": "#E0B1D9",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-01-08_at_15.35.48_1.jpg"
+          }
+        },
+        "cor_7bBQGd": {
+          "type": "cor",
+          "settings": {
+            "color_name": "",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-01-19_at_13.20.41.jpg"
+          }
+        },
         "cor_iaVhEC": {
           "type": "cor",
           "settings": {
@@ -22,18 +38,12 @@
             "color_image": "shopify://shop_images/download_2.jpg"
           }
         },
-        "cor_4JyqrQ": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
-          }
-        },
         "cor_z64HrE": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Paisley Copa",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/ChatGPT_Image_8_de_jul._de_2026_15_50_11.png"
           }
         },
         "cor_VMNF64": {
@@ -327,8 +337,9 @@
         }
       },
       "block_order": [
+        "cor_pVngUy",
+        "cor_7bBQGd",
         "cor_iaVhEC",
-        "cor_4JyqrQ",
         "cor_z64HrE",
         "cor_VMNF64",
         "cor_VCFDDD",

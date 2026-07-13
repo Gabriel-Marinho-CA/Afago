@@ -14,11 +14,19 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_zbBgBr": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Estampado Floral Colorido",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-13_at_15.26.37.jpg"
+          }
+        },
         "cor_pVngUy": {
           "type": "cor",
           "settings": {
             "color_name": "Verone",
-            "color_value": "#E0B1D9",
+            "color_value": "#e0b1d9",
             "color_image": "shopify://shop_images/WhatsApp_Image_2026-01-08_at_15.35.48_1.jpg"
           }
         },
@@ -34,27 +42,43 @@
           "type": "cor",
           "settings": {
             "color_name": "Azul bebê",
-            "color_value": "#CADCE0",
+            "color_value": "#cadce0",
             "color_image": "shopify://shop_images/download_2.jpg"
           }
         },
         "cor_z64HrE": {
           "type": "cor",
           "settings": {
-            "color_name": "Paisley Copa",
+            "color_name": "Pasley Copa",
             "color_value": "#111111",
             "color_image": "shopify://shop_images/ChatGPT_Image_8_de_jul._de_2026_15_50_11.png"
           }
         },
-        "cor_VMNF64": {
+        "cor_VCFDDD": {
           "type": "cor",
           "settings": {
-            "color_name": "Marrom",
-            "color_value": "#654321",
-            "color_image": "shopify://shop_images/24_30.jpg"
+            "color_name": "Off white",
+            "color_value": "#FDFDFD",
+            "color_image": "shopify://shop_images/download_3.jpg"
           }
         },
-        "cor_VCFDDD": {
+        "cor_TVA8ky": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Banoffe",
+            "color_value": "#DEE141",
+            "color_image": "shopify://shop_images/download_5.jpg"
+          }
+        },
+        "cor_qt93UW": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Marron",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/download_6_cd3f13f2-0104-4842-9175-0947c9d1d83e.jpg"
+          }
+        },
+        "cor_jgczCe": {
           "type": "cor",
           "settings": {
             "color_name": "Preto",
@@ -64,15 +88,16 @@
         "cor_wijqyY": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Azul Marinho",
+            "color_value": "#03196E",
+            "color_image": "shopify://shop_images/download_5.jpg"
           }
         },
         "cor_Pq4hz9": {
           "type": "cor",
           "settings": {
             "color_name": "Estampado rosa coração",
-            "color_value": "#DB6594",
+            "color_value": "#db6594",
             "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-08_at_12.10.04.jpg"
           }
         },
@@ -337,12 +362,15 @@
         }
       },
       "block_order": [
+        "cor_zbBgBr",
         "cor_pVngUy",
         "cor_7bBQGd",
         "cor_iaVhEC",
         "cor_z64HrE",
-        "cor_VMNF64",
         "cor_VCFDDD",
+        "cor_TVA8ky",
+        "cor_qt93UW",
+        "cor_jgczCe",
         "cor_wijqyY",
         "cor_Pq4hz9",
         "cor_b6MbDG",

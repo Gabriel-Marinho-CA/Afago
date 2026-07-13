@@ -49,10 +49,10 @@
       "type": "res-featured-collection",
       "name": "Vitrine Result",
       "settings": {
-        "title": "CALÇAS",
+        "title": "NOVIDADES DA SEMANA",
         "view_more_text": "Ver mais",
-        "view_more_url": "shopify://collections/calca",
-        "collection": "calca",
+        "view_more_url": "shopify://collections/novidades-da-semana",
+        "collection": "novidades-da-semana",
         "product_list": [],
         "show_button": true,
         "add_to_cart": true,
@@ -92,7 +92,7 @@
             "title_font_size_mobile": 30,
             "title_font_weight": 300,
             "title_letter_spacing": 17,
-            "title_color": "#FFFFFF",
+            "title_color": "#ffffff",
             "title_alignment_desktop": "center",
             "title_alignment_mobile": "center"
           }
@@ -205,86 +205,6 @@
     },
     "res_categories_slider_rGBJqR": {
       "type": "res-categories-slider",
-      "blocks": {
-        "category_card_PB6tmg": {
-          "type": "category_card",
-          "settings": {
-            "show_card": true,
-            "image_desktop": "shopify://shop_images/d9a4a46c048ee224dedb61e22e6a4435663b53eb.png",
-            "image_mobile": "shopify://shop_images/d9a4a46c048ee224dedb61e22e6a4435663b53eb_6033f5c1-e161-41b0-b674-1f05da273cb0.png",
-            "card_link": "",
-            "show_title": true,
-            "title": "INFANTIL",
-            "title_font_size_desktop": 40,
-            "title_font_size_mobile": 17,
-            "title_font_weight": 400,
-            "title_letter_spacing": 4,
-            "title_color": "#ffffff",
-            "title_alignment_desktop": "center",
-            "title_alignment_mobile": "center"
-          }
-        },
-        "category_card_i9iaBQ": {
-          "type": "category_card",
-          "settings": {
-            "show_card": true,
-            "image_desktop": "shopify://shop_images/d9a4a46c048ee224dedb61e22e6a4435663b53eb.png",
-            "image_mobile": "shopify://shop_images/d9a4a46c048ee224dedb61e22e6a4435663b53eb_6033f5c1-e161-41b0-b674-1f05da273cb0.png",
-            "card_link": "",
-            "show_title": true,
-            "title": "ADULTO",
-            "title_font_size_desktop": 40,
-            "title_font_size_mobile": 17,
-            "title_font_weight": 400,
-            "title_letter_spacing": 4,
-            "title_color": "#ffffff",
-            "title_alignment_desktop": "center",
-            "title_alignment_mobile": "center"
-          }
-        },
-        "category_card_xAxnQR": {
-          "type": "category_card",
-          "settings": {
-            "show_card": true,
-            "image_desktop": "shopify://shop_images/eddd835abf2b2977814b39a4d0e8136078deb64b.png",
-            "image_mobile": "shopify://shop_images/eddd835abf2b2977814b39a4d0e8136078deb64b_57521d3a-5c1a-4a66-9544-8fa1b01ef5d2.png",
-            "card_link": "",
-            "show_title": true,
-            "title": "ACESSÓRIOS",
-            "title_font_size_desktop": 40,
-            "title_font_size_mobile": 17,
-            "title_font_weight": 400,
-            "title_letter_spacing": 4,
-            "title_color": "#ffffff",
-            "title_alignment_desktop": "center",
-            "title_alignment_mobile": "center"
-          }
-        },
-        "category_card_94jLaX": {
-          "type": "category_card",
-          "settings": {
-            "show_card": true,
-            "image_desktop": "shopify://shop_images/281cab1a30bf75fa23c080094da8ac67775b9e29.png",
-            "image_mobile": "shopify://shop_images/281cab1a30bf75fa23c080094da8ac67775b9e29_628faee1-8acf-43ab-9c17-0021584cb7d6.png",
-            "card_link": "",
-            "show_title": true,
-            "title": "COLEÇÃO",
-            "title_font_size_desktop": 40,
-            "title_font_size_mobile": 17,
-            "title_font_weight": 400,
-            "title_letter_spacing": 4,
-            "title_color": "#ffffff",
-            "title_alignment_desktop": "center",
-            "title_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "category_card_PB6tmg",
-        "category_card_i9iaBQ",
-        "category_card_xAxnQR",
-        "category_card_94jLaX"
-      ],
       "name": "Categorias Slider",
       "settings": {
         "show_button": false,

@@ -19,7 +19,7 @@
           "settings": {
             "color_name": "Estampado Floral Colorido",
             "color_value": "#111111",
-            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-13_at_15.26.37.jpg"
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-13_at_15.26.37_1.jpg"
           }
         },
         "cor_pVngUy": {
@@ -58,7 +58,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Off white",
-            "color_value": "#FDFDFD",
+            "color_value": "#fdfdfd",
             "color_image": "shopify://shop_images/download_3.jpg"
           }
         },
@@ -66,7 +66,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Banoffe",
-            "color_value": "#DEE141",
+            "color_value": "#dee141",
             "color_image": "shopify://shop_images/download_5.jpg"
           }
         },
@@ -81,16 +81,16 @@
         "cor_jgczCe": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Rosa Bebe",
+            "color_value": "#FFD3F8"
           }
         },
         "cor_wijqyY": {
           "type": "cor",
           "settings": {
             "color_name": "Azul Marinho",
-            "color_value": "#03196E",
-            "color_image": "shopify://shop_images/download_5.jpg"
+            "color_value": "#03196e",
+            "color_image": "shopify://shop_images/051C54_-_Blue.jpg"
           }
         },
         "cor_Pq4hz9": {
@@ -101,18 +101,26 @@
             "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-08_at_12.10.04.jpg"
           }
         },
+        "cor_jHFHPh": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Marron Com Bolas Bege",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-13_at_15.35.01_ca2e1028-1928-4574-9b01-4c14ca3a8ecb.jpg"
+          }
+        },
         "cor_b6MbDG": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Verde",
+            "color_value": "#64663A"
           }
         },
         "cor_EXCTpy": {
           "type": "cor",
           "settings": {
-            "color_name": "Lilás",
-            "color_value": "#d5b3da"
+            "color_name": "Lilas",
+            "color_value": "#CFAAD5"
           }
         },
         "cor_WcBYAH": {
@@ -133,8 +141,8 @@
         "cor_t3Fn4g": {
           "type": "cor",
           "settings": {
-            "color_name": "Manteiga",
-            "color_value": "#dfda92"
+            "color_name": "Amarelo Manteiga",
+            "color_value": "#EDEAB2"
           }
         },
         "cor_XMHD7M": {
@@ -183,15 +191,16 @@
         "cor_ABBy3t": {
           "type": "cor",
           "settings": {
-            "color_name": "Rosa",
-            "color_value": "#de38ac"
+            "color_name": "Pink Escuro",
+            "color_value": "#E136AE"
           }
         },
         "cor_zaqeMb": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Cashemire Estampado",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-13_at_15.35.30.jpg"
           }
         },
         "cor_QDGmPM": {
@@ -205,21 +214,30 @@
           "type": "cor",
           "settings": {
             "color_name": "Azul",
-            "color_value": "#3625ea"
+            "color_value": "#6EE6F8"
+          }
+        },
+        "cor_Q7QfcH": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Cashemire Colorido Fundo Bege",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-13_at_15.26.29_1.jpg"
           }
         },
         "cor_GjUqga": {
           "type": "cor",
           "settings": {
             "color_name": "Bege",
-            "color_value": "#d8b33a"
+            "color_value": "#E1C97C"
           }
         },
         "cor_89jk47": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Pucci Mousse",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-01-08_at_15.35.48.jpg"
           }
         },
         "cor_4pBWhn": {
@@ -233,8 +251,9 @@
         "cor_CLAymE": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Estampado Coracao",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2025-12-16_at_12.13.21_1_0831d818-869a-461b-8b41-1655ef06d140.jpg"
           }
         },
         "cor_HgAjCL": {
@@ -278,7 +297,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Banoffe",
-            "color_value": "#dab52d"
+            "color_value": "#DEE141"
           }
         },
         "cor_DhwbGe": {
@@ -292,7 +311,7 @@
         "cor_Q8Qyyj": {
           "type": "cor",
           "settings": {
-            "color_name": "Bege",
+            "color_name": "Rosa Escuro",
             "color_value": "#c70389"
           }
         },
@@ -328,8 +347,8 @@
         "cor_4UyKzA": {
           "type": "cor",
           "settings": {
-            "color_name": "Marrom",
-            "color_value": "#cf7121"
+            "color_name": "Rose",
+            "color_value": "#EAD7ED"
           }
         },
         "cor_Ve3Yx7": {
@@ -342,8 +361,8 @@
         "cor_rcU9yc": {
           "type": "cor",
           "settings": {
-            "color_name": "Bronze",
-            "color_value": "#ffdc00"
+            "color_name": "Azul Claro",
+            "color_value": "#8DEDFA"
           }
         },
         "cor_phzz84": {
@@ -356,8 +375,8 @@
         "cor_YtnwyC": {
           "type": "cor",
           "settings": {
-            "color_name": "Estampado Rosa Verde",
-            "color_value": "#00ff59"
+            "color_name": "Verde Abacate",
+            "color_value": "#ABE579"
           }
         }
       },
@@ -373,6 +392,7 @@
         "cor_jgczCe",
         "cor_wijqyY",
         "cor_Pq4hz9",
+        "cor_jHFHPh",
         "cor_b6MbDG",
         "cor_EXCTpy",
         "cor_WcBYAH",
@@ -388,6 +408,7 @@
         "cor_zaqeMb",
         "cor_QDGmPM",
         "cor_FRVgR8",
+        "cor_Q7QfcH",
         "cor_GjUqga",
         "cor_89jk47",
         "cor_4pBWhn",

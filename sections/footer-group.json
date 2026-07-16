@@ -14,6 +14,35 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_4FMCBJ": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_haeafL": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Coracao Rosa",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2025-12-17_at_10.21.42.jpg"
+          }
+        },
+        "cor_ET4Unb": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Terracota",
+            "color_value": "#C78915"
+          }
+        },
+        "cor_3Vjpt3": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_zbBgBr": {
           "type": "cor",
           "settings": {
@@ -82,7 +111,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Rosa Bebe",
-            "color_value": "#FFD3F8"
+            "color_value": "#ffd3f8"
           }
         },
         "cor_wijqyY": {
@@ -113,14 +142,14 @@
           "type": "cor",
           "settings": {
             "color_name": "Verde",
-            "color_value": "#64663A"
+            "color_value": "#64663a"
           }
         },
         "cor_EXCTpy": {
           "type": "cor",
           "settings": {
             "color_name": "Lilas",
-            "color_value": "#CFAAD5"
+            "color_value": "#cfaad5"
           }
         },
         "cor_WcBYAH": {
@@ -142,7 +171,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Amarelo Manteiga",
-            "color_value": "#EDEAB2"
+            "color_value": "#edeab2"
           }
         },
         "cor_XMHD7M": {
@@ -192,7 +221,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Pink Escuro",
-            "color_value": "#E136AE"
+            "color_value": "#e136ae"
           }
         },
         "cor_zaqeMb": {
@@ -214,7 +243,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Azul",
-            "color_value": "#6EE6F8"
+            "color_value": "#6ee6f8"
           }
         },
         "cor_Q7QfcH": {
@@ -229,7 +258,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Bege",
-            "color_value": "#E1C97C"
+            "color_value": "#e1c97c"
           }
         },
         "cor_89jk47": {
@@ -297,7 +326,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Banoffe",
-            "color_value": "#DEE141"
+            "color_value": "#dee141"
           }
         },
         "cor_DhwbGe": {
@@ -348,7 +377,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Rose",
-            "color_value": "#EAD7ED"
+            "color_value": "#ead7ed"
           }
         },
         "cor_Ve3Yx7": {
@@ -362,7 +391,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Azul Claro",
-            "color_value": "#8DEDFA"
+            "color_value": "#8dedfa"
           }
         },
         "cor_phzz84": {
@@ -376,11 +405,15 @@
           "type": "cor",
           "settings": {
             "color_name": "Verde Abacate",
-            "color_value": "#ABE579"
+            "color_value": "#abe579"
           }
         }
       },
       "block_order": [
+        "cor_4FMCBJ",
+        "cor_haeafL",
+        "cor_ET4Unb",
+        "cor_3Vjpt3",
         "cor_zbBgBr",
         "cor_pVngUy",
         "cor_7bBQGd",

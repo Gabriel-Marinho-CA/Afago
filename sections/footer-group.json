@@ -17,8 +17,8 @@
         "cor_4FMCBJ": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Bege Bordado Coracao Pequeno",
+            "color_value": "#EAE8C0"
           }
         },
         "cor_haeafL": {
@@ -33,14 +33,7 @@
           "type": "cor",
           "settings": {
             "color_name": "Terracota",
-            "color_value": "#C78915"
-          }
-        },
-        "cor_3Vjpt3": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_value": "#c78915"
           }
         },
         "cor_zbBgBr": {
@@ -160,6 +153,13 @@
             "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-07_at_15.47.53.jpg"
           }
         },
+        "cor_W994jr": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_6hhFMk": {
           "type": "cor",
           "settings": {
@@ -172,20 +172,6 @@
           "settings": {
             "color_name": "Amarelo Manteiga",
             "color_value": "#edeab2"
-          }
-        },
-        "cor_XMHD7M": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Off White",
-            "color_value": "#fafafa"
-          }
-        },
-        "cor_tdtCJc": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
           }
         },
         "cor_7GAKzJ": {
@@ -201,13 +187,6 @@
             "color_name": "Listrado Azul",
             "color_value": "#111111",
             "color_image": "shopify://shop_images/WhatsApp_Image_2026-05-04_at_16.57.21.jpg"
-          }
-        },
-        "cor_pNapL8": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Azul Marinho",
-            "color_value": "#0c0e8e"
           }
         },
         "cor_dm4KDK": {
@@ -315,13 +294,6 @@
             "color_image": "shopify://shop_images/estampa_paisley_350kb.jpg"
           }
         },
-        "cor_f6JL7N": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Azul Marinho",
-            "color_value": "#000080"
-          }
-        },
         "cor_DQWLxj": {
           "type": "cor",
           "settings": {
@@ -413,7 +385,6 @@
         "cor_4FMCBJ",
         "cor_haeafL",
         "cor_ET4Unb",
-        "cor_3Vjpt3",
         "cor_zbBgBr",
         "cor_pVngUy",
         "cor_7bBQGd",
@@ -429,13 +400,11 @@
         "cor_b6MbDG",
         "cor_EXCTpy",
         "cor_WcBYAH",
+        "cor_W994jr",
         "cor_6hhFMk",
         "cor_t3Fn4g",
-        "cor_XMHD7M",
-        "cor_tdtCJc",
         "cor_7GAKzJ",
         "cor_fFiC7e",
-        "cor_pNapL8",
         "cor_dm4KDK",
         "cor_ABBy3t",
         "cor_zaqeMb",
@@ -450,7 +419,6 @@
         "cor_TfUjCP",
         "cor_JnDKLh",
         "cor_JxXwgc",
-        "cor_f6JL7N",
         "cor_DQWLxj",
         "cor_DhwbGe",
         "cor_Q8Qyyj",

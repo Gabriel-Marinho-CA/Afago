@@ -14,11 +14,26 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_MDjQkB": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_mWeaiL": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Xadrez",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/download_8.jpg"
+          }
+        },
         "cor_4FMCBJ": {
           "type": "cor",
           "settings": {
             "color_name": "Bege Bordado Coracao Pequeno",
-            "color_value": "#EAE8C0"
+            "color_value": "#eae8c0"
           }
         },
         "cor_haeafL": {
@@ -382,6 +397,8 @@
         }
       },
       "block_order": [
+        "cor_MDjQkB",
+        "cor_mWeaiL",
         "cor_4FMCBJ",
         "cor_haeafL",
         "cor_ET4Unb",

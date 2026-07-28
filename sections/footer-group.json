@@ -14,6 +14,29 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_eUpbiK": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_jwbUNG": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Poa Vinho",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/download_10.jpg"
+          }
+        },
+        "cor_GBKYyJ": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Poa Preto",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/download_9.jpg"
+          }
+        },
         "cor_GzyjMw": {
           "type": "cor",
           "settings": {
@@ -320,7 +343,7 @@
         "cor_JxXwgc": {
           "type": "cor",
           "settings": {
-            "color_name": "Paisley fundo Marrom",
+            "color_name": "Pasley Fundo Marrom",
             "color_value": "#f9f9f9",
             "color_image": "shopify://shop_images/estampa_paisley_350kb.jpg"
           }
@@ -427,6 +450,9 @@
         }
       },
       "block_order": [
+        "cor_eUpbiK",
+        "cor_jwbUNG",
+        "cor_GBKYyJ",
         "cor_GzyjMw",
         "cor_MDjQkB",
         "cor_mWeaiL",

@@ -14,11 +14,20 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_GzyjMw": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Cashemire Azul Fundo Bege",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-28_at_14.09.13.jpg"
+          }
+        },
         "cor_MDjQkB": {
           "type": "cor",
           "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
+            "color_name": "Pasley Fundo Off",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsApp_Image_2026-07-28_at_14.38.47.jpg"
           }
         },
         "cor_mWeaiL": {
@@ -27,6 +36,13 @@
             "color_name": "Xadrez",
             "color_value": "#111111",
             "color_image": "shopify://shop_images/download_8.jpg"
+          }
+        },
+        "cor_TRenhg": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
           }
         },
         "cor_4FMCBJ": {
@@ -316,6 +332,13 @@
             "color_value": "#dee141"
           }
         },
+        "cor_9DXdya": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_DhwbGe": {
           "type": "cor",
           "settings": {
@@ -339,6 +362,13 @@
           }
         },
         "cor_7hPTx4": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
+        "cor_jdfWkA": {
           "type": "cor",
           "settings": {
             "color_name": "Preto",
@@ -397,8 +427,10 @@
         }
       },
       "block_order": [
+        "cor_GzyjMw",
         "cor_MDjQkB",
         "cor_mWeaiL",
+        "cor_TRenhg",
         "cor_4FMCBJ",
         "cor_haeafL",
         "cor_ET4Unb",
@@ -437,10 +469,12 @@
         "cor_JnDKLh",
         "cor_JxXwgc",
         "cor_DQWLxj",
+        "cor_9DXdya",
         "cor_DhwbGe",
         "cor_Q8Qyyj",
         "cor_KFMnYE",
         "cor_7hPTx4",
+        "cor_jdfWkA",
         "cor_pJKh9w",
         "cor_Ai6WPR",
         "cor_4UyKzA",

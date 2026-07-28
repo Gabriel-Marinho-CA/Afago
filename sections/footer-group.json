@@ -14,13 +14,6 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
-        "cor_eUpbiK": {
-          "type": "cor",
-          "settings": {
-            "color_name": "Preto",
-            "color_value": "#111111"
-          }
-        },
         "cor_jwbUNG": {
           "type": "cor",
           "settings": {
@@ -34,7 +27,7 @@
           "settings": {
             "color_name": "Poa Preto",
             "color_value": "#111111",
-            "color_image": "shopify://shop_images/download_9.jpg"
+            "color_image": "shopify://shop_images/download_11.jpg"
           }
         },
         "cor_GzyjMw": {
@@ -450,7 +443,6 @@
         }
       },
       "block_order": [
-        "cor_eUpbiK",
         "cor_jwbUNG",
         "cor_GBKYyJ",
         "cor_GzyjMw",

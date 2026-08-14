@@ -14,6 +14,21 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_dt6dgt": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Pasley Croacia",
+            "color_value": "#111111",
+            "color_image": "shopify://shop_images/WhatsAppImage2026-08-14at16.07.44_1.jpg"
+          }
+        },
+        "cor_rXHy3k": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Preto",
+            "color_value": "#111111"
+          }
+        },
         "cor_jwbUNG": {
           "type": "cor",
           "settings": {
@@ -443,6 +458,8 @@
         }
       },
       "block_order": [
+        "cor_dt6dgt",
+        "cor_rXHy3k",
         "cor_jwbUNG",
         "cor_GBKYyJ",
         "cor_GzyjMw",

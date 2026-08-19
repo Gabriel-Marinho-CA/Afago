@@ -1,0 +1,114 @@
+{% comment %}
+  Renders the kit builder for a product that has the metafield
+  product.metafields.custom.itens_do_kit (list of product references).
+
+  Each referenced product gets its own option pickers. When every kit item has a
+  valid selection, the add-to-cart button of the section adds all of them (plus,
+  optionally, the kit product itself) to the cart in a single request.
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} block object.
+  - section_id: {String} id of the section.
+  - product_form_id: {String} id of the product form.
+
+  Usage:
+  {% render 'variant-kits', product: product, block: block, section_id: section.id, product_form_id: product_form_id %}
+{% endcomment %}
+
+{%- assign kit_items = product.metafields.custom.itens_do_kit -%}
+
+{%- if kit_items != blank and kit_items.value.size > 0 -%}
+  {%- comment -%}
+    The main product may have a single default variant, in which case the section
+    does not load the variant picker styles the kit option pills rely on.
+  {%- endcomment -%}
+  {%- if product.has_only_default_variant -%}
+    {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+  {{ 'component-variant-kits.css' | asset_url | stylesheet_tag }}
+  <script src="{{ 'variant-kits.js' | asset_url }}" defer="defer"></script>
+
+  {%- liquid
+    assign base_variant = product.selected_or_first_available_variant
+    assign include_main = block.settings.include_main_product
+    assign base_price = 0
+    assign base_compare_price = 0
+    if include_main
+      assign base_price = base_variant.price | default: 0
+      assign base_compare_price = base_variant.compare_at_price | default: 0
+    endif
+
+    assign allow_main_deselect = false
+    if include_main and block.settings.allow_main_deselect and product.has_only_default_variant == false
+      assign allow_main_deselect = true
+    endif
+  -%}
+
+  <variant-kits
+    class="variant-kits"
+    data-section-id="{{ section_id }}"
+    data-product-form-id="{{ product_form_id }}"
+    data-include-main-product="{{ include_main }}"
+    data-base-price="{{ base_price }}"
+    data-base-compare-price="{{ base_compare_price }}"
+    data-base-available="{{ base_variant.available | default: false }}"
+    data-update-price="{{ block.settings.update_price }}"
+    data-incomplete-text="{{ block.settings.incomplete_text | default: 'Escolha as opções do kit' | escape }}"
+    data-allow-main-deselect="{{ allow_main_deselect }}"
+    data-main-title="{{ product.title | escape }}"
+    {{ block.shopify_attributes }}
+  >
+    {%- if block.settings.heading != blank -%}
+      <h2 class="variant-kits__heading h4">{{ block.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if allow_main_deselect and block.settings.deselect_hint != blank -%}
+      <p class="variant-kits__hint" data-kit-main-hint>{{ block.settings.deselect_hint }}</p>
+    {%- endif -%}
+
+    {%- if allow_main_deselect -%}
+      <div class="variant-kits__main" data-kit-main hidden>
+        <span class="variant-kits__main-text">
+          {{- block.settings.main_removed_text | default: 'O produto principal não será incluído.' -}}
+        </span>
+        <button type="button" class="link variant-kits__main-restore" data-kit-main-restore>
+          {{- block.settings.main_restore_text | default: 'Incluir novamente' -}}
+        </button>
+      </div>
+    {%- endif -%}
+
+    <div class="variant-kits__items">
+      {%- for item in kit_items.value -%}
+        <div class="variant-kits__item" data-kit-item data-kit-item-id="{{ item.id }}">
+          <a class="variant-kits__media" href="{{ item.url }}" title="{{ item.title | escape }}" tabindex="-1">
+            {%- if item.featured_image -%}
+              {{
+                item.featured_image
+                | image_url: width: 200
+                | image_tag: loading: 'lazy', widths: '100, 200, 300', alt: item.featured_image.alt
+              }}
+            {%- else -%}
+              {{ 'product-1' | placeholder_svg_tag: 'variant-kits__placeholder' }}
+            {%- endif -%}
+          </a>
+
+          <div class="variant-kits__details">
+            <a class="variant-kits__title" href="{{ item.url }}">{{ item.title | escape }}</a>
+            <span class="variant-kits__price" data-kit-item-price>{{ item.price | money }}</span>
+            <p class="variant-kits__stock" data-kit-item-stock hidden></p>
+
+            {%- render 'kit-item-options', item: item -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    {%- if block.settings.show_total -%}
+      <div class="variant-kits__total">
+        <span class="variant-kits__total-label">{{ block.settings.total_label | default: 'Total do kit' }}</span>
+        <span class="variant-kits__total-value" data-kit-total>—</span>
+      </div>
+    {%- endif -%}
+  </variant-kits>
+{%- endif -%}

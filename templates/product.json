@@ -38,6 +38,21 @@
             "swatch_shape": "circle"
           }
         },
+        "variant_kits": {
+          "type": "variant_kits",
+          "settings": {
+            "heading": "Monte seu kit",
+            "include_main_product": true,
+            "allow_main_deselect": true,
+            "deselect_hint": "Toque novamente na opção selecionada para comprar apenas os itens do kit.",
+            "main_removed_text": "O produto principal não será incluído.",
+            "main_restore_text": "Incluir novamente",
+            "update_price": true,
+            "show_total": true,
+            "total_label": "Total do kit",
+            "incomplete_text": "Escolha as opções do kit"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -93,6 +108,7 @@
         "text_BDtyiB",
         "price",
         "variant_picker",
+        "variant_kits",
         "buy_buttons",
         "shipping_banner_9QJnLG",
         "collapsible-row-0",

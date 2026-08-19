@@ -45,13 +45,15 @@
             "include_main_product": true,
             "swatch_shape": "circle",
             "allow_main_deselect": true,
-            "deselect_hint": "Toque novamente na opção selecionada para comprar apenas os itens do kit.",
+            "deselect_hint": "Os itens do kit são opcionais. Toque novamente em uma opção já selecionada para removê-la da compra.",
             "main_removed_text": "O produto principal não será incluído.",
             "main_restore_text": "Incluir novamente",
             "update_price": true,
             "show_total": true,
             "total_label": "Total do kit",
-            "incomplete_text": "Escolha as opções do kit"
+            "incomplete_text": "Escolha as opções do kit",
+            "empty_text": "Selecione um produto",
+            "include_label": "Incluir"
           }
         },
         "buy_buttons": {

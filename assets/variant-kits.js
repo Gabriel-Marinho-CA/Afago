@@ -8,6 +8,8 @@ if (!customElements.get('variant-kits')) {
         this.onFormSubmit = this.onFormSubmit.bind(this);
         this.onPickerPointerDown = this.onPickerPointerDown.bind(this);
         this.onPickerClick = this.onPickerClick.bind(this);
+        this.onKitPointerDown = this.onKitPointerDown.bind(this);
+        this.onKitClick = this.onKitClick.bind(this);
         this.restoreMainVariant = this.restoreMainVariant.bind(this);
       }
 
@@ -54,6 +56,8 @@ if (!customElements.get('variant-kits')) {
         this.items = this.items.filter((item) => item.hasStock);
 
         this.addEventListener('change', this.onChange);
+        this.addEventListener('pointerdown', this.onKitPointerDown, true);
+        this.addEventListener('click', this.onKitClick);
         document.addEventListener('submit', this.onFormSubmit, true);
         this.setupMainProductToggle();
 
@@ -76,12 +80,51 @@ if (!customElements.get('variant-kits')) {
 
       disconnectedCallback() {
         document.removeEventListener('submit', this.onFormSubmit, true);
+        this.removeEventListener('pointerdown', this.onKitPointerDown, true);
+        this.removeEventListener('click', this.onKitClick);
         this.productInfo?.removeEventListener('pointerdown', this.onPickerPointerDown, true);
         this.productInfo?.removeEventListener('click', this.onPickerClick);
         this.variantChangeUnsubscriber?.();
       }
 
       onChange() {
+        this.update();
+      }
+
+      /* ------------------------------------------------------------------ */
+      /* Kit item opt-out                                                   */
+      /* ------------------------------------------------------------------ */
+
+      // Same toggle affordance as the main product: clicking the option that is
+      // already selected clears it and drops the item from the kit.
+      kitPickerInput(target) {
+        if (!(target instanceof Element) || !target.closest('[data-kit-option]')) return null;
+        if (target instanceof HTMLInputElement && target.type === 'radio') return target;
+
+        const label = target.closest('label[for]');
+        return label ? document.getElementById(label.htmlFor) : null;
+      }
+
+      onKitPointerDown(event) {
+        const input = this.kitPickerInput(event.target);
+        this.kitPointerWasChecked = !!input && input.checked;
+      }
+
+      onKitClick(event) {
+        const target = event.target;
+        if (!(target instanceof HTMLInputElement) || target.type !== 'radio') return;
+        if (!target.closest('[data-kit-option]')) return;
+
+        const wasChecked = this.kitPointerWasChecked;
+        this.kitPointerWasChecked = false;
+        if (!wasChecked) return;
+
+        // Unchecking through the property fires no `change`, hence the explicit update.
+        target.checked = false;
+        setTimeout(() => {
+          target.checked = false;
+        });
+
         this.update();
       }
 
@@ -209,11 +252,31 @@ if (!customElements.get('variant-kits')) {
         this.updateSubmitButton();
       }
 
-      get isComplete() {
-        if (this.items.length === 0) return false;
-        if (this.mainProductIncluded && !this.baseAvailable) return false;
+      // Kit items are optional: the customer may buy only the main product, only
+      // part of the kit, or everything. Returns 'ready', 'incomplete' (an item
+      // was started but not finished) or 'empty' (nothing to add).
+      get selectionState() {
+        if (this.items.some((item) => this.isPartiallySelected(item))) return 'incomplete';
+        if (!this.hasSomethingToAdd) return 'empty';
 
-        return this.items.every((item) => item.selectedVariant && item.selectedVariant.available);
+        return 'ready';
+      }
+
+      get itemsToAdd() {
+        return this.items.filter((item) => item.selectedVariant && item.selectedVariant.available);
+      }
+
+      get hasSomethingToAdd() {
+        return (this.mainProductIncluded && this.baseAvailable) || this.itemsToAdd.length > 0;
+      }
+
+      // An item the customer started choosing but whose selection cannot be
+      // turned into a buyable variant yet.
+      isPartiallySelected(item) {
+        const values = this.selectedValues(item);
+        if (values.every((value) => value === null)) return false;
+
+        return !item.selectedVariant || !item.selectedVariant.available;
       }
 
       selectedValues(item) {
@@ -224,8 +287,7 @@ if (!customElements.get('variant-kits')) {
       }
 
       resolveVariant(item) {
-        // Products with a single default variant need no selection.
-        if (item.optionFieldsets.length === 0) return item.variants[0] || null;
+        if (item.optionFieldsets.length === 0) return null;
 
         const values = this.selectedValues(item);
         if (values.some((value) => value === null)) return null;
@@ -309,10 +371,11 @@ if (!customElements.get('variant-kits')) {
         const total = this.totalPrice;
 
         if (this.totalElement) {
-          this.totalElement.textContent = this.isComplete ? this.formatMoney(total) : '—';
+          this.totalElement.textContent = total > 0 ? this.formatMoney(total) : '—';
         }
 
-        if (!this.shouldUpdatePrice || !this.isComplete) return;
+        // Nothing selected at all: leave the price rendered by the theme alone.
+        if (!this.shouldUpdatePrice || total === 0) return;
 
         const priceContainer = document.getElementById(`price-${this.sectionId}`);
         if (!priceContainer) return;
@@ -377,13 +440,18 @@ if (!customElements.get('variant-kits')) {
         const text = button.querySelector('span');
         if (text && this.defaultButtonText === undefined) this.defaultButtonText = text.textContent;
 
-        if (this.isComplete) {
+        const state = this.selectionState;
+
+        if (state === 'ready') {
           button.removeAttribute('disabled');
           button.removeAttribute('aria-disabled');
           if (text && this.defaultButtonText !== undefined) text.textContent = this.defaultButtonText;
-        } else {
-          button.setAttribute('disabled', 'disabled');
-          if (text) text.textContent = this.dataset.incompleteText;
+          return;
+        }
+
+        button.setAttribute('disabled', 'disabled');
+        if (text) {
+          text.textContent = state === 'empty' ? this.dataset.emptyText : this.dataset.incompleteText;
         }
       }
 
@@ -399,7 +467,7 @@ if (!customElements.get('variant-kits')) {
         event.preventDefault();
         event.stopPropagation();
 
-        if (!this.isComplete) return;
+        if (this.selectionState !== 'ready') return;
 
         this.addKitToCart(form);
       }
@@ -418,7 +486,7 @@ if (!customElements.get('variant-kits')) {
           }
         }
 
-        this.items.forEach((item) => {
+        this.itemsToAdd.forEach((item) => {
           items.push({ id: item.selectedVariant.id, quantity });
         });
 

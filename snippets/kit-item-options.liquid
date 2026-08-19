@@ -16,7 +16,34 @@
 
 {%- assign kit_swatch_shape = swatch_shape | default: 'circle' -%}
 
-{%- unless item.has_only_default_variant -%}
+{%- if item.has_only_default_variant -%}
+  {%- comment -%}
+    Nothing to choose, but the item still needs an opt-in so the customer can
+    leave it out of the cart like any other kit item.
+  {%- endcomment -%}
+  <div class="variant-kits__options">
+    <fieldset
+      class="js product-form__input product-form__input--pill variant-kits__option variant-kits__option--include"
+      data-kit-option
+      data-option-position="1"
+    >
+      <legend class="visually-hidden">{{ item.title | escape }}</legend>
+      <input
+        type="radio"
+        id="KitOption-{{ item.id }}-include"
+        name="kit-{{ item.id }}-option-1"
+        value="{{ item.variants.first.option1 | escape }}"
+        data-kit-option-value="{{ item.variants.first.option1 | escape }}"
+        {% unless item.available %}
+          class="disabled"
+        {% endunless %}
+      >
+      <label for="KitOption-{{ item.id }}-include">
+        {{- include_label | default: 'Incluir' -}}
+      </label>
+    </fieldset>
+  </div>
+{%- else -%}
   <div class="variant-kits__options">
     {%- for option in item.options_with_values -%}
       {%- liquid
@@ -100,7 +127,7 @@
       </fieldset>
     {%- endfor -%}
   </div>
-{%- endunless -%}
+{%- endif -%}
 
 <script type="application/json" data-kit-variants>
   [

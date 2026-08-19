@@ -133,6 +133,13 @@
   font-size: 1.2rem;
 }
 
+/* The opt-in pill of items without variants holds a word, not a size code. */
+.variant-kits .variant-kits__option--include input[type='radio'] + label {
+  width: auto !important;
+  padding: 0 1.4rem !important;
+  letter-spacing: 0.05rem;
+}
+
 .variant-kits .product-form__input--swatch .swatch-input__input + .swatch-input__label {
   --swatch-input--size: 2.4rem;
 

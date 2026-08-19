@@ -72,16 +72,23 @@ titulo, preco e os botoes de tamanho.
 
 ## Como funciona para o cliente
 
+**Tudo e opcional.** O cliente monta a compra do jeito que quiser: so o produto
+principal, so um item do kit, ou a combinacao completa.
+
 1. O cliente escolhe a variante do produto principal (se houver).
-2. Escolhe a variante de **cada** item do kit.
-3. Enquanto faltar alguma escolha, o botao de compra fica desabilitado com o
-   texto configurado no bloco.
-4. Com tudo selecionado, o preco exibido passa a ser a soma do kit e o botao
-   adiciona todos os itens ao carrinho em uma unica acao.
-5. Se quiser levar somente as pecas do kit, o cliente clica de novo na opcao ja
-   marcada do produto principal. Ela e desmarcada, aparece o aviso "O produto
-   principal nao sera incluido" com o botao "Incluir novamente", e o total passa
-   a somar apenas os itens do kit.
+2. Escolhe a variante dos itens do kit que quiser levar. Itens sem escolha
+   simplesmente nao entram no carrinho.
+3. Para tirar algo da compra, basta clicar de novo na opcao ja marcada - vale
+   tanto para os itens do kit quanto para o produto principal. No caso do
+   produto principal aparece o aviso "O produto principal nao sera incluido"
+   com o botao "Incluir novamente".
+4. O preco exibido acompanha a selecao, somando apenas o que esta marcado.
+5. O botao de compra so trava em dois casos:
+   - o cliente comecou a escolher um item do kit e nao fechou a combinacao
+     (ex: escolheu a cor mas nao o tamanho) - mostra o texto de "item pela metade";
+   - nao ha nada selecionado - mostra o texto de "sem nada selecionado".
+6. Com a selecao valida, todos os itens marcados vao para o carrinho em uma
+   unica acao.
 
 ---
 
@@ -113,9 +120,9 @@ Variantes" (veja o DOCS-PRODUTOS.md). Se uma cor aparecer sem preenchimento, e
 porque ela ainda nao foi cadastrada la com o nome identico ao da variante. O
 formato (circulo, quadrado ou texto) e configuravel nas opcoes do bloco.
 
-**Um item do kit ficou sem botoes de tamanho.**
-Esse produto provavelmente nao tem variantes cadastradas. Nesse caso ele entra no
-carrinho automaticamente, sem precisar de escolha.
+**Um item do kit ficou sem botoes de tamanho, so com o botao "Incluir".**
+Esse produto nao tem variantes cadastradas, entao nao ha o que escolher - o
+cliente so decide se leva ou nao. O texto desse botao e configuravel no bloco.
 
 **Tamanhos esgotados de um item do kit.**
 Aparecem riscados e nao podem ser selecionados, igual ao seletor do produto normal.

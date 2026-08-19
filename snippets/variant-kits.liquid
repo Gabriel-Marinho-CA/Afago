@@ -62,6 +62,7 @@
     data-base-available="{{ base_variant.available | default: false }}"
     data-update-price="{{ block.settings.update_price }}"
     data-incomplete-text="{{ block.settings.incomplete_text | default: 'Escolha as opções do kit' | escape }}"
+    data-empty-text="{{ block.settings.empty_text | default: 'Selecione um produto' | escape }}"
     data-allow-main-deselect="{{ allow_main_deselect }}"
     data-main-title="{{ product.title | escape }}"
     {{ block.shopify_attributes }}
@@ -70,8 +71,8 @@
       <h2 class="variant-kits__heading h4">{{ block.settings.heading }}</h2>
     {%- endif -%}
 
-    {%- if allow_main_deselect and block.settings.deselect_hint != blank -%}
-      <p class="variant-kits__hint" data-kit-main-hint>{{ block.settings.deselect_hint }}</p>
+    {%- if block.settings.deselect_hint != blank -%}
+      <p class="variant-kits__hint">{{ block.settings.deselect_hint }}</p>
     {%- endif -%}
 
     {%- if allow_main_deselect -%}
@@ -105,7 +106,11 @@
             <span class="variant-kits__price" data-kit-item-price>{{ item.price | money }}</span>
             <p class="variant-kits__stock" data-kit-item-stock hidden></p>
 
-            {%- render 'kit-item-options', item: item, swatch_shape: block.settings.swatch_shape -%}
+            {%- render 'kit-item-options',
+              item: item,
+              swatch_shape: block.settings.swatch_shape,
+              include_label: block.settings.include_label
+            -%}
           </div>
         </div>
       {%- endfor -%}

@@ -2,44 +2,100 @@
   Renders the option pickers of a single kit item (product referenced in
   product.metafields.custom.itens_do_kit).
 
+  Mirrors the main variant picker: color options become swatches (using the
+  tp-swatch--{slug} classes from the "Cores de Variantes" section) and every
+  other option becomes pills.
+
   Accepts:
   - item: {Object} product object of the kit item.
+  - swatch_shape: {String} 'circle', 'square' or 'none'.
 
   Usage:
-  {% render 'kit-item-options', item: item %}
+  {% render 'kit-item-options', item: item, swatch_shape: swatch_shape %}
 {% endcomment %}
+
+{%- assign kit_swatch_shape = swatch_shape | default: 'circle' -%}
 
 {%- unless item.has_only_default_variant -%}
   <div class="variant-kits__options">
     {%- for option in item.options_with_values -%}
+      {%- liquid
+        assign swatch_count = option.values | map: 'swatch' | compact | size
+
+        assign opt_name_lower = option.name | downcase
+        assign is_color_option = false
+        if opt_name_lower == 'cor' or opt_name_lower == 'color' or opt_name_lower == 'colour' or opt_name_lower == 'cores'
+          assign is_color_option = true
+        endif
+
+        assign picker_type = 'button'
+        if kit_swatch_shape != 'none'
+          if swatch_count > 0 or is_color_option
+            assign picker_type = 'swatch'
+          endif
+        endif
+      -%}
+
       <fieldset
-        class="js product-form__input product-form__input--pill variant-kits__option"
+        class="js product-form__input product-form__input--{% if picker_type == 'swatch' %}swatch{% else %}pill{% endif %} variant-kits__option"
         data-kit-option
         data-option-position="{{ option.position }}"
       >
-        <legend class="form__label">{{ option.name }}</legend>
+        <legend class="form__label">
+          {{- option.name -}}
+          {%- if picker_type == 'swatch' -%}
+            <span data-kit-selected-value></span>
+          {%- endif -%}
+        </legend>
+
         {%- for value in option.values -%}
           {%- capture kit_input_id -%}
             KitOption-{{ item.id }}-{{ option.position }}-{{ forloop.index0 }}
           {%- endcapture -%}
-          <input
-            type="radio"
-            id="{{ kit_input_id | strip }}"
-            name="kit-{{ item.id }}-option-{{ option.position }}"
-            value="{{ value | escape }}"
-            data-kit-option-value="{{ value | escape }}"
-            {% unless value.available %}
-              class="disabled"
-            {% endunless %}
-          >
-          <label for="{{ kit_input_id | strip }}">
-            {{- value -}}
-            {%- unless value.available -%}
-              <span class="visually-hidden label-unavailable">
-                {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
-              </span>
-            {%- endunless -%}
-          </label>
+          {%- assign kit_input_id = kit_input_id | strip -%}
+
+          {%- if picker_type == 'swatch' -%}
+            <input
+              type="radio"
+              id="{{ kit_input_id }}"
+              name="kit-{{ item.id }}-option-{{ option.position }}"
+              value="{{ value | escape }}"
+              class="swatch-input__input{% unless value.available %} visually-disabled{% endunless %}"
+              data-kit-option-value="{{ value | escape }}"
+            >
+            <label
+              for="{{ kit_input_id }}"
+              title="{{ value | escape }}"
+              class="swatch-input__label{% if kit_swatch_shape == 'square' %} swatch-input__label--square{% endif %}"
+            >
+              {%- render 'swatch', swatch: value.swatch, shape: kit_swatch_shape, color_name: value -%}
+              <span class="visually-hidden">{{ value | escape }}</span>
+              {%- unless value.available -%}
+                <span class="visually-hidden label-unavailable">
+                  {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+                </span>
+              {%- endunless -%}
+            </label>
+          {%- else -%}
+            <input
+              type="radio"
+              id="{{ kit_input_id }}"
+              name="kit-{{ item.id }}-option-{{ option.position }}"
+              value="{{ value | escape }}"
+              data-kit-option-value="{{ value | escape }}"
+              {% unless value.available %}
+                class="disabled"
+              {% endunless %}
+            >
+            <label for="{{ kit_input_id }}">
+              {{- value -}}
+              {%- unless value.available -%}
+                <span class="visually-hidden label-unavailable">
+                  {{- 'products.product.variant_sold_out_or_unavailable' | t -}}
+                </span>
+              {%- endunless -%}
+            </label>
+          {%- endif -%}
         {%- endfor -%}
       </fieldset>
     {%- endfor -%}

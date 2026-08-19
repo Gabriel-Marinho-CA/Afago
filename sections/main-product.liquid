@@ -2203,6 +2203,18 @@
           "default": true
         },
         {
+          "type": "select",
+          "id": "swatch_shape",
+          "label": "Formato das cores",
+          "info": "Usa as cores cadastradas na seção \"Cores de Variantes\", igual ao seletor do produto principal.",
+          "options": [
+            { "value": "circle", "label": "Círculo" },
+            { "value": "square", "label": "Quadrado" },
+            { "value": "none", "label": "Sem bolinha (texto)" }
+          ],
+          "default": "circle"
+        },
+        {
           "type": "checkbox",
           "id": "allow_main_deselect",
           "label": "Permitir desmarcar o produto principal",

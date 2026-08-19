@@ -37,12 +37,21 @@ if (!customElements.get('variant-kits')) {
           return {
             element,
             variants,
+            // An item without a single available variant can never be
+            // completed, so it is dropped instead of locking the buy button.
+            hasStock: variants.some((variant) => variant.available),
             priceElement: element.querySelector('[data-kit-item-price]'),
             stockElement: element.querySelector('[data-kit-item-stock]'),
             optionFieldsets: Array.from(element.querySelectorAll('[data-kit-option]')),
             selectedVariant: null,
           };
         });
+
+        this.items.forEach((item) => {
+          if (!item.hasStock) item.element.hidden = true;
+        });
+
+        this.items = this.items.filter((item) => item.hasStock);
 
         this.addEventListener('change', this.onChange);
         document.addEventListener('submit', this.onFormSubmit, true);
@@ -192,6 +201,7 @@ if (!customElements.get('variant-kits')) {
         this.items.forEach((item) => {
           item.selectedVariant = this.resolveVariant(item);
           this.updateOptionAvailability(item);
+          this.updateSelectedValueLabels(item);
           this.updateItemInfo(item);
         });
 
@@ -243,6 +253,17 @@ if (!customElements.get('variant-kits')) {
 
             input.classList.toggle('disabled', !available);
           });
+        });
+      }
+
+      // Mirrors the "COR: AZUL CLARO" legend of the main variant picker.
+      updateSelectedValueLabels(item) {
+        item.optionFieldsets.forEach((fieldset) => {
+          const label = fieldset.querySelector('[data-kit-selected-value]');
+          if (!label) return;
+
+          const checked = fieldset.querySelector('input[type="radio"]:checked');
+          label.textContent = checked ? `: ${checked.value}` : '';
         });
       }
 

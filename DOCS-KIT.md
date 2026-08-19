@@ -101,6 +101,18 @@ titulo, preco e os botoes de tamanho.
 Confira se o metacampo esta preenchido nesse produto e se a chave e exatamente
 `custom.itens_do_kit`.
 
+**Um item do kit sumiu da pagina.**
+Produtos sem nenhuma variante em estoque nao sao exibidos, porque o cliente nunca
+conseguiria concluir a escolha e o botao de compra ficaria travado. Assim que o
+estoque voltar, o item reaparece sozinho. Se nenhum item do kit tiver estoque, o
+bloco inteiro nao aparece e o produto se comporta como um produto normal.
+
+**As cores do kit aparecem como bolinhas?**
+Sim. O kit usa exatamente as mesmas cores cadastradas na secao "Cores de
+Variantes" (veja o DOCS-PRODUTOS.md). Se uma cor aparecer sem preenchimento, e
+porque ela ainda nao foi cadastrada la com o nome identico ao da variante. O
+formato (circulo, quadrado ou texto) e configuravel nas opcoes do bloco.
+
 **Um item do kit ficou sem botoes de tamanho.**
 Esse produto provavelmente nao tem variantes cadastradas. Nesse caso ele entra no
 carrinho automaticamente, sem precisar de escolha.

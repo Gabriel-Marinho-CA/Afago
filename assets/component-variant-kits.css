@@ -119,9 +119,24 @@
   margin-bottom: 0;
 }
 
-.variant-kits .variant-kits__option .form__label {
-  margin-bottom: 0.4rem;
+/* Matches the specificity of the section overrides in section-main-product.css,
+   which pin the main picker to its full size. */
+.variant-kits fieldset.js.product-form__input.variant-kits__option .form__label {
+  margin-bottom: 0.6rem !important;
+  font-size: 1.1rem !important;
+}
+
+.variant-kits .product-form__input--pill input[type='radio'] + label {
+  width: 3.2rem !important;
+  height: 3.2rem !important;
+  margin: 0 0.4rem 0.4rem 0 !important;
   font-size: 1.2rem;
+}
+
+.variant-kits .product-form__input--swatch .swatch-input__input + .swatch-input__label {
+  --swatch-input--size: 2.4rem;
+
+  margin: 0 0.8rem 0.4rem 0 !important;
 }
 
 .variant-kits__total {

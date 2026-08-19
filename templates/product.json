@@ -43,6 +43,7 @@
           "settings": {
             "heading": "Monte seu kit",
             "include_main_product": true,
+            "swatch_shape": "circle",
             "allow_main_deselect": true,
             "deselect_hint": "Toque novamente na opção selecionada para comprar apenas os itens do kit.",
             "main_removed_text": "O produto principal não será incluído.",

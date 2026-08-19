@@ -16,15 +16,22 @@
   {% render 'variant-kits', product: product, block: block, section_id: section.id, product_form_id: product_form_id %}
 {% endcomment %}
 
-{%- assign kit_items = product.metafields.custom.itens_do_kit -%}
+{%- liquid
+  assign kit_items = product.metafields.custom.itens_do_kit
+  # Products with no stock at all would keep the buy button locked forever,
+  # since the customer can never complete their selection.
+  assign kit_available_items = kit_items.value | where: 'available', true
+-%}
 
-{%- if kit_items != blank and kit_items.value.size > 0 -%}
+{%- if kit_available_items.size > 0 -%}
   {%- comment -%}
     The main product may have a single default variant, in which case the section
     does not load the variant picker styles the kit option pills rely on.
   {%- endcomment -%}
   {%- if product.has_only_default_variant -%}
     {{ 'component-product-variant-picker.css' | asset_url | stylesheet_tag }}
+    {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
+    {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
   {%- endif -%}
   {{ 'component-variant-kits.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'variant-kits.js' | asset_url }}" defer="defer"></script>
@@ -79,7 +86,7 @@
     {%- endif -%}
 
     <div class="variant-kits__items">
-      {%- for item in kit_items.value -%}
+      {%- for item in kit_available_items -%}
         <div class="variant-kits__item" data-kit-item data-kit-item-id="{{ item.id }}">
           <a class="variant-kits__media" href="{{ item.url }}" title="{{ item.title | escape }}" tabindex="-1">
             {%- if item.featured_image -%}
@@ -98,7 +105,7 @@
             <span class="variant-kits__price" data-kit-item-price>{{ item.price | money }}</span>
             <p class="variant-kits__stock" data-kit-item-stock hidden></p>
 
-            {%- render 'kit-item-options', item: item -%}
+            {%- render 'kit-item-options', item: item, swatch_shape: block.settings.swatch_shape -%}
           </div>
         </div>
       {%- endfor -%}

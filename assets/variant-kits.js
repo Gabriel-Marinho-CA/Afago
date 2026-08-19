@@ -389,7 +389,12 @@ if (!customElements.get('variant-kits')) {
 
       onFormSubmit(event) {
         const form = event.target;
-        if (!(form instanceof HTMLFormElement) || form.id !== this.productFormId) return;
+        if (!(form instanceof HTMLFormElement)) return;
+
+        // HTMLFormElement has [LegacyOverrideBuiltIns]: because the form holds an
+        // <input name="id">, `form.id` returns that input instead of the id
+        // string, so the attribute has to be read explicitly.
+        if (form.getAttribute('id') !== this.productFormId) return;
 
         event.preventDefault();
         event.stopPropagation();
@@ -400,12 +405,14 @@ if (!customElements.get('variant-kits')) {
       }
 
       buildItems(form) {
-        const quantityInput = form.querySelector('[name="quantity"]');
+        // The quantity input lives outside the <form> and is linked through the
+        // `form` attribute, so it is only reachable through form.elements.
+        const quantityInput = form.elements.namedItem('quantity');
         const quantity = Math.max(parseInt(quantityInput?.value, 10) || 1, 1);
         const items = [];
 
         if (this.mainProductIncluded) {
-          const variantInput = form.querySelector('[name="id"]');
+          const variantInput = form.elements.namedItem('id');
           if (variantInput && variantInput.value) {
             items.push({ id: Number(variantInput.value), quantity });
           }

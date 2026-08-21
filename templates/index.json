@@ -252,16 +252,22 @@
     },
     "17873417903126085f": {
       "type": "apps",
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "178734193127153b18": {
+      "type": "apps",
       "blocks": {
-        "gsc_instagram_feed_instafeed_6twhYP": {
+        "gsc_instagram_feed_instafeed_aeWpy3": {
           "type": "shopify://apps/gsc-instagram-feed/blocks/instafeed/96970b1b-b770-454f-b16b-51f47e1aa4ed",
           "settings": {
-            "widget_id": "GSC-OmIVddYvzpFPiSL"
+            "widget_id": "GSC-IrfLjKMSGAIlJVC"
           }
         }
       },
       "block_order": [
-        "gsc_instagram_feed_instafeed_6twhYP"
+        "gsc_instagram_feed_instafeed_aeWpy3"
       ],
       "settings": {
         "include_margins": true
@@ -275,6 +281,7 @@
     "res_featured_collection_aXAMMg",
     "res_categories_slider_rGBJqR",
     "res_instagram_FHn8MC",
-    "17873417903126085f"
+    "17873417903126085f",
+    "178734193127153b18"
   ]
 }

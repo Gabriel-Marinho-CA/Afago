@@ -14,6 +14,13 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_c3BULx": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Marrom Cafe",
+            "color_value": "#6F4E37"
+          }
+        },
         "cor_dt6dgt": {
           "type": "cor",
           "settings": {
@@ -458,6 +465,7 @@
         }
       },
       "block_order": [
+        "cor_c3BULx",
         "cor_dt6dgt",
         "cor_rXHy3k",
         "cor_jwbUNG",

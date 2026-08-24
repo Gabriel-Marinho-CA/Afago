@@ -14,11 +14,18 @@
     "custom_colors_KLhtYG": {
       "type": "custom-colors",
       "blocks": {
+        "cor_ayp8XJ": {
+          "type": "cor",
+          "settings": {
+            "color_name": "Rosa",
+            "color_value": "#DE69A1"
+          }
+        },
         "cor_YzkX8H": {
           "type": "cor",
           "settings": {
             "color_name": "Rosa Bebe",
-            "color_value": "#E691BA"
+            "color_value": "#e691ba"
           }
         },
         "cor_c3BULx": {
@@ -472,6 +479,7 @@
         }
       },
       "block_order": [
+        "cor_ayp8XJ",
         "cor_YzkX8H",
         "cor_c3BULx",
         "cor_dt6dgt",
